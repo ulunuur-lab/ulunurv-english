@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ulunur's English | Lug'at Darajasini Aniqlash Testi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0b1120;
+      --card-bg: #131d33;
+      --card-hover: #1b2744;
+      --border: #1e293b;
+      --primary: #6366f1;
+      --primary-hover: #4f46e5;
+      --emerald: #10b981;
+      --amber: #f59e0b;
+      --rose: #f43f5e;
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    /* HEADER */
+    header {
+      background: rgba(11, 17, 32, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      padding: 12px 20px;
+    }
+
+    .nav-container {
+      max-width: 700px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .logo-badge {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, #10b981, #059669);
+      color: #fff;
+      font-weight: 800;
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 12px rgba(16, 185, 129, 0.25);
+    }
+
+    .brand-title {
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .brand-subtitle {
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    .teacher-badge {
+      display: none;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 12px;
+      background: rgba(245, 158, 11, 0.12);
+      border: 1px solid rgba(245, 158, 11, 0.3);
+      border-radius: 999px;
+      color: var(--amber);
+      font-size: 11px;
+      font-weight: 700;
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      padding: 6px 12px;
+      border-radius: 8px;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s ease;
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.1);
+      color: var(--text);
+    }
+
+    /* MAIN */
+    main {
+      max-width: 680px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 20px 16px 40px;
+      flex-grow: 1;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 28px 24px;
+      box-shadow: 0 12px 30px -10px rgba(0, 0, 0, 0.4);
+    }
+
+    /* INTRO */
+    .intro-header {
+      text-align: center;
+      margin-bottom: 24px;
+    }
+
+    .intro-tag {
+      display: inline-block;
+      padding: 4px 12px;
+      background: rgba(16, 185, 129, 0.12);
+      color: var(--emerald);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 700;
+      margin-bottom: 12px;
+      letter-spacing: 0.5px;
+    }
+
+    .intro-title {
+      font-size: 24px;
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+
+    .intro-desc {
+      color: var(--text-muted);
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .level-pills {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin: 20px 0;
+      flex-wrap: wrap;
+    }
+
+    .level-pill {
+      background: rgba(11, 17, 32, 0.6);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 8px 14px;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-align: center;
+    }
+
+    .level-pill strong {
+      display: block;
+      color: var(--text);
+      font-size: 14px;
+    }
+
+    .input-box {
+      width: 100%;
+      background: rgba(11, 17, 32, 0.7);
+      border: 1px solid var(--border);
+      padding: 14px 16px;
+      border-radius: 12px;
+      color: var(--text);
+      font-size: 15px;
+      outline: none;
+      transition: all 0.2s;
+    }
+
+    .input-box:focus {
+      border-color: var(--emerald);
+      box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.2);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #10b981, #059669);
+      color: #fff;
+      border: none;
+      border-radius: 12px;
+      padding: 14px 24px;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      margin-top: 14px;
+      transition: all 0.2s;
+      box-shadow: 0 4px 14px rgba(16, 185, 129, 0.3);
+    }
+
+    .btn-primary:hover {
+      opacity: 0.95;
+      transform: translateY(-1px);
+    }
+
+    /* TEST SCREEN */
+    .test-top-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 12px;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--text-muted);
+    }
+
+    .tier-badge {
+      padding: 3px 10px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 700;
+    }
+
+    .tier-a2 {
+      background: rgba(16, 185, 129, 0.15);
+      color: var(--emerald);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+    }
+
+    .tier-b1 {
+      background: rgba(99, 102, 241, 0.15);
+      color: var(--primary);
+      border: 1px solid rgba(99, 102, 241, 0.3);
+    }
+
+    .tier-b2 {
+      background: rgba(244, 63, 94, 0.15);
+      color: var(--rose);
+      border: 1px solid rgba(244, 63, 94, 0.3);
+    }
+
+    .progress-bar-bg {
+      width: 100%;
+      height: 6px;
+      background: rgba(255, 255, 255, 0.06);
+      border-radius: 999px;
+      margin-bottom: 24px;
+      overflow: hidden;
+    }
+
+    .progress-bar-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #10b981, #6366f1);
+      width: 0%;
+      transition: width 0.3s ease;
+    }
+
+    .word-prompt-box {
+      text-align: center;
+      padding: 24px 16px;
+      background: rgba(11, 17, 32, 0.5);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      margin-bottom: 20px;
+    }
+
+    .target-word {
+      font-size: 32px;
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: -0.5px;
+      margin-bottom: 6px;
+    }
+
+    .word-pos {
+      font-size: 12px;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 700;
+    }
+
+    .options-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+
+    .opt-btn {
+      background: rgba(11, 17, 32, 0.6);
+      border: 1.5px solid var(--border);
+      border-radius: 12px;
+      padding: 14px 16px;
+      color: var(--text);
+      font-size: 15px;
+      font-weight: 600;
+      text-align: left;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      transition: all 0.15s ease;
+    }
+
+    .opt-btn:hover:not(:disabled) {
+      background: var(--card-hover);
+      border-color: #475569;
+    }
+
+    .opt-letter {
+      width: 26px;
+      height: 26px;
+      border-radius: 6px;
+      background: rgba(255, 255, 255, 0.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--text-muted);
+      flex-shrink: 0;
+    }
+
+    .opt-btn.correct {
+      border-color: var(--emerald);
+      background: rgba(16, 185, 129, 0.18);
+      color: #34d399;
+    }
+
+    .opt-btn.correct .opt-letter {
+      background: var(--emerald);
+      color: #fff;
+    }
+
+    .opt-btn.wrong {
+      border-color: var(--rose);
+      background: rgba(244, 63, 94, 0.18);
+      color: #fb7185;
+      text-decoration: line-through;
+    }
+
+    .opt-btn.wrong .opt-letter {
+      background: var(--rose);
+      color: #fff;
+    }
+
+    .feedback-note {
+      text-align: center;
+      font-size: 13px;
+      font-weight: 600;
+      margin-top: 10px;
+      min-height: 20px;
+    }
+
+    .feedback-correct {
+      color: #34d399;
+    }
+
+    .feedback-wrong {
+      color: #fb7185;
+    }
+
+    /* RESULT SCREEN */
+    .result-box {
+      text-align: center;
+      padding: 24px 16px;
+      background: linear-gradient(180deg, rgba(16, 185, 129, 0.12), transparent);
+      border-radius: 14px;
+      margin-bottom: 20px;
+      border: 1px solid rgba(16, 185, 129, 0.2);
+    }
+
+    .score-num {
+      font-size: 48px;
+      font-weight: 900;
+      color: var(--emerald);
+      letter-spacing: -1px;
+    }
+
+    .band-badge {
+      display: inline-block;
+      padding: 4px 14px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .tier-breakdown {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin: 20px 0;
+    }
+
+    .tier-item {
+      background: rgba(11, 17, 32, 0.5);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 12px 16px;
+    }
+
+    .tier-item-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .tier-bar-bg {
+      height: 6px;
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 999px;
+      overflow: hidden;
+    }
+
+    .tier-bar-fill {
+      height: 100%;
+      border-radius: 999px;
+    }
+
+    .rec-box {
+      background: rgba(99, 102, 241, 0.08);
+      border: 1px solid rgba(99, 102, 241, 0.3);
+      border-radius: 12px;
+      padding: 16px;
+      margin-bottom: 20px;
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    .rec-box strong {
+      color: #818cf8;
+    }
+
+    .status-msg {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-top: 14px;
+      text-align: center;
+    }
+
+    footer {
+      text-align: center;
+      padding: 18px;
+      font-size: 12px;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="nav-container">
+      <a href="index.html" class="brand">
+        <div class="logo-badge">UZ</div>
+        <div>
+          <div class="brand-title">Ulunur's English</div>
+          <div class="brand-subtitle">Lug'at Boyligi Testi (EN → UZ)</div>
+        </div>
+      </a>
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <div id="teacher-mode-pill" class="teacher-badge">
+          🛡️ Ulunur Mode (Muted)
+        </div>
+        <a href="index.html" class="btn-secondary">
+          ← Asosiy sahifa
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN -->
+  <main>
+    <!-- STEP 1: INTRO -->
+    <section id="screen-intro" class="card">
+      <div class="intro-header">
+        <div class="intro-tag">TEZKOR VA ANIQ</div>
+        <h1 class="intro-title">Inglizcha So'zlar Testi</h1>
+        <p class="intro-desc">
+          Har bir inglizcha so'zning o'zbekcha to'g'ri tarjimasini tanlang. Ortiqcha murakkab matnlar yo'q, faqat so'zlar!
+        </p>
+      </div>
+
+      <div class="level-pills">
+        <div class="level-pill">
+          <strong>10 ta</strong>
+          A2 (Boshlang'ich)
+        </div>
+        <div class="level-pill">
+          <strong>15 ta</strong>
+          B1 (O'rta daraja)
+        </div>
+        <div class="level-pill">
+          <strong>10 ta</strong>
+          B2 (Yuqori o'rta)
+        </div>
+      </div>
+
+      <div style="margin-top: 20px;">
+        <label style="display: block; font-size: 13px; font-weight: 600; margin-bottom: 8px; color: var(--text-muted);">
+          Ismingizni kiriting:
+        </label>
+        <input type="text" id="student-name" class="input-box" placeholder="Ismingiz (masalan: Malika)" oninput="handleNameInput(this.value)">
+        <div id="name-hint" style="display: none; color: var(--amber); font-size: 12px; margin-top: 6px; font-weight: 600;">
+          🛡️ Ulunur rejimi: O'qituvchi sinovi faollashdi. Botga xabar yuborilmaydi.
+        </div>
+        <button class="btn-primary" onclick="startTest()">
+          Testni Boshlash →
+        </button>
+      </div>
+    </section>
+
+    <!-- STEP 2: ACTIVE TEST -->
+    <section id="screen-test" class="card" style="display: none;">
+      <div class="test-top-bar">
+        <span id="q-counter">1 / 35</span>
+        <span id="tier-badge" class="tier-badge tier-a2">A2 Baza</span>
+      </div>
+
+      <div class="progress-bar-bg">
+        <div class="progress-bar-fill" id="progress-fill"></div>
+      </div>
+
+      <div class="word-prompt-box">
+        <div class="word-pos" id="word-pos">fe'l (verb)</div>
+        <div class="target-word" id="target-word">afford</div>
+        <div style="font-size: 13px; color: var(--text-muted); margin-top: 4px;">To'g'ri o'zbekcha ma'nosini tanlang:</div>
+      </div>
+
+      <div class="options-grid" id="options-grid"></div>
+
+      <div class="feedback-note" id="feedback-note"></div>
+
+      <button class="btn-primary" id="next-btn" style="display: none; margin-top: 10px;" onclick="nextQuestion()">
+        Keyingi so'z →
+      </button>
+    </section>
+
+    <!-- STEP 3: RESULT -->
+    <section id="screen-result" class="card" style="display: none;">
+      <div class="result-box">
+        <div class="band-badge tier-b1" id="res-band">B1 O'rta Daraja</div>
+        <div class="score-num" id="res-score">0 / 35</div>
+        <p style="font-size: 15px; font-weight: 700; color: var(--text);" id="res-title">Test Yakunlandi!</p>
+        <p style="font-size: 12px; color: var(--text-muted); margin-top: 4px;">Natijalar o'qituvchiga yuborildi.</p>
+      </div>
+
+      <h3 style="font-size: 15px; font-weight: 700; margin-bottom: 10px;">Darajalar bo'yicha natija:</h3>
+      <div class="tier-breakdown">
+        <!-- A2 -->
+        <div class="tier-item">
+          <div class="tier-item-row">
+            <span style="color: var(--emerald);">A2 Boshlang'ich so'zlar</span>
+            <span id="t1-score">0 / 10</span>
+          </div>
+          <div class="tier-bar-bg">
+            <div class="tier-bar-fill" id="t1-bar" style="background: var(--emerald); width: 0%;"></div>
+          </div>
+        </div>
+
+        <!-- B1 -->
+        <div class="tier-item">
+          <div class="tier-item-row">
+            <span style="color: var(--primary);">B1 O'rta so'zlar</span>
+            <span id="t2-score">0 / 15</span>
+          </div>
+          <div class="tier-bar-bg">
+            <div class="tier-bar-fill" id="t2-bar" style="background: var(--primary); width: 0%;"></div>
+          </div>
+        </div>
+
+        <!-- B2 -->
+        <div class="tier-item">
+          <div class="tier-item-row">
+            <span style="color: var(--rose);">B2 Murakkab so'zlar</span>
+            <span id="t3-score">0 / 10</span>
+          </div>
+          <div class="tier-bar-bg">
+            <div class="tier-bar-fill" id="t3-bar" style="background: var(--rose); width: 0%;"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RECOMMENDATION -->
+      <div class="rec-box" id="rec-box">
+        <strong>💡 Tavsiya:</strong>
+        <p id="rec-text" style="margin-top: 6px;">Tahlil qilinmoqda...</p>
+      </div>
+
+      <div style="display: flex; gap: 10px; margin-top: 16px;">
+        <a href="index.html" class="btn-primary" style="flex: 1; text-decoration: none; margin-top: 0;">
+          Darslarga o'tish →
+        </a>
+        <button class="btn-secondary" style="padding: 12px 18px; font-size: 13px;" onclick="retake()">
+          🔄 Qaytadan
+        </button>
+      </div>
+
+      <div class="status-msg" id="status-msg">📡 O'qituvchiga yuborilmoqda...</div>
+    </section>
+  </main>
+
+  <footer>
+    Ulunur's English • Lug'at Darajasini Baholash Tizimi
+  </footer>
+
+  <!-- SCRIPT -->
+  <script>
+    const TELEGRAM_BOT_TOKEN = "8828359607:AAFEpXaJusqaorQtIhd2sDMm4enaVWxnmuY";
+    const TELEGRAM_CHAT_ID = "7957347033";
+
+    // 35 REALISTIK VA QULAY LUG'AT SAVOLLARI (INGLIZCHA -> O'ZBEKCHA)
+    const VOCAB_DATA = [
+      // --- 1-10: A1/A2 BAZA (Kundalik eng oddiy so'zlar) ---
+      { id: 1, tier: 1, tierName: "A1/A2 Baza", word: "choose", pos: "fe'l", ans: "tanlamoq", opts: ["tanlamoq", "sotmoq", "yozmoq", "kutmoq"] },
+      { id: 2, tier: 1, tierName: "A1/A2 Baza", word: "forget", pos: "fe'l", ans: "unutmoq / esdan chiqarmoq", opts: ["eslamoq", "unutmoq / esdan chiqarmoq", "topmoq", "bormoq"] },
+      { id: 3, tier: 1, tierName: "A1/A2 Baza", word: "invite", pos: "fe'l", ans: "taklif qilmoq", opts: ["taklif qilmoq", "haydamoq", "to'xtatmoq", "sotib olmoq"] },
+      { id: 4, tier: 1, tierName: "A1/A2 Baza", word: "expensive", pos: "sifat", ans: "qimmat", opts: ["arzon", "eski", "qimmat", "chiroyli"] },
+      { id: 5, tier: 1, tierName: "A1/A2 Baza", word: "dangerous", pos: "sifat", ans: "xavfli", opts: ["xavfli", "qiziqarli", "tinch", "tez"] },
+      { id: 6, tier: 1, tierName: "A1/A2 Baza", word: "angry", pos: "sifat", ans: "jahldor / achchiqlangan", opts: ["xursand", "charchagan", "jahldor / achchiqlangan", "och qolgan"] },
+      { id: 7, tier: 1, tierName: "A1/A2 Baza", word: "explain", pos: "fe'l", ans: "tushuntirmoq", opts: ["tinglamoq", "tushuntirmoq", "yashirmoq", "qidirmoq"] },
+      { id: 8, tier: 1, tierName: "A1/A2 Baza", word: "delicious", pos: "sifat", ans: "mazali / shirin", opts: ["issiq", "achchiq", "mazali / shirin", "quruq"] },
+      { id: 9, tier: 1, tierName: "A1/A2 Baza", word: "wait", pos: "fe'l", ans: "kutmoq", opts: ["yugurmoq", "kutmoq", "uxlamoq", "gapirmoq"] },
+      { id: 10, tier: 1, tierName: "A1/A2 Baza", word: "healthy", pos: "sifat", ans: "sog'lom / foydali", opts: ["kasal", "sog'lom / foydali", "zaif", "qiyin"] },
+
+      // --- 11-25: A2/B1 DARAJA (Jonli muloqot so'zlari) ---
+      { id: 11, tier: 2, tierName: "A2/B1 O'rta", word: "decide", pos: "fe'l", ans: "qaror qilmoq", opts: ["shubhalanmoq", "rad etmoq", "qaror qilmoq", "taklif qilmoq"] },
+      { id: 12, tier: 2, tierName: "A2/B1 O'rta", word: "arrive", pos: "fe'l", ans: "yetib kelmoq", opts: ["jo'nab ketmoq", "yetib kelmoq", "yo'qolmoq", "qaytmoq"] },
+      { id: 13, tier: 2, tierName: "A2/B1 O'rta", word: "borrow", pos: "fe'l", ans: "qarzga olmoq (vaqtincha)", opts: ["sovg'a qilmoq", "qarzga olmoq (vaqtincha)", "qarz bermoq", "topib olmoq"] },
+      { id: 14, tier: 2, tierName: "A2/B1 O'rta", word: "prepare", pos: "fe'l", ans: "tayyorlanmoq / tayyorlamoq", opts: ["buzmoq", "tayyorlanmoq / tayyorlamoq", "unutmoq", "kechikmoq"] },
+      { id: 15, tier: 2, tierName: "A2/B1 O'rta", word: "promise", pos: "fe'l", ans: "va'da bermoq", opts: ["so'ramoq", "va'da bermoq", "inkor qilmoq", "buyurmoq"] },
+      { id: 16, tier: 2, tierName: "A2/B1 O'rta", word: "complain", pos: "fe'l", ans: "shikoyat qilmoq", opts: ["maqtamoq", "shikoyat qilmoq", "minnatdor bo'lmoq", "kulmoq"] },
+      { id: 17, tier: 2, tierName: "A2/B1 O'rta", word: "simple", pos: "sifat", ans: "oddiy / sodda", opts: ["og'ir", "chalkash", "oddiy / sodda", "uzoq"] },
+      { id: 18, tier: 2, tierName: "A2/B1 O'rta", word: "proud", pos: "sifat", ans: "faxrlangan / mag'rur", opts: ["uyalgan", "qo'rqqan", "faxrlangan / mag'rur", "g'amgin"] },
+      { id: 19, tier: 2, tierName: "A2/B1 O'rta", word: "notice", pos: "fe'l", ans: "payqamoq / sezib qolmoq", opts: ["e'tiborsiz qoldirmoq", "payqamoq / sezib qolmoq", "unutmoq", "yo'qotmoq"] },
+      { id: 20, tier: 2, tierName: "A2/B1 O'rta", word: "busy", pos: "sifat", ans: "band / bo'sh emas", opts: ["erkin", "zerikarli", "band / bo'sh emas", "sekin"] },
+      { id: 21, tier: 2, tierName: "A2/B1 O'rta", word: "happen", pos: "fe'l", ans: "sodir bo'lmoq / bo'lmoq", opts: ["boshlanmoq", "sodir bo'lmoq / bo'lmoq", "tugamoq", "yo'qolmoq"] },
+      { id: 22, tier: 2, tierName: "A2/B1 O'rta", word: "spend", pos: "fe'l", ans: "sarflamoq (vaqt/pul)", opts: ["topmoq", "tejamoq", "sarflamoq (vaqt/pul)", "sovg'a qilmoq"] },
+      { id: 23, tier: 2, tierName: "A2/B1 O'rta", word: "remember", pos: "fe'l", ans: "eslamoq / yodda tutmoq", opts: ["unutmoq", "eslamoq / yodda tutmoq", "tushuntirmoq", "so'ramoq"] },
+      { id: 24, tier: 2, tierName: "A2/B1 O'rta", word: "change", pos: "fe'l", ans: "o'zgarmoq / o'zgartirmoq", opts: ["saqlab qolmoq", "o'zgarmoq / o'zgartirmoq", "buzmoq", "to'xtamoq"] },
+      { id: 25, tier: 2, tierName: "A2/B1 O'rta", word: "prefer", pos: "fe'l", ans: "afzal ko'rmoq", opts: ["yomon ko'rmoq", "afzal ko'rmoq", "rad etmoq", "qo'rqmoq"] },
+
+      // --- 26-35: B1 DARAJA (Mustahkam poydevor) ---
+      { id: 26, tier: 3, tierName: "B1 Bosqich", word: "improve", pos: "fe'l", ans: "yaxshilamoq / rivojlantirmoq", opts: ["yaxshilamoq / rivojlantirmoq", "buzmoq", "qisqartirmoq", "to'xtatmoq"] },
+      { id: 27, tier: 3, tierName: "B1 Bosqich", word: "advice", pos: "ot", ans: "maslahat", opts: ["xabar", "maslahat", "qoida", "buyruq"] },
+      { id: 28, tier: 3, tierName: "B1 Bosqich", word: "convenient", pos: "sifat", ans: "qulay (vaqt/joy bo'yicha)", opts: ["xavfli", "qulay (vaqt/joy bo'yicha)", "qimmat", "uzoq"] },
+      { id: 29, tier: 3, tierName: "B1 Bosqich", word: "afford", pos: "fe'l", ans: "qurbi yetmoq / puli yetmoq", opts: ["qurbi yetmoq / puli yetmoq", "qarz bermoq", "sotib yubormoq", "tejamoq"] },
+      { id: 30, tier: 3, tierName: "B1 Bosqich", word: "achieve", pos: "fe'l", ans: "erishmoq / qo'lga kiritmoq", opts: ["erishmoq / qo'lga kiritmoq", "yo'qotmoq", "kechikmoq", "qidirmoq"] },
+      { id: 31, tier: 3, tierName: "B1 Bosqich", word: "disappointed", pos: "sifat", ans: "hafsalasi pir bo'lgan", opts: ["xursand bo'lgan", "hafsalasi pir bo'lgan", "hayratda qolgan", "charchagan"] },
+      { id: 32, tier: 3, tierName: "B1 Bosqich", word: "confident", pos: "sifat", ans: "o'ziga ishongan", opts: ["uyatchan", "qo'rqqan", "o'ziga ishongan", "shubhali"] },
+      { id: 33, tier: 3, tierName: "B1 Bosqich", word: "avoid", pos: "fe'l", ans: "chetlab o'tmoq / o'zini tiymoq", opts: ["qidirmoq", "chetlab o'tmoq / o'zini tiymoq", "qabul qilmoq", "boshlamoq"] },
+      { id: 34, tier: 3, tierName: "B1 Bosqich", word: "reliable", pos: "sifat", ans: "ishonchli / suyansa bo'ladigan", opts: ["ishonchli / suyansa bo'ladigan", "xiyonatkor", "kuchsiz", "qo'pol"] },
+      { id: 35, tier: 3, tierName: "B1 Bosqich", word: "patient", pos: "sifat", ans: "sabrli / sabr-toqatli", opts: ["shoshqaloq", "jahldor", "sabrli / sabr-toqatli", "dangasa"] }
+    ];
+
+    let currentIndex = 0;
+    let answers = {};
+    let studentName = "";
+
+    function init() {
+      const stored = localStorage.getItem("ulunur_student_name");
+      if (stored) {
+        studentName = stored;
+        document.getElementById("student-name").value = stored;
+        handleNameInput(stored);
+      }
+    }
+
+    function handleNameInput(val) {
+      const isUlunur = val.trim().toLowerCase() === "ulunur";
+      document.getElementById("name-hint").style.display = isUlunur ? "block" : "none";
+      document.getElementById("teacher-mode-pill").style.display = isUlunur ? "inline-flex" : "none";
+    }
+
+    function startTest() {
+      const val = document.getElementById("student-name").value.trim();
+      if (!val) {
+        alert("Iltimos, ismingizni yozing!");
+        return;
+      }
+      studentName = val;
+      localStorage.setItem("ulunur_student_name", studentName);
+
+      document.getElementById("screen-intro").style.display = "none";
+      document.getElementById("screen-test").style.display = "block";
+      currentIndex = 0;
+      answers = {};
+      loadQuestion();
+    }
+
+    function loadQuestion() {
+      const q = VOCAB_DATA[currentIndex];
+      const total = VOCAB_DATA.length;
+
+      document.getElementById("q-counter").textContent = `${currentIndex + 1} / ${total}`;
+      const pct = Math.round((currentIndex / total) * 100);
+      document.getElementById("progress-fill").style.width = `${pct}%`;
+
+      const tBadge = document.getElementById("tier-badge");
+      tBadge.textContent = q.tierName;
+      tBadge.className = `tier-badge tier-${q.tier === 1 ? 'a2' : (q.tier === 2 ? 'b1' : 'b2')}`;
+
+      document.getElementById("word-pos").textContent = q.pos;
+      document.getElementById("target-word").textContent = q.word;
+
+      const grid = document.getElementById("options-grid");
+      grid.innerHTML = "";
+
+      const letters = ["A", "B", "C", "D"];
+      q.opts.forEach((opt, idx) => {
+        const btn = document.createElement("button");
+        btn.className = "opt-btn";
+        btn.innerHTML = `<span class="opt-letter">${letters[idx]}</span><span>${opt}</span>`;
+        btn.onclick = () => selectOption(opt, btn);
+        grid.appendChild(btn);
+      });
+
+      document.getElementById("feedback-note").innerHTML = "";
+      document.getElementById("next-btn").style.display = "none";
+    }
+
+    function selectOption(selectedOpt, btnEl) {
+      const q = VOCAB_DATA[currentIndex];
+      if (answers[currentIndex] !== undefined) return;
+
+      answers[currentIndex] = selectedOpt;
+      const isCorrect = selectedOpt === q.ans;
+
+      const allBtns = document.querySelectorAll(".opt-btn");
+      allBtns.forEach(b => {
+        b.disabled = true;
+        const text = b.querySelectorAll("span")[1].textContent;
+        if (text === q.ans) b.classList.add("correct");
+      });
+
+      if (!isCorrect) {
+        btnEl.classList.add("wrong");
+      }
+
+      const fb = document.getElementById("feedback-note");
+      fb.className = `feedback-note ${isCorrect ? 'feedback-correct' : 'feedback-wrong'}`;
+      fb.textContent = isCorrect ? "To'g'ri! ✅" : `To'g'ri javob: ${q.ans}`;
+
+      const nextBtn = document.getElementById("next-btn");
+      nextBtn.style.display = "block";
+      nextBtn.textContent = (currentIndex === VOCAB_DATA.length - 1) ? "Natijalarni ko'rish →" : "Keyingi so'z →";
+    }
+
+    function nextQuestion() {
+      if (currentIndex < VOCAB_DATA.length - 1) {
+        currentIndex++;
+        loadQuestion();
+      } else {
+        finish();
+      }
+    }
+
+    async function finish() {
+      document.getElementById("screen-test").style.display = "none";
+      document.getElementById("screen-result").style.display = "block";
+
+      let total = 0;
+      let t1 = 0; // out of 10
+      let t2 = 0; // out of 15
+      let t3 = 0; // out of 10
+      let missed = [];
+
+      VOCAB_DATA.forEach((q, i) => {
+        const given = answers[i];
+        if (given === q.ans) {
+          total++;
+          if (q.tier === 1) t1++;
+          if (q.tier === 2) t2++;
+          if (q.tier === 3) t3++;
+        } else {
+          missed.push({
+            word: q.word,
+            ans: q.ans,
+            chosen: given || "Belgilanmadi",
+            tierName: q.tierName
+          });
+        }
+      });
+
+      // UI
+      document.getElementById("res-score").textContent = `${total} / 35`;
+
+      const p1 = Math.round((t1 / 10) * 100);
+      const p2 = Math.round((t2 / 15) * 100);
+      const p3 = Math.round((t3 / 10) * 100);
+
+      document.getElementById("t1-score").textContent = `${t1} / 10 (${p1}%)`;
+      document.getElementById("t1-bar").style.width = `${p1}%`;
+
+      document.getElementById("t2-score").textContent = `${t2} / 15 (${p2}%)`;
+      document.getElementById("t2-bar").style.width = `${p2}%`;
+
+      document.getElementById("t3-score").textContent = `${t3} / 10 (${p3}%)`;
+      document.getElementById("t3-bar").style.width = `${p3}%`;
+
+      // Band
+      let band = "";
+      let rec = "";
+      if (total <= 14) {
+        band = "A2 (Boshlang'ich)";
+        rec = "Hozircha B2 darajadagi murakkab so'zlar sizga og'irlik qiladi. Avval eng ko'p ishlatiladigan 500 ta A2/B1 so'zlarni o'zbekcha ma'nosi bilan yodlash kerak. Kuniga 5-6 ta so'z kifoya.";
+      } else if (total <= 25) {
+        band = "B1 (O'rta Daraja)";
+        rec = "Boshlang'ich so'z boyligingiz yaxshi! Endi B1 so'zlarni (ikkilanmoq, erishmoq, kechiktirmoq) mustahkamlab, kuniga 6-8 ta so'zdan o'rganish va jumlalarda qo'llash tavsiya etiladi.";
+      } else {
+        band = "B1+ / B2 Tayyor";
+        rec = "Ajoyib natija! So'z boyligingiz B2 darajasiga yetarli. Endi so'zlarni faol nutqda va yozmada ishlatishga e'tibor qarating.";
+      }
+
+      const bandEl = document.getElementById("res-band");
+      bandEl.textContent = band;
+      document.getElementById("rec-text").textContent = rec;
+
+      await sendTelegram(total, t1, t2, t3, band, missed, rec);
+    }
+
+    async function sendTelegram(total, t1, t2, t3, band, missed, rec) {
+      const isUlunur = studentName.trim().toLowerCase() === "ulunur";
+      const status = document.getElementById("status-msg");
+
+      if (isUlunur) {
+        status.innerHTML = "🛡️ <b>Ulunur rejimi:</b> Sinov muvaffaqiyatli o'tdi (botga xabar yuborilmadi).";
+        return;
+      }
+
+      status.innerHTML = "📡 O'qituvchiga natija jo'natilmoqda...";
+
+      const pct = Math.round((total / 35) * 100);
+      const time = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+
+      let text = `🇺🇿 <b>LUG'AT DARAJASI TESTI (EN ➔ UZ)</b>\n`;
+      text += `━━━━━━━━━━━━━━━━━━━━\n`;
+      text += `👤 <b>O'quvchi:</b> ${studentName}\n`;
+      text += `⏰ <b>Vaqt:</b> ${time}\n`;
+      text += `🏆 <b>Umumiy Natija:</b> <b>${total}/35 (${pct}%)</b>\n`;
+      text += `📊 <b>Aniqlangan Daraja:</b> <b>${band}</b>\n\n`;
+
+      text += `📈 <b>Bo'limlar tahlili:</b>\n`;
+      text += `• A2 Baza (1-10): <b>${t1}/10</b> (${Math.round((t1/10)*100)}%)\n`;
+      text += `• B1 O'rta (11-25): <b>${t2}/15</b> (${Math.round((t2/15)*100)}%)\n`;
+      text += `• B2 Murakkab (26-35): <b>${t3}/10</b> (${Math.round((t3/10)*100)}%)\n\n`;
+
+      if (missed.length > 0) {
+        text += `❌ <b>Bilmagan / Adashgan so'zlari (${missed.length}):</b>\n`;
+        missed.slice(0, 10).forEach(m => {
+          text += `• <b>${m.word}</b> (Tanladi: <i>${m.chosen}</i> ➔ To'g'risi: <b>${m.ans}</b>)\n`;
+        });
+        if (missed.length > 10) {
+          text += `<i>...va yana ${missed.length - 10} ta so'z.</i>\n`;
+        }
+      } else {
+        text += `🌟 <b>Barcha 35 ta so'zga 100% to'g'ri javob berildi!</b>\n`;
+      }
+
+      text += `\n💡 <b>Tavsiya:</b> ${rec}\n`;
+      text += `━━━━━━━━━━━━━━━━━━━━`;
+
+      try {
+        const res = await fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            chat_id: TELEGRAM_CHAT_ID,
+            text: text,
+            parse_mode: "HTML"
+          })
+        });
+        if (res.ok) {
+          status.innerHTML = "✅ Natijalar o'qituvchining Telegramiga yuborildi!";
+        } else {
+          status.innerHTML = "⚠️ Natija saqlandi (Telegram xatosi).";
+        }
+      } catch (e) {
+        status.innerHTML = "⚠️ Natija hisoblandi.";
+      }
+    }
+
+    function retake() {
+      currentIndex = 0;
+      answers = {};
+      document.getElementById("screen-result").style.display = "none";
+      document.getElementById("screen-test").style.display = "block";
+      loadQuestion();
+    }
+
+    window.addEventListener("DOMContentLoaded", init);
+  </script>
+</body>
+</html>

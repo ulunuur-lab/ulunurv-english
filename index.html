@@ -1,0 +1,3895 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ulunur's English | 2-Hafta: Present Perfect & Level Check</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0b1120;
+      --card-bg: #131d33;
+      --card-hover: #1c2742;
+      --border: #1e293b;
+      --primary: #6366f1;
+      --primary-hover: #4f46e5;
+      --primary-glow: rgba(99, 102, 241, 0.35);
+      --accent: #8b5cf6;
+      --emerald: #10b981;
+      --amber: #f59e0b;
+      --rose: #ef4444;
+      --sky: #0ea5e9;
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    /* HEADER */
+    header {
+      background: rgba(11, 17, 32, 0.94);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      padding: 12px 20px;
+    }
+
+    .nav-container {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .logo-badge {
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      color: #fff;
+      font-weight: 800;
+      font-size: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 14px var(--primary-glow);
+    }
+
+    .brand-title {
+      font-size: 15px;
+      font-weight: 800;
+      letter-spacing: -0.3px;
+    }
+
+    .brand-subtitle {
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    .teacher-badge {
+      display: none;
+      align-items: center;
+      gap: 6px;
+      background: rgba(245, 158, 11, 0.15);
+      border: 1px solid rgba(245, 158, 11, 0.4);
+      color: var(--amber);
+      font-size: 12px;
+      font-weight: 700;
+      padding: 6px 12px;
+      border-radius: 999px;
+    }
+
+    .btn-header-tool {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid var(--border);
+      color: var(--text);
+      font-size: 12.5px;
+      font-weight: 600;
+      padding: 6px 14px;
+      border-radius: 8px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .btn-header-tool:hover {
+      background: rgba(99, 102, 241, 0.15);
+      border-color: var(--primary);
+    }
+
+    /* MAIN CONTAINER */
+    main {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 24px 16px 40px;
+      width: 100%;
+      flex: 1;
+    }
+
+    /* BANNER */
+    .week-banner {
+      background: linear-gradient(135deg, rgba(99, 102, 241, 0.12), rgba(139, 92, 246, 0.08));
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 20px 24px;
+      margin-bottom: 24px;
+      position: relative;
+    }
+
+    .banner-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+    }
+
+    .user-tag {
+      font-size: 13px;
+      color: #a5b4fc;
+      font-weight: 600;
+    }
+
+    .btn-switch-user {
+      background: transparent;
+      border: 1px solid #334155;
+      color: #94a3b8;
+      font-size: 11.5px;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: 0.15s;
+    }
+
+    .btn-switch-user:hover {
+      color: #fff;
+      border-color: #64748b;
+    }
+
+    .week-title {
+      font-size: 22px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      color: #fff;
+      margin-bottom: 4px;
+    }
+
+    .week-desc {
+      font-size: 13.5px;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* 7 DAYS SCHEDULE TABS (SCROLLABLE) */
+    .schedule-grid {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 24px;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      scroll-snap-type: x mandatory;
+      padding-bottom: 8px;
+    }
+
+    .schedule-grid::-webkit-scrollbar {
+      height: 6px;
+    }
+
+    .schedule-grid::-webkit-scrollbar-track {
+      background: var(--bg);
+    }
+
+    .schedule-grid::-webkit-scrollbar-thumb {
+      background: var(--border);
+      border-radius: 4px;
+    }
+
+    .day-tab {
+      min-width: 210px;
+      scroll-snap-align: start;
+      flex-shrink: 0;
+      background: var(--card-bg);
+      border: 1.5px solid var(--border);
+      border-radius: 14px;
+      padding: 14px 16px;
+      cursor: pointer;
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+    }
+
+    .day-tab:hover:not(.locked) {
+      border-color: var(--primary);
+      transform: translateY(-2px);
+    }
+
+    .day-tab.active {
+      border-color: var(--primary);
+      background: linear-gradient(180deg, var(--card-hover), rgba(99, 102, 241, 0.08));
+      box-shadow: 0 4px 16px var(--primary-glow);
+    }
+
+    .day-tab.locked {
+      opacity: 0.55;
+      cursor: not-allowed;
+    }
+
+    .day-tab-date {
+      font-size: 11px;
+      font-weight: 700;
+      color: #818cf8;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 4px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .day-tab-title {
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 1.4;
+      color: var(--text);
+    }
+
+    /* CONTENT BOX */
+    .content-box {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 24px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    .nav-tabs {
+      display: flex;
+      gap: 8px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 16px;
+      margin-bottom: 24px;
+      overflow-x: auto;
+    }
+
+    .nav-tabs::-webkit-scrollbar {
+      display: none;
+    }
+
+    .nav-tab-btn {
+      background: transparent;
+      border: 1px solid transparent;
+      color: var(--text-muted);
+      padding: 10px 18px;
+      border-radius: 10px;
+      font-size: 13.5px;
+      font-weight: 700;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.15s;
+    }
+
+    .nav-tab-btn:hover {
+      color: var(--text);
+      background: rgba(255, 255, 255, 0.04);
+    }
+
+    .nav-tab-btn.active {
+      color: #fff;
+      background: rgba(99, 102, 241, 0.15);
+      border-color: var(--primary);
+    }
+
+    .nav-tab-btn.ppt-highlight {
+      background: rgba(99, 102, 241, 0.08);
+      border-color: rgba(99, 102, 241, 0.3);
+      color: #a5b4fc;
+    }
+
+    /* 1. PRESENTATION SLIDES (GOOGLE MEET) */
+    .presentation-frame {
+      background: #000;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1.5px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      height: 520px;
+      position: relative;
+    }
+
+    .presentation-frame:fullscreen {
+      border-radius: 0;
+      border: none;
+      width: 100vw;
+      height: 100vh;
+      justify-content: space-between;
+    }
+
+    .presentation-frame:fullscreen .slide-viewport {
+      flex: 1;
+      padding: 48px;
+    }
+
+    .ppt-topbar {
+      background: #0b0f19;
+      padding: 12px 18px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #1e293b;
+    }
+
+    .ppt-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      color: var(--rose);
+      background: rgba(239, 68, 68, 0.12);
+      padding: 4px 10px;
+      border-radius: 999px;
+    }
+
+    .ppt-tool-btn {
+      background: #1e293b;
+      border: 1px solid #334155;
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 6px 12px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.15s;
+    }
+
+    .ppt-tool-btn:hover {
+      background: #334155;
+    }
+
+    .slide-viewport {
+      flex: 1;
+      padding: 36px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background: linear-gradient(180deg, #0d1527 0%, #080d1a 100%);
+      overflow-y: auto;
+      text-align: center;
+    }
+
+    .slide-tag {
+      font-size: 12px;
+      font-weight: 800;
+      color: #38bdf8;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 10px;
+    }
+
+    .slide-title {
+      font-size: 26px;
+      font-weight: 900;
+      color: #fff;
+      letter-spacing: -0.5px;
+      margin-bottom: 20px;
+    }
+
+    .slide-compare-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      text-align: left;
+      margin: 16px 0;
+    }
+
+    .slide-compare-card {
+      padding: 16px 18px;
+      border-radius: 12px;
+      font-size: 13.5px;
+      line-height: 1.6;
+    }
+
+    .slide-card-green {
+      background: rgba(16, 185, 129, 0.12);
+      border: 1.5px solid rgba(16, 185, 129, 0.35);
+    }
+
+    .slide-card-red {
+      background: rgba(14, 165, 233, 0.12);
+      border: 1.5px solid rgba(14, 165, 233, 0.35);
+    }
+
+    .ppt-footer {
+      background: #0b0f19;
+      padding: 12px 18px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid #1e293b;
+    }
+
+    .ppt-nav-btn {
+      background: #1e293b;
+      border: 1px solid #334155;
+      color: #fff;
+      padding: 8px 18px;
+      border-radius: 10px;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+
+    .ppt-nav-btn:hover:not(:disabled) {
+      background: #334155;
+    }
+
+    .ppt-nav-btn:disabled {
+      opacity: 0.35;
+      cursor: not-allowed;
+    }
+
+    .ppt-nav-btn.primary {
+      background: var(--primary);
+      border-color: var(--primary);
+    }
+
+    .ppt-nav-btn.primary:hover:not(:disabled) {
+      background: var(--primary-hover);
+    }
+
+    .ppt-progress-dots {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .ppt-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: #334155;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .ppt-dot.active {
+      background: #38bdf8;
+      width: 24px;
+    }
+
+    /* 2. LESSON TAB */
+    .instructor-box {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: rgba(99, 102, 241, 0.08);
+      border: 1px solid rgba(99, 102, 241, 0.25);
+      border-radius: 12px;
+      padding: 12px 16px;
+      margin-bottom: 20px;
+    }
+
+    .instructor-avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #6366f1, #a855f7);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+
+    .instructor-info-title {
+      font-size: 13px;
+      font-weight: 800;
+      color: #a5b4fc;
+    }
+
+    .instructor-info-sub {
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    .lesson-content {
+      line-height: 1.7;
+      font-size: 15px;
+      color: #e2e8f0;
+    }
+
+    .lesson-content h3 {
+      font-size: 18px;
+      font-weight: 800;
+      color: #fff;
+      margin: 16px 0 8px;
+    }
+
+    .rule-card {
+      background: rgba(11, 17, 32, 0.7);
+      border-left: 4px solid var(--primary);
+      border-radius: 0 12px 12px 0;
+      padding: 14px 18px;
+      margin: 16px 0;
+      font-size: 14px;
+    }
+
+    .uz-trap-box {
+      background: rgba(245, 158, 11, 0.1);
+      border: 1px solid rgba(245, 158, 11, 0.3);
+      border-radius: 12px;
+      padding: 14px 18px;
+      margin: 16px 0;
+      font-size: 13.5px;
+      color: #fde68a;
+    }
+
+    /* 3. 3D FLASHCARDS */
+    .flashcard-wrapper {
+      perspective: 1000px;
+      width: 100%;
+      max-width: 520px;
+      height: 270px;
+      margin: 10px auto 20px;
+      cursor: pointer;
+    }
+
+    .flashcard {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      transform-style: preserve-3d;
+      transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      border-radius: 16px;
+    }
+
+    .flashcard.flipped {
+      transform: rotateY(180deg);
+    }
+
+    .flashcard-front, .flashcard-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      border-radius: 16px;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      border: 1.5px solid var(--border);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    }
+
+    .flashcard-front {
+      background: linear-gradient(145deg, #131d33, #1e293b);
+    }
+
+    .flashcard-back {
+      background: linear-gradient(145deg, #1b2744, #0f172a);
+      transform: rotateY(180deg);
+      border-color: rgba(99, 102, 241, 0.4);
+    }
+
+    .card-word {
+      font-size: 32px;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+
+    .card-pos {
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #818cf8;
+      background: rgba(99, 102, 241, 0.15);
+      padding: 2px 10px;
+      border-radius: 999px;
+      margin-bottom: 14px;
+    }
+
+    .card-hint {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    .card-uz-trans {
+      font-size: 24px;
+      font-weight: 800;
+      color: #34d399;
+      margin-bottom: 12px;
+    }
+
+    .card-ex-en {
+      font-size: 14.5px;
+      font-style: italic;
+      color: #fff;
+      margin-bottom: 4px;
+    }
+
+    .card-ex-uz {
+      font-size: 13px;
+      color: #94a3b8;
+    }
+
+    .card-controls {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid var(--border);
+      color: var(--text);
+      font-size: 13px;
+      font-weight: 700;
+      padding: 8px 16px;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+
+    .btn-secondary:hover:not(:disabled) {
+      background: rgba(255, 255, 255, 0.12);
+    }
+
+    .btn-secondary:disabled {
+      opacity: 0.35;
+      cursor: not-allowed;
+    }
+
+    .card-counter {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text-muted);
+    }
+
+    /* 4. INTERACTIVE QUIZ & LEVEL CHECK HUB */
+    .lc-nav-pills {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 20px;
+      background: rgba(11, 17, 32, 0.6);
+      padding: 6px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      overflow-x: auto;
+    }
+
+    .lc-pill-btn {
+      flex: 1;
+      min-width: 180px;
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      padding: 10px 14px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.15s;
+    }
+
+    .lc-pill-btn:hover {
+      color: #fff;
+    }
+
+    .lc-pill-btn.active {
+      background: var(--primary);
+      color: #fff;
+      box-shadow: 0 4px 12px var(--primary-glow);
+    }
+
+    .lc-pill-btn.completed::after {
+      content: " ✓";
+      color: #34d399;
+      font-weight: 900;
+    }
+
+    .quiz-card {
+      background: rgba(11, 17, 32, 0.5);
+      border: 1.5px solid var(--border);
+      border-radius: 16px;
+      padding: 24px;
+    }
+
+    .quiz-category-tag {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: #818cf8;
+      background: rgba(99, 102, 241, 0.12);
+      padding: 4px 10px;
+      border-radius: 6px;
+      margin-bottom: 12px;
+    }
+
+    .quiz-q-title {
+      font-size: 17px;
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.5;
+      margin-bottom: 18px;
+    }
+
+    .quiz-options {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+
+    .quiz-opt-btn {
+      background: rgba(19, 29, 51, 0.9);
+      border: 1.5px solid var(--border);
+      color: var(--text);
+      padding: 13px 16px;
+      border-radius: 12px;
+      font-size: 14.5px;
+      font-weight: 600;
+      text-align: left;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      transition: all 0.15s;
+    }
+
+    .quiz-opt-btn:hover:not(:disabled) {
+      border-color: var(--primary);
+      background: var(--card-hover);
+    }
+
+    .quiz-opt-btn.correct {
+      background: rgba(16, 185, 129, 0.15) !important;
+      border-color: var(--emerald) !important;
+      color: #34d399 !important;
+    }
+
+    .quiz-opt-btn.wrong {
+      background: rgba(239, 68, 68, 0.15) !important;
+      border-color: var(--rose) !important;
+      color: #f87171 !important;
+    }
+
+    .quiz-expl-box {
+      display: none;
+      background: rgba(11, 17, 32, 0.8);
+      border-left: 4px solid var(--emerald);
+      padding: 14px 18px;
+      border-radius: 0 10px 10px 0;
+      font-size: 13.5px;
+      line-height: 1.6;
+      margin-bottom: 14px;
+    }
+
+    /* Open Questions */
+    .open-q-box {
+      background: rgba(11, 17, 32, 0.5);
+      border: 1.5px solid var(--border);
+      border-radius: 14px;
+      padding: 18px;
+      margin-bottom: 16px;
+    }
+
+    .open-q-title {
+      font-size: 14.5px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 10px;
+      line-height: 1.5;
+    }
+
+    .open-q-input {
+      width: 100%;
+      background: rgba(11, 17, 32, 0.8);
+      border: 1.5px solid #1e293b;
+      padding: 12px 14px;
+      border-radius: 10px;
+      color: #fff;
+      font-size: 14.5px;
+      outline: none;
+      margin-bottom: 10px;
+      transition: border-color 0.2s;
+    }
+
+    .open-q-input:focus {
+      border-color: var(--primary);
+    }
+
+    .open-q-feedback {
+      display: none;
+      padding: 10px 14px;
+      border-radius: 8px;
+      font-size: 13px;
+      line-height: 1.5;
+      margin-top: 8px;
+    }
+
+    .open-q-feedback.correct {
+      background: rgba(16, 185, 129, 0.15);
+      border: 1px solid rgba(16, 185, 129, 0.35);
+      color: #34d399;
+    }
+
+    .open-q-feedback.check {
+      background: rgba(245, 158, 11, 0.12);
+      border: 1px solid rgba(245, 158, 11, 0.35);
+      color: #fde68a;
+    }
+
+    .diagnostic-report-card {
+      background: linear-gradient(135deg, rgba(99, 102, 241, 0.12), rgba(16, 185, 129, 0.08));
+      border: 1.5px solid var(--border);
+      border-radius: 18px;
+      padding: 26px;
+      margin-top: 20px;
+      text-align: left;
+      display: none;
+    }
+
+    /* 5. HOMEWORK */
+    .hw-section-title {
+      font-size: 15px;
+      font-weight: 800;
+      color: #38bdf8;
+      margin: 18px 0 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .hw-prompt {
+      background: rgba(99, 102, 241, 0.08);
+      border: 1px solid rgba(99, 102, 241, 0.25);
+      border-radius: 14px;
+      padding: 20px;
+      margin-bottom: 20px;
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    .hw-textarea {
+      width: 100%;
+      height: 320px;
+      min-height: 220px;
+      background: rgba(11, 17, 32, 0.7);
+      border: 1.5px solid var(--border);
+      border-radius: 12px;
+      padding: 16px;
+      color: var(--text);
+      font-size: 14.5px;
+      line-height: 1.6;
+      outline: none;
+      resize: vertical;
+      margin-bottom: 14px;
+    }
+
+    .hw-textarea:focus {
+      border-color: var(--primary);
+    }
+
+    .btn-submit {
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      color: #fff;
+      border: none;
+      border-radius: 12px;
+      padding: 12px 24px;
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s;
+    }
+
+    .btn-submit:hover:not(:disabled) {
+      opacity: 0.95;
+      transform: translateY(-1px);
+    }
+
+    .status-toast {
+      padding: 14px 18px;
+      border-radius: 10px;
+      font-size: 13.5px;
+      font-weight: 600;
+      margin-top: 14px;
+      display: none;
+      line-height: 1.5;
+    }
+
+    /* MODAL */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.85);
+      backdrop-filter: blur(8px);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 100;
+      padding: 16px;
+    }
+
+    .modal-box {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 28px 24px;
+      max-width: 440px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+    }
+
+    .input-clean {
+      width: 100%;
+      background: rgba(11, 17, 32, 0.7);
+      border: 1px solid var(--border);
+      padding: 14px;
+      border-radius: 12px;
+      color: var(--text);
+      font-size: 15px;
+      outline: none;
+      margin: 16px 0 8px;
+    }
+
+    .input-clean:focus {
+      border-color: var(--primary);
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 18px;
+      text-align: center;
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="nav-container">
+      <a href="index.html" class="brand">
+        <div class="logo-badge">UE</div>
+        <div>
+          <div class="brand-title">Ulunur's English</div>
+          <div class="brand-subtitle">Jonli Dars & 1-on-1 Intensiv</div>
+        </div>
+      </a>
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <a href="vocab.html" class="btn-header-tool">
+          🎯 Vocab Test (EN ➔ UZ)
+        </a>
+        <button class="btn-header-tool" onclick="openNameModal()">
+          👤 Ismni o'zgartirish
+        </button>
+        <div id="teacher-badge" class="teacher-badge">
+          🛡️ Ulunur Mode (Muted)
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN -->
+  <main>
+    <!-- WEEK BANNER -->
+    <div class="week-banner">
+      <div class="banner-top">
+        <div class="user-tag" id="user-greeting">Xush kelibsiz! 👋</div>
+        <button class="btn-switch-user" onclick="openNameModal()">👤 Ismni o'zgartirish</button>
+      </div>
+      <h1 class="week-title">2-Haftalik Intensiv: Present Perfect & Level Check</h1>
+      <p class="week-desc">
+        Dars taqdimoti (Google Meet), 3D kartochkalar, <strong>kengaytirilgan 5 bo'limli ulkan vazifalar</strong> va <strong>bosqichma-bosqich 3-Modulli katta Level Check</strong> tizimi.
+      </p>
+    </div>
+
+    <!-- 7 DAYS SCHEDULE TABS -->
+    <div class="schedule-grid" id="schedule-grid"></div>
+
+    <!-- MAIN LESSON BOX -->
+    <div class="content-box">
+      <!-- Section Switcher -->
+      <div class="nav-tabs">
+        <button id="sec-btn-slides" class="nav-tab-btn ppt-highlight active" onclick="switchSection('slides')">
+          🖥️ Dars Taqdimoti (Slides)
+        </button>
+        <button id="sec-btn-lesson" class="nav-tab-btn" onclick="switchSection('lesson')">
+          📖 Dars Matni & Qoidalar
+        </button>
+        <button id="sec-btn-vocab" class="nav-tab-btn" onclick="switchSection('vocab')">
+          ⚡ 3D Flashcards
+        </button>
+        <button id="sec-btn-practice" class="nav-tab-btn" onclick="switchSection('practice')">
+          🎯 Level Check & Testlar
+        </button>
+        <button id="sec-btn-hw" class="nav-tab-btn" onclick="switchSection('hw')">
+          📝 Kengaytirilgan Vazifa
+        </button>
+      </div>
+
+      <!-- 1. LIVE PRESENTATION SLIDES (GOOGLE MEET) -->
+      <div id="section-slides">
+        <div class="presentation-frame" id="presentation-frame">
+          <div class="ppt-topbar">
+            <div class="ppt-badge">
+              <span>● LIVE</span>
+              <span>GOOGLE MEET TAQDIMOT REJIMI</span>
+            </div>
+            <div class="ppt-tools">
+              <span style="font-size: 12px; color: #94a3b8; margin-right: 6px;">
+                ⌨️ Klaviatura: <strong>←</strong> / <strong>→</strong>
+              </span>
+              <button class="ppt-tool-btn" onclick="toggleFullscreen()">
+                ⛶ To'liq Ekran
+              </button>
+            </div>
+          </div>
+
+          <div class="slide-viewport" id="slide-viewport"></div>
+
+          <div class="ppt-footer">
+            <button class="ppt-nav-btn" id="btn-prev-slide" onclick="prevSlide()">
+              ← Oldingi Slayd
+            </button>
+            <div class="ppt-progress-dots" id="ppt-dots-container"></div>
+            <button class="ppt-nav-btn primary" id="btn-next-slide" onclick="nextSlide()">
+              Keyingi Slayd →
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. LESSON CONTENT -->
+      <div id="section-lesson" style="display: none;">
+        <div class="instructor-box">
+          <div class="instructor-avatar">👨‍🏫</div>
+          <div>
+            <div class="instructor-info-title">Ulunur Ustoz Tushuntiradi</div>
+            <div class="instructor-info-sub">O'zbek tilidagi qiyoslar, grammatik modellar va tuzoqlar tahlili</div>
+          </div>
+        </div>
+        <div class="lesson-content" id="lesson-html">
+          Yuklanmoqda...
+        </div>
+      </div>
+
+      <!-- 3. FLASHCARDS -->
+      <div id="section-vocab" style="display: none;">
+        <div style="text-align: center; margin-bottom: 14px;">
+          <h3 style="font-size: 16px; font-weight: 700;">3D Lug'at Kartochkalari (Active Recall)</h3>
+          <p style="font-size: 12.5px; color: var(--text-muted);">Kartochkani bosib tarjimasini va namunaviy gaplarini ko'ring</p>
+        </div>
+
+        <div class="flashcard-wrapper" onclick="flipCard()">
+          <div class="flashcard" id="flashcard-el">
+            <div class="flashcard-front">
+              <span class="card-pos" id="fc-pos">fe'l</span>
+              <div class="card-word" id="fc-word">travel</div>
+              <span class="card-hint">🔄 O'zbekcha tarjimasini ko'rish uchun bosing</span>
+            </div>
+            <div class="flashcard-back">
+              <div class="card-uz-trans" id="fc-uz">sayohat qilmoq</div>
+              <div class="card-ex-en" id="fc-ex-en">"I have traveled to 5 countries."</div>
+              <div class="card-ex-uz" id="fc-ex-uz">Men 5 ta mamlakatga sayohat qilganman.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-controls">
+          <button class="btn-secondary" onclick="prevCard()">← Oldingi</button>
+          <span class="card-counter" id="fc-counter">1 / 10</span>
+          <button class="btn-secondary" onclick="nextCard()">Keyingi →</button>
+        </div>
+      </div>
+
+      <!-- 4. LEVEL CHECK & MULTI-SECTION PRACTICE -->
+      <div id="section-practice" style="display: none;">
+        
+        <!-- DAY 7 MULTI-MODULE HUB CONTROLS -->
+        <div id="day7-hub-nav" style="display: none;">
+          <div class="lc-nav-pills">
+            <button class="lc-pill-btn active" id="pill-btn-tenses" onclick="switchLcModule('tenses')">
+              ⏱️ 1. Grammatika Testi (24 ta)
+            </button>
+            <button class="lc-pill-btn" id="pill-btn-vocab" onclick="switchLcModule('vocab')">
+              ⚡ 2. Katta Lug'at Sinovi (60 ta)
+            </button>
+            <button class="lc-pill-btn" id="pill-btn-open" onclick="switchLcModule('open')">
+              ✍️ 3. Ochiq Yozma Savollar (12 ta)
+            </button>
+          </div>
+        </div>
+
+        <!-- MODULE 1: MULTIPLE CHOICE (FOR DAYS 1-6 OR DAY 7 GRAMMAR) -->
+        <div id="lc-module-tenses">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px;">
+            <span style="font-size: 12px; font-weight: 700; color: var(--text-muted);" id="pq-counter">Savol 1 / 6</span>
+            <span style="font-size: 12px; font-weight: 700; color: var(--primary);" id="pq-score-pill">Grammar Diagnostic</span>
+          </div>
+
+          <div class="quiz-card">
+            <div class="quiz-category-tag" id="pq-category">Grammar Focus</div>
+            <div class="quiz-q-title" id="pq-title">Yuklanmoqda...</div>
+            <div class="quiz-options" id="pq-options"></div>
+            <div class="quiz-expl-box" id="pq-expl"></div>
+            
+            <button class="btn-submit" id="pq-next-btn" style="display: none; margin-top: 10px;" onclick="nextPracticeQuestion()">
+              Keyingi savol →
+            </button>
+          </div>
+        </div>
+
+        <!-- MODULE 2: VOCABULARY QUIZ (DAY 7 ONLY) -->
+        <div id="lc-module-vocab" style="display: none;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px;">
+            <span style="font-size: 12px; font-weight: 700; color: var(--text-muted);" id="vq-counter">So'z 1 / 60</span>
+            <span style="font-size: 12px; font-weight: 700; color: var(--emerald);" id="vq-score-pill">60 ta Lug'at Sinovi (Barcha So'zlar)</span>
+          </div>
+
+          <div class="quiz-card">
+            <div class="quiz-category-tag" style="background: rgba(16, 185, 129, 0.15); color: #34d399;" id="vq-type-tag">EN ➔ UZ Tarjima</div>
+            <div class="quiz-q-title" id="vq-title" style="font-size: 24px; font-weight: 800; color: #fff;">travel</div>
+            <div class="quiz-options" id="vq-options"></div>
+            <div class="quiz-expl-box" id="vq-expl"></div>
+
+            <button class="btn-submit" id="vq-next-btn" style="display: none; margin-top: 10px;" onclick="nextVocabQuizQuestion()">
+              Keyingi so'z →
+            </button>
+          </div>
+        </div>
+
+        <!-- MODULE 3: OPEN-ENDED TYPED QUESTIONS (DAY 7 ONLY) -->
+        <div id="lc-module-open" style="display: none;">
+          <div style="margin-bottom: 16px;">
+            <h3 style="font-size: 17px; font-weight: 800; color: #fff; margin-bottom: 4px;">✍️ 3-Modul: Ochiq Savollar & Yozma Mashqlar</h3>
+            <p style="font-size: 13px; color: var(--text-muted);">
+              Qavs ichidagi fe'llarni to'g'ri zamonga qo'yib yozing yoki berilgan gaplarni tarjima qilib to'ldiring:
+            </p>
+          </div>
+
+          <div id="open-questions-container"></div>
+
+          <button class="btn-submit" style="width: 100%; justify-content: center; margin-top: 10px;" onclick="finishAllLevelChecks()">
+            Barcha Sinovlarni Yakunlash & To'liq Diagnostikani Ko'rish 🏆
+          </button>
+        </div>
+
+        <!-- DIAGNOSTIC FINAL REPORT -->
+        <div class="diagnostic-report-card" id="diagnostic-report-box">
+          <h3 style="font-size: 20px; font-weight: 800; margin-bottom: 10px; color: #fff;" id="diag-title">🏆 2-Haftalik To'liq Diagnostika Natijasi</h3>
+          <p style="font-size: 14.5px; color: #cbd5e1; line-height: 1.6; margin-bottom: 14px;" id="diag-desc"></p>
+          <div id="diag-breakdown" style="font-size: 13.5px; color: #94a3b8; line-height: 1.6; margin-bottom: 16px;"></div>
+          
+          <button class="btn-submit" id="btn-send-test-result" onclick="sendFullLevelCheckToTelegram()">
+            Natijalarni Ustozga Jo'natish (Telegram) 🚀
+          </button>
+        </div>
+
+      </div>
+
+      <!-- 5. HOMEWORK -->
+      <div id="section-hw" style="display: none;">
+        <div class="hw-prompt" id="hw-prompt-text">
+          Yuklanmoqda...
+        </div>
+
+        <label style="display: block; font-size: 13.5px; font-weight: 700; margin-bottom: 8px;">
+          Javoblaringizni barcha 5 ta bo'lim bo'yicha to'liq yozing:
+        </label>
+        <textarea id="hw-textarea" class="hw-textarea" placeholder="1-BO'LIM: Tarjimalar...&#10;2-BO'LIM: Xatolarni tuzatish va sababi...&#10;3-BO'LIM: Fe'l shakllari...&#10;4-BO'LIM: Shaxsiy kengaytirilgan insho...&#10;5-BO'LIM: Ustoz uchun tayyorlangan savollar..."></textarea>
+
+        <button class="btn-submit" id="hw-submit-btn" onclick="submitHomework()">
+          Ustozga Yuborish (Telegram) 🚀
+        </button>
+
+        <div class="status-toast" id="hw-toast"></div>
+      </div>
+    </div>
+  </main>
+
+  <!-- NAME MODAL -->
+  <div class="modal-overlay" id="name-modal">
+    <div class="modal-box">
+      <h2 style="font-size: 20px; font-weight: 800; margin-bottom: 6px;">Assalomu alaykum! 👋</h2>
+      <p style="font-size: 13px; color: var(--text-muted); line-height: 1.5;">
+        Darslarni boshlash uchun ismingizni kiriting.
+      </p>
+      <input type="text" id="modal-name-input" class="input-clean" placeholder="Masalan: Malika" oninput="checkModalName(this.value)" onkeyup="if(event.key==='Enter') saveName()">
+      <div id="modal-hint" style="display: none; color: var(--amber); font-size: 12px; font-weight: 700; margin-bottom: 10px;">
+        🛡️ Ulunur rejimi aniqlandi: Barcha darslar to'liq ochiq va Telegram xabarlari simulyatsiya qilinadi.
+      </div>
+      <button class="btn-submit" style="width: 100%; justify-content: center; margin-top: 8px;" onclick="saveName()">
+        Davom etish →
+      </button>
+    </div>
+  </div>
+
+  <footer>
+    Ulunur's English 1-on-1 Intensiv • 2-Hafta Diagnostika Tizimi
+  </footer>
+
+  <!-- ENGINE SCRIPT -->
+  <script>
+    const TELEGRAM_BOT_TOKEN = "8828359607:AAFEpXaJusqaorQtIhd2sDMm4enaVWxnmuY";
+    const TELEGRAM_CHAT_ID = "7957347033";
+
+    const COURSE_DAYS = {
+      1: {
+        dateStr: "21-Sentyabr, Dushanba",
+        shortDate: "21-Sent • Dush",
+        title: "Present Perfect — Experience (ever/never)",
+
+        slides: [
+          {
+            tag: "1-SLAYD • HOOK & HAYOTIY TAJRIBA",
+            title: "Have you ever been to London?",
+            html: `
+              <div style="margin: 18px 0; font-size: 16px; line-height: 1.6; color: #cbd5e1;">
+                🤔 <strong>English File Asosiy Savoli:</strong><br><br>
+                <div class="slide-compare-grid" style="margin: 10px 0;">
+                  <div class="slide-compare-card slide-card-green">
+                    <strong style="color: #34d399; font-size: 15px;">"Have you ever tried sushi?"</strong><br>
+                    <span style="font-size: 13.5px; color: #cbd5e1;">
+                      👉 Umringizda hech sushi tatib ko'rganmisiz?<br>
+                      (Aniq qachonligi emas, <em>hayotingizdagi tajriba</em> muhim!)
+                    </span>
+                  </div>
+                  <div class="slide-compare-card slide-card-red">
+                    <strong style="color: #38bdf8; font-size: 15px;">"I have never flown in a helicopter."</strong><br>
+                    <span style="font-size: 13.5px; color: #cbd5e1;">
+                      👉 Men hayotimda hech vertolyotda uchmaganman.<br>
+                      (O'tmishdan to ayni shu lahzagacha bo'lgan tajriba).
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <p style="font-size: 13.5px; color: #94a3b8;">Ustoz o'quvchidan so'raydi: <em>"Have you ever lived abroad? Have you ever ridden a horse?"</em></p>
+            `
+          },
+          {
+            tag: "2-SLAYD • FORMULA & TUZILISH",
+            title: "Formula: Subject + HAVE / HAS + V3",
+            html: `
+              <div style="max-width: 700px; width: 100%; text-align: left; margin: 14px auto; font-size: 14px; line-height: 1.6;">
+                <div class="rule-card" style="margin-bottom: 12px;">
+                  📌 <strong>Darak gap:</strong><br>
+                  • <b>I / You / We / They</b> + <strong>HAVE</strong> + V3 (eaten, seen, visited)<br>
+                  • <b>He / She / It</b> + <strong>HAS</strong> + V3 (written, done, gone)<br>
+                  📌 <strong>So'roq gap:</strong><br>
+                  • <strong>Have / Has</strong> + Subject + <strong>EVER</strong> + V3?
+                </div>
+                <div style="background: rgba(11, 17, 32, 0.7); border: 1px solid #1e293b; padding: 12px 16px; border-radius: 10px;">
+                  ⚡ <strong>Qisqartmalar:</strong> <em>I have = I've, She has = She's, They have = They've</em>
+                </div>
+              </div>
+            `
+          },
+          {
+            tag: "3-SLAYD • EVER VA NEVER QOIDASI",
+            title: "EVER va NEVER ning Gapdagi O'rni",
+            html: `
+              <div style="max-width: 700px; width: 100%; text-align: left; margin: 14px auto; font-size: 14px; line-height: 1.6;">
+                <div class="slide-compare-grid">
+                  <div class="slide-compare-card slide-card-green">
+                    <strong style="color: #34d399;">EVER (So'roq gapda)</strong><br>
+                    have/has va V3 o'rtasida keladi:<br>
+                    • <em>"Have you <strong>ever</strong> seen a ghost?"</em><br>
+                    • <em>"Has she <strong>ever</strong> driven a Tesla?"</em>
+                  </div>
+                  <div class="slide-compare-card slide-card-red">
+                    <strong style="color: #f87171;">NEVER (Inkor ma'noda)</strong><br>
+                    Gapda NOT bo'lmaydi, never o'zi inkor qiladi:<br>
+                    • <em>"I have <strong>never</strong> broken a bone."</em><br>
+                    • ❌ <em>"I haven't never..." (Qo'sh inkor XATO!)</em>
+                  </div>
+                </div>
+              </div>
+            `
+          },
+          {
+            tag: "4-SLAYD • V3 NOTO'G'RI FE'LLAR TUZOG'I",
+            title: "⚠️ V2 (Past Simple) vs V3 (Past Participle)",
+            html: `
+              <div style="max-width: 700px; width: 100%; text-align: left; margin: 14px auto; font-size: 13.5px; line-height: 1.6;">
+                <p style="color: #fde68a; margin-bottom: 12px;">
+                  Ko'p o'quvchilar V2 va V3 ni adashtiradi. Present Perfect faqat <strong>V3</strong> oladi!
+                </p>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                  <div style="background: rgba(239, 68, 68, 0.1); border: 1px solid rgba(239, 68, 68, 0.3); padding: 10px 14px; border-radius: 8px; color: #fca5a5;">
+                    ❌ I have went there.<br>
+                    ❌ She has saw him.<br>
+                    ❌ Have you ate lunch?<br>
+                    ❌ He has wrote a book.
+                  </div>
+                  <div style="background: rgba(16, 185, 129, 0.1); border: 1px solid rgba(16, 185, 129, 0.3); padding: 10px 14px; border-radius: 8px; color: #86efac;">
+                    ✅ <strong>I have GONE there.</strong><br>
+                    ✅ <strong>She has SEEN him.</strong><br>
+                    ✅ <strong>Have you EATEN lunch?</strong><br>
+                    ✅ <strong>He has WRITTEN a book.</strong>
+                  </div>
+                </div>
+              </div>
+            `
+          }
+        ],
+
+        lessonHtml: `
+          <h3>Present Perfect: Umr Davomidagi Tajribalar (Life Experiences)</h3>
+          <p>
+            Present Perfect zamoni (<code>have/has + V3</code>) o'tmishda sodir bo'lgan, lekin ayni damdagi tajribamiz bilan bog'liq bo'lgan ishlarni ifodalaydi.
+          </p>
+          <div class="rule-card">
+            📌 <strong>1. ASOSIY QOIDA:</strong> Aniq qachon (kecha, o'tgan yili) borganingiz EMAS, hayotingizda shu narsani qilib ko'rganmisiz yoki yo'qmi — shuni bildiradi.
+          </div>
+          <div class="rule-card" style="border-left-color: #38bdf8;">
+            📌 <strong>2. EVER / NEVER:</strong> <em>Have you ever...?</em> (Hayotingizda hech...?), <em>I have never...</em> (Hech qachon qilmaganman).
+          </div>
+          <div class="uz-trap-box">
+            ⚠️ <strong>O'zbek Tili Tuzog'i:</strong> O'zbek tilida bu zamonning alohida grammatik shakli yo'q ("Men borganman"). Ingliz tilida esa bu o'tmish va hozirgi vaqt orasidagi ko'prikdir!
+          </div>
+        `,
+
+        vocab: [
+          { word: "travel", pos: "fe'l", uz: "sayohat qilmoq", exEn: "I have traveled to 5 countries.", exUz: "Men 5 ta mamlakatga sayohat qilganman." },
+          { word: "visit", pos: "fe'l", uz: "tashrif buyurmoq", exEn: "Have you ever visited Bukhara?", exUz: "Buxoroga tashrif buyurganmisiz?" },
+          { word: "try", pos: "fe'l", uz: "sinab ko'rmoq, tatib ko'rmoq", exEn: "I have never tried Korean food.", exUz: "Men hech qachon koreys taomini tatib ko'rmaganman." },
+          { word: "experience", pos: "fe'l / ot", uz: "boshdan kechirmoq / tajriba", exEn: "She has experienced many challenges.", exUz: "U ko'p qiyinchiliklarni boshdan kechirgan." },
+          { word: "abroad", pos: "ravish", uz: "chet elda", exEn: "Have you ever lived abroad?", exUz: "Hech chet elda yashab ko'rganmisiz?" },
+          { word: "taste", pos: "fe'l", uz: "tatib ko'rmoq", exEn: "I have tasted real Italian pizza.", exUz: "Men haqiqiy italyan pitssasini tatib ko'rganman." },
+          { word: "meet", pos: "fe'l (met)", uz: "uchrashmoq, tanishmoq", exEn: "I have met many interesting people.", exUz: "Men ko'p qiziqarli odamlar bilan uchrashganman." },
+          { word: "ride", pos: "fe'l (ridden)", uz: "minib yurmoq", exEn: "She has never ridden a horse.", exUz: "U hech qachon otga minmagan." },
+          { word: "fly", pos: "fe'l (flown)", uz: "uchmoq", exEn: "I have flown to Istanbul twice.", exUz: "Men Istanbulga ikki marta uchganman." },
+          { word: "win", pos: "fe'l (won)", uz: "yutmoq, g'alaba qozonmoq", exEn: "Our team has won 3 games this season.", exUz: "Jamoamiz bu mavsumda 3 ta o'yin yutgan." }
+        ],
+
+        practice: [
+          {
+            cat: "Ever / Never",
+            q: "______ you ever ______ to Samarkand?",
+            opts: ["Have / been", "Did / been", "Have / went", "Are / been"],
+            ans: "Have / been",
+            expl: "Present Perfect tajriba so'rog'i: 'Have you ever been...?' (V3 = been)."
+          },
+          {
+            cat: "V3 Past Participle",
+            q: "She has ______ three novels this year.",
+            opts: ["written", "wrote", "writed", "writing"],
+            ans: "written",
+            expl: "write → wrote → written (V3). Present Perfect: has + V3 ('written')."
+          },
+          {
+            cat: "Never Placement",
+            q: "I have ______ sushi in my life.",
+            opts: ["never tried", "never try", "not never tried", "ever tried"],
+            ans: "never tried",
+            expl: "'never' have dan keyin va V3 dan oldin keladi: 'have never tried'."
+          },
+          {
+            cat: "Have vs Has",
+            q: "My brother ______ many foreign countries.",
+            opts: ["has visited", "have visited", "has visit", "have visit"],
+            ans: "has visited",
+            expl: "'My brother' = he bo'lgani uchun 'has' + V3 ('has visited') ishlatiladi."
+          },
+          {
+            cat: "Question Formation",
+            q: "______ your parents ever ______ abroad?",
+            opts: ["Have / lived", "Has / lived", "Did / lived", "Have / live"],
+            ans: "Have / lived",
+            expl: "'your parents' = they → 'Have your parents ever lived abroad?'"
+          },
+          {
+            cat: "Irregular V3 Trap",
+            q: "We have ______ that movie three times already.",
+            opts: ["seen", "saw", "seed", "seeing"],
+            ans: "seen",
+            expl: "see → saw → seen. 'have seen' — V3 shakli kerak, 'saw' emas."
+          }
+        ],
+
+        hwPrompt: `
+          <strong>📝 1-KUNLIK ULKAN VA KENGAYTIRILGAN UYGA VAZIFA (Present Perfect: Experience):</strong><br><br>
+          
+          <b>1-BO'LIM: Katta Kontekstual Tarjima Drilli (14 ta gap):</b><br>
+          1. Siz hech qachon samolyotda uchganmisiz (fly)?<br>
+          2. Men umrimda 4 ta chet el davlatiga sayohat qilganman (travel).<br>
+          3. Shahlo hech qachon ot minib ko'rmagan (ride).<br>
+          4. Biz bu mashhur filmni allaqachon 3 marta ko'rganmiz (see, three times).<br>
+          5. Siz hech haqiqiy yapon sushisini tatib ko'rganmisiz (taste / try)?<br>
+          6. Akangiz chet elda hech yashab ko'rganmi (live abroad)?<br>
+          7. Men hayotimda ko'p qiziqarli va dono insonlar bilan uchrashganman (meet).<br>
+          8. Bizning jamoamiz bu yilgi musobaqada 1-o'rinni yutib oldi (win).<br>
+          9. U hech qachon tog' cho'qqisiga chiqmagan (climb).<br>
+          10. Siz hech qachon hamyoningizni ko'chada yo'qotib qo'yganmisiz (lose)?<br>
+          11. Men hech qachon mashina boshqarmaganman (drive).<br>
+          12. Ular Parijga ikki marta borganlar (be to Paris twice).<br>
+          13. Siz hech mashhur inson bilan shaxsan gaplashganmisiz (speak to)?<br>
+          14. Men bu kitobni 2 marta o'qib chiqqanman (read).<br><br>
+
+          <b>2-BO'LIM: Grammatik Tuzoqlar & Xatolarni Tahlil Qilish (8 ta gap):</b><br>
+          Har bir xato gapni tuzating va nima uchun xatoligini o'zbekcha tushuntirib bering:<br>
+          • ❌ 1. <i>"She have visited London twice."</i><br>
+          • ❌ 2. <i>"I have never went to Japan."</i><br>
+          • ❌ 3. <i>"Did you ever tried Indian spicy food?"</i><br>
+          • ❌ 4. <i>"He has wrote a very beautiful poem."</i><br>
+          • ❌ 5. <i>"I haven't never seen a ghost in my life."</i><br>
+          • ❌ 6. <i>"Has they ever flown in a helicopter?"</i><br>
+          • ❌ 7. <i>"We has saw this dramatic film before."</i><br>
+          • ❌ 8. <i>"She has broke her phone screen three times."</i><br><br>
+
+          <b>3-BO'LIM: Qavslarni Ochish & Fe'l Shakli Mashqi (10 ta gap):</b><br>
+          Qavs ichidagi fe'llarni to'g'ri Present Perfect shaklida yozing:<br>
+          1. I ________________ (never / eat) raw fish.<br>
+          2. ________________ you ever ________________ (meet) a celebrity?<br>
+          3. Anvar ________________ (win) two international chess competitions.<br>
+          4. She ________________ (not / visit) her grandparents this month.<br>
+          5. ________________ your sister ever ________________ (ride) a camel?<br>
+          6. We ________________ (be) to Bukhara and Khiva.<br>
+          7. He ________________ (never / fly) by plane before.<br>
+          8. They ________________ (see) that museum exhibition twice.<br>
+          9. ________________ you ever ________________ (lose) your passport abroad?<br>
+          10. My parents ________________ (travel) to more than ten cities.<br><br>
+
+          <b>4-BO'LIM: Katta Shaxsiy Tajriba Inshosi (14-16 gap):</b><br>
+          O'z hayotingizdagi eng qiziqarli tajribalar haqida batafsil insho yozing:<br>
+          • Nimalarni qilib ko'rgansiz (kamida 6 ta <code>have/has + V3</code> jumlasi).<br>
+          • Umringizda hali hech qachon nimalarni qilib ko'rmagansiz (kamida 4 ta <code>never</code> jumlasi).<br>
+          • Kelajakda qaysi yangi tajribalarni sinab ko'rmoqchisiz.<br><br>
+
+          <b>5-BO'LIM: Ustoz Uchun 1-on-1 Suhbat Savollari (6 ta savol):</b><br>
+          Keyingi jonli darsda ustozingizga berish uchun <code>"Have you ever...?"</code> bilan 6 ta chuqur va qiziqarli savol tayyorlang.
+        `
+      },
+
+      2: {
+        dateStr: "22-Sentyabr, Seshanba",
+        shortDate: "22-Sent • Sesh",
+        title: "Present Perfect — Recent Events (just/already/yet)",
+
+        slides: [
+          {
+            tag: "1-SLAYD • HOOK & YANGILIKLAR",
+            title: "I've just finished my homework!",
+            html: `
+              <div style="font-size: 16px; line-height: 1.6; color: #cbd5e1; margin: 18px 0;">
+                ⚡ <strong>Yaqinda sodir bo'lgan voqealar & Yangiliklar:</strong><br><br>
+                O'tmishda bir necha daqiqa yoki soat oldin sodir bo'lgan va natijasi <strong>ayni damda ko'rinib turgan</strong> ishlar:
+                <div class="slide-compare-grid" style="margin: 12px 0;">
+                  <div class="slide-compare-card slide-card-green">
+                    <strong style="color: #34d399;">"I've just had lunch."</strong><br>
+                    👉 Hozirgina tushlik qildim (qornim to'q, ovqat yemayman).
+                  </div>
+                  <div class="slide-compare-card slide-card-red">
+                    <strong style="color: #38bdf8;">"The bus has just left."</strong><br>
+                    👉 Avtobus hozirgina jo'nab ketdi (yetib ololmaysiz).
+                  </div>
+                </div>
+              </div>
+            `
+          },
+          {
+            tag: "2-SLAYD • JUST, ALREADY, YET FARQI",
+            title: "Uchala Kalit So'zning Gapdagi O'rni",
+            html: `
+              <div style="max-width: 700px; width: 100%; text-align: left; margin: 14px auto; font-size: 13.5px; line-height: 1.6;">
+                <div class="rule-card" style="margin-bottom: 10px;">
+                  🔹 <strong>JUST (Hozirgina):</strong> have/has va V3 o'rtasida.<br>
+                  • <em>"She has <strong>just</strong> arrived."</em>
+                </div>
+                <div class="rule-card" style="border-left-color: #34d399; margin-bottom: 10px;">
+                  🔹 <strong>ALREADY (Allaqachon):</strong> Kutilganidan tezroq bo'lganda (darak gapda).<br>
+                  • <em>"I have <strong>already</strong> cleaned my room."</em>
+                </div>
+                <div class="rule-card" style="border-left-color: #f59e0b;">
+                  🔹 <strong>YET (Hali):</strong> Inkor va so'roq gapda <strong>gapning oxirida</strong> keladi.<br>
+                  • <em>"I haven't eaten <strong>yet</strong>."</em> | <em>"Have you paid <strong>yet</strong>?"</em>
+                </div>
+              </div>
+            `
+          },
+          {
+            tag: "3-SLAYD • YET TUZOG'I",
+            title: "⚠️ YET Faqat Inkor va So'roqda Keladi",
+            html: `
+              <div style="max-width: 700px; width: 100%; text-align: left; margin: 14px auto; font-size: 14px; line-height: 1.6;">
+                <div class="slide-compare-grid">
+                  <div class="slide-compare-card slide-card-green">
+                    <strong style="color: #34d399;">✅ TO'G'RI:</strong><br>
+                    • <em>"I haven't finished the report <strong>yet</strong>."</em><br>
+                    • <em>"Has the doctor arrived <strong>yet</strong>?"</em>
+                  </div>
+                  <div class="slide-compare-card slide-card-red">
+                    <strong style="color: #f87171;">❌ XATO:</strong><br>
+                    • ❌ <em>"I have finished yet." (Darakda 'yet' bo'lmaydi!)</em><br>
+                    • ❌ <em>"I didn't finish yet." (Past Simple emas!)</em>
+                  </div>
+                </div>
+              </div>
+            `
+          },
+          {
+            tag: "4-SLAYD • HAYRAT SO'ROQLARI",
+            title: "Surprise Questions with ALREADY",
+            html: `
+              <div style="max-width: 700px; width: 100%; text-align: left; margin: 14px auto; font-size: 14px; line-height: 1.6;">
+                <div class="rule-card" style="border-left-color: #38bdf8;">
+                  😲 <strong>Hayratlanganingizda savol oxirida ALREADY keladi:</strong><br>
+                  • <em>"Have you finished your exam <strong>already</strong>?! That was only 10 minutes!"</em><br>
+                  (Vazifani kutilganidan juda tez bitirganida hayrat bildirish).
+                </div>
+              </div>
+            `
+          }
+        ],
+
+        lessonHtml: `
+          <h3>Present Perfect: Yaqindagi Voqealar (just, already, yet)</h3>
+          <p>
+            Yaqinda sodir bo'lgan va ayni damdagi vaziyatga to'g'ridan-to'g'ri ta'sir ko'rsatayotgan hodisalar uchun <b>just, already, yet</b> qo'llaniladi.
+          </p>
+          <div class="rule-card">
+            📌 <strong>1. JUST (hozirgina):</strong> Harakat bir necha daqiqa oldin yakunlangan (<code>have/has + just + V3</code>).
+          </div>
+          <div class="rule-card" style="border-left-color: #34d399;">
+            📌 <strong>2. ALREADY (allaqachon):</strong> Ish kutilgandan erta bitgan (<code>have/has + already + V3</code>).
+          </div>
+          <div class="rule-card" style="border-left-color: #f59e0b;">
+            📌 <strong>3. YET (hali):</strong> Inkor va so'roq gaplarning eng oxirida keladi (<code>haven't + V3 ... yet</code>).
+          </div>
+          <div class="uz-trap-box">
+            ⚠️ <strong>O'zbek Tili Tuzog'i:</strong> O'zbek tilida "Men hali vazifani tugatmadim" desak, o'tgan zamondek tuyuladi. Lekin ingliz tilida "yet" faqat Present Perfect bilan ishlatiladi (❌ <i>I didn't finish yet</i> EMAS!).
+          </div>
+        `,
+
+        vocab: [
+          { word: "finish", pos: "fe'l", uz: "tugatmoq", exEn: "I have just finished the report.", exUz: "Men hozirgina hisobotni tugatdim." },
+          { word: "complete", pos: "fe'l", uz: "to'liq bajarmoq", exEn: "She has already completed the task.", exUz: "U allaqachon vazifani bajardi." },
+          { word: "prepare", pos: "fe'l", uz: "tayyorlamoq", exEn: "Have you prepared dinner yet?", exUz: "Kechki ovqatni tayyorladingizmi?" },
+          { word: "receive", pos: "fe'l", uz: "qabul qilmoq, olmoq", exEn: "I have just received your message.", exUz: "Men hozirgina xabaringizni oldim." },
+          { word: "send", pos: "fe'l (sent)", uz: "jo'natmoq", exEn: "He hasn't sent the email yet.", exUz: "U hali emailni jo'natmagan." },
+          { word: "begin", pos: "fe'l (begun)", uz: "boshlamoq", exEn: "The movie has already begun.", exUz: "Film allaqachon boshlangan." },
+          { word: "lose", pos: "fe'l (lost)", uz: "yo'qotmoq", exEn: "I have lost my keys somewhere.", exUz: "Kalitlarimni qayerdadir yo'qotib qo'ydim." },
+          { word: "pass", pos: "fe'l", uz: "muvaffaqiyatli topshirmoq", exEn: "She has just passed her exam!", exUz: "U hozirgina imtihonini topshirdi!" },
+          { word: "reply", pos: "fe'l", uz: "javob bermoq", exEn: "He hasn't replied to my message yet.", exUz: "U hali xabarimga javob bermagan." },
+          { word: "deliver", pos: "fe'l", uz: "yetkazib bermoq", exEn: "The package has already been delivered.", exUz: "Pochta allaqachon yetkazilgan." }
+        ],
+
+        practice: [
+          {
+            cat: "Just Placement",
+            q: "I can't eat anything right now — I've ______ had a big lunch.",
+            opts: ["just", "yet", "already", "never"],
+            ans: "just",
+            expl: "Hozirgina tushlik qilgani uchun 'just' — 'I've just had lunch.'"
+          },
+          {
+            cat: "Already vs Yet",
+            q: "Don't tell me the ending — I haven't watched the movie ______.",
+            opts: ["yet", "already", "just", "ever"],
+            ans: "yet",
+            expl: "Inkor gapda 'yet' gap oxirida keladi: 'haven't watched yet.'"
+          },
+          {
+            cat: "Already Surprise",
+            q: "Wow, you've ______ cleaned the whole house! That was fast!",
+            opts: ["already", "yet", "just", "never"],
+            ans: "already",
+            expl: "Kutilganidan tez bajarilgan ish — 'already' hayrat ifodalaydi."
+          },
+          {
+            cat: "Yet in Questions",
+            q: "Has the teacher ______ the homework ______?",
+            opts: ["checked / yet", "check / yet", "checked / already", "checking / just"],
+            ans: "checked / yet",
+            expl: "Savol gapda 'yet': 'Has the teacher checked the homework yet?'"
+          },
+          {
+            cat: "Just + V3",
+            q: "Look outside! It has just ______ to rain heavily.",
+            opts: ["started", "start", "starting", "starts"],
+            ans: "started",
+            expl: "have/has + just + V3: 'has just started' (start → started)."
+          },
+          {
+            cat: "Negative + Yet",
+            q: "We ______ our new neighbors ______.",
+            opts: ["haven't met / yet", "didn't meet / yet", "haven't meet / yet", "hasn't met / yet"],
+            ans: "haven't met / yet",
+            expl: "'We' → haven't + V3 ('met') + yet."
+          }
+        ],
+
+        hwPrompt: `
+          <strong>📝 2-KUNLIK ULKAN VA KENGAYTIRILGAN UYGA VAZIFA (just / already / yet):</strong><br><br>
+
+          <b>1-BO'LIM: Katta Tarjima Drilli (14 ta gap):</b><br>
+          1. Men hozirgina uyga yetib keldim va choy damlayapman (just, arrive).<br>
+          2. U allaqachon barcha ingliz tili darslarini tugatgan (already, complete).<br>
+          3. Siz hali kechki ovqatni tayyorladingizmi (prepare, yet)?<br>
+          4. Pochta xizmati posilkani hali yetkazib bermadi (deliver, yet).<br>
+          5. Ular hozirgina yangi loyihani boshladilar (just, begin).<br>
+          6. Biz mijozdan allaqachon ijobiy javob oldik (already, receive).<br>
+          7. Shoshiling! Film allaqachon boshlanib ketgan (already, begin).<br>
+          8. Men kalitlarimni hozirgina topdim (just, find).<br>
+          9. Siz hisobotni ustozga yubordingizmi hali (send, yet)?<br>
+          10. U hali mening xabarimga javob yozgani yo'q (reply, yet).<br>
+          11. Nargiza haydovchilik imtihonini hozirgina muvaffaqiyatli topshirdi (just, pass).<br>
+          12. Biz kinoteatrga chiptalarni allaqachon sotib olganmiz (already, buy).<br>
+          13. Siz yangi xodim bilan tanishdingizmi hali (meet, yet)?<br>
+          14. Men hali nonushta qilganim yo'q, qornim och (have breakfast, yet).<br><br>
+
+          <b>2-BO'LIM: Xatolarni Tuzating & Sababini Tushuntiring (8 ta gap):</b><br>
+          • ❌ 1. <i>"I didn't finish my homework yet."</i><br>
+          • ❌ 2. <i>"She has already went to the bank."</i><br>
+          • ❌ 3. <i>"Have you just ate lunch?"</i><br>
+          • ❌ 4. <i>"They haven't began the conference yet."</i><br>
+          • ❌ 5. <i>"He have already sent the documents."</i><br>
+          • ❌ 6. <i>"I have yet received the email." (o'rni xato!)</i><br>
+          • ❌ 7. <i>"Has the train arrived already? (oddiy so'roq)"</i><br>
+          • ❌ 8. <i>"We haven't saw the new manager yet."</i><br><br>
+
+          <b>3-BO'LIM: Qavslarni Ochish & To'g'ri Shaklni Qo'yish (10 ta gap):</b><br>
+          1. The taxi ________________ (just / arrive) outside.<br>
+          2. I ________________ (already / read) this book, so you can take it.<br>
+          3. ________________ you ________________ (speak) to the boss yet?<br>
+          4. She ________________ (not / receive) the official contract yet.<br>
+          5. We ________________ (just / hear) the exciting news!<br>
+          6. He ________________ (already / make) all the reservations for tomorrow.<br>
+          7. The students ________________ (not / start) the test yet.<br>
+          8. ________________ your brother ________________ (pass) his driving test yet?<br>
+          9. Look! Somebody ________________ (just / break) the window.<br>
+          10. I ________________ (already / drink) two cups of coffee this morning.<br><br>
+
+          <b>4-BO'LIM: "Bugun Nimalarga Ulgurdim / Ulgurmadim?" Kundaligi (14-16 gap):</b><br>
+          Bugungi kuningiz sarhisobini ingliz tilida yozing:<br>
+          • Hozirgina nimalar sodir bo'ldi (kamida 4 ta <code>just</code>).<br>
+          • Allaqachon nimalarni tugatib qo'ygansiz (kamida 4 ta <code>already</code>).<br>
+          • Hali qaysi ishlarni qilmagansiz va rejalashtiryapsiz (kamida 4 ta <code>yet</code>).<br><br>
+
+          <b>5-BO'LIM: Ustoz Uchun Tekshiruv Savollari (6 ta savol):</b><br>
+          Ustozingizga bugungi dars mavzusi bo'yicha <code>"Have you ... yet?"</code> va <code>"Have you already ...?"</code> bilan 6 ta savol tuzing.
+        `
+      },
+
+      3: {
+        dateStr: "23-Sentyabr, Chorshanba",
+        shortDate: "23-Sent • Chor",
+        title: "Present Perfect vs Past Simple — The Critical Contrast",
+
+        slides: [
+          {
+            tag: "1-SLAYD • ASOSIY QIYOSIY JANG",
+            title: "Finished Time vs Unfinished Time",
+            html: `
+              <div style="margin: 16px 0; font-size: 15px; line-height: 1.6;">
+                <div class="slide-compare-grid">
+                  <div class="slide-compare-card slide-card-green">
+                    <strong style="color: #34d399; font-size: 15px;">PRESENT PERFECT (No specific time)</strong><br>
+                    • <em>"I have visited Samarkand twice."</em><br>
+                    (Umrimda 2 marta borganman — qachon borganim muhim emas, tajriba bor).
+                  </div>
+                  <div class="slide-compare-card slide-card-red">
+                    <strong style="color: #38bdf8; font-size: 15px;">PAST SIMPLE (Specific finished time)</strong><br>
+                    • <em>"I visited Samarkand last summer."</em><br>
+                    (O'tgan yozda — aniq tugallangan o'tmish vaqti bor).
+                  </div>
+                </div>
+              </div>
+            `
+          },
+          {
+            tag: "2-SLAYD • SIGNAL SO'ZLAR JADVALI",
+            title: "Qaysi Zamon Qaysi So'zlar Bilan Keladi?",
+            html: `
+              <div style="max-width: 700px; width: 100%; text-align: left; margin: 14px auto; font-size: 13px; line-height: 1.6;">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+                  <div style="background: rgba(16, 185, 129, 0.1); border: 1px solid rgba(16, 185, 129, 0.3); padding: 12px; border-radius: 10px;">
+                    <strong style="color: #34d399;">Present Perfect:</strong><br>
+                    • ever, never<br>
+                    • just, already, yet<br>
+                    • recently, lately<br>
+                    • today, this week (hali tugamagan)
+                  </div>
+                  <div style="background: rgba(14, 165, 233, 0.1); border: 1px solid rgba(14, 165, 233, 0.3); padding: 12px; border-radius: 10px;">
+                    <strong style="color: #38bdf8;">Past Simple:</strong><br>
+                    • yesterday<br>
+                    • last night / last year<br>
+                    • 3 days ago, in 2020<br>
+                    • when I was a child
+                  </div>
+                </div>
+              </div>
+            `
+          },
+          {
+            tag: "3-SLAYD • ENG KATTA GRAMMATIK TUZOQ",
+            title: "⚠️ Aniq Vaqt Ko'rsatilsa Present Perfect MUMKIN EMAS!",
+            html: `
+              <div style="max-width: 700px; width: 100%; text-align: left; margin: 14px auto; font-size: 14px; line-height: 1.6;">
+                <div class="slide-compare-grid">
+                  <div class="slide-compare-card slide-card-green">
+                    <strong style="color: #34d399;">✅ TO'G'RI:</strong><br>
+                    • <em>"I <strong>went</strong> to London in 2022."</em><br>
+                    • <em>"She <strong>bought</strong> a car 2 days ago."</em>
+                  </div>
+                  <div class="slide-compare-card slide-card-red">
+                    <strong style="color: #f87171;">❌ O'ZBEKZABON XATOSI:</strong><br>
+                    • ❌ <em>"I have gone to London in 2022."</em><br>
+                    • ❌ <em>"She has bought a car 2 days ago."</em>
+                  </div>
+                </div>
+              </div>
+            `
+          },
+          {
+            tag: "4-SLAYD • DIALOGDAGI KO'CHISH MODELI",
+            title: "Present Perfect ➔ Past Simple Ga O'tish",
+            html: `
+              <div style="max-width: 700px; width: 100%; text-align: left; margin: 14px auto; font-size: 13.5px; line-height: 1.7;">
+                <div class="rule-card" style="border-left-color: #a855f7;">
+                  💬 <strong>Tabiiy Inglizcha Suhbat Modeli:</strong><br>
+                  A: <em>"Have you ever been to Turkey?"</em> (Tajriba — Present Perfect)<br>
+                  B: <em>"Yes, I have. I <strong>went</strong> there last summer."</em> (Aniq vaqt — Past Simple)<br>
+                  A: <em>"Did you enjoy it?"</em> (Past Simple)<br>
+                  B: <em>"Yes, it <strong>was</strong> wonderful!"</em> (Past Simple)
+                </div>
+              </div>
+            `
+          }
+        ],
+
+        lessonHtml: `
+          <h3>Present Perfect va Past Simple: Katta Qiyosiy Tahlil</h3>
+          <p>
+            Bu o'zbekzabon ingliz tili o'rganuvchilari uchun <b>1-raqamli eng katta tuzoq</b> hisoblanadi.
+          </p>
+          <div class="rule-card">
+            📌 <strong>Past Simple (Tugallangan O'tmish):</strong> Aniq o'tmish vaqti ko'rsatilgan bo'lsa (<i>yesterday, last week, in 2021, 2 years ago, when</i>), faqat Past Simple ishlatiladi.
+          </div>
+          <div class="rule-card" style="border-left-color: #38bdf8;">
+            📌 <strong>Present Perfect (Hozirga Bog'liq O'tmish):</strong> Aniq vaqt aytilmagan, umumiy tajriba yoki bugungi hali tugamagan davr bo'lsa (<i>today, this week</i>), Present Perfect ishlatiladi.
+          </div>
+          <div class="uz-trap-box">
+            ⚠️ <strong>Oltin Qoida:</strong> Gapda "ago", "yesterday" yoki "last..." so'zini ko'rdingizmi — hech qachon "have/has" qo'ymang! Faqat fe'lning 2-shakli (V2) bo'ladi.
+          </div>
+        `,
+
+        vocab: [
+          { word: "recently", pos: "ravish", uz: "yaqinda, shu kunlarda", exEn: "I have recently started a new job.", exUz: "Men yaqinda yangi ishga kirdim." },
+          { word: "already", pos: "ravish", uz: "allaqachon", exEn: "I've already told you twice.", exUz: "Men sizga allaqachon ikki marta aytganman." },
+          { word: "yet", pos: "ravish", uz: "hali", exEn: "She hasn't called yet.", exUz: "U hali qo'ng'iroq qilmagan." },
+          { word: "ago", pos: "ravish", uz: "...oldin (Past Simple)", exEn: "I moved here two years ago.", exUz: "Men bu yerga ikki yil oldin ko'chdim." },
+          { word: "break", pos: "fe'l (broke, broken)", uz: "sindirmoq", exEn: "He has broken his arm.", exUz: "U qo'lini sindirib olgan." },
+          { word: "grow up", pos: "ibora fe'l", uz: "voyaga yetmoq, o'smoq", exEn: "I grew up in Tashkent.", exUz: "Men Toshkentda o'sdim." },
+          { word: "improve", pos: "fe'l", uz: "yaxshilamoq, rivojlantirmoq", exEn: "My English has improved a lot.", exUz: "Ingliz tilim ancha yaxshilandi." },
+          { word: "achieve", pos: "fe'l", uz: "erishmoq", exEn: "She has achieved her dream.", exUz: "U orzusiga erishdi." },
+          { word: "change", pos: "fe'l", uz: "o'zgarmoq, o'zgartirmoq", exEn: "The city has changed so much.", exUz: "Shahar juda o'zgardi." },
+          { word: "move", pos: "fe'l", uz: "ko'chmoq, harakatlanmoq", exEn: "They moved to Samarkand in 2019.", exUz: "Ular 2019-yilda Samarqandga ko'chdilar." }
+        ],
+
+        practice: [
+          {
+            cat: "Specific Time → Past Simple",
+            q: "I ______ to Istanbul last summer with my family.",
+            opts: ["went", "have gone", "have been", "has gone"],
+            ans: "went",
+            expl: "'last summer' — aniq o'tgan vaqt. Faqat Past Simple: 'went'."
+          },
+          {
+            cat: "No Time → Present Perfect",
+            q: "______ you ever ______ Japanese food in your life?",
+            opts: ["Have / tried", "Did / tried", "Have / try", "Did / try"],
+            ans: "Have / tried",
+            expl: "'ever' — umr davomidagi tajriba, aniq vaqt yo'q. 'Have you ever tried'."
+          },
+          {
+            cat: "Unfinished Time Period",
+            q: "I ______ three cups of coffee today — it's only 2 PM.",
+            opts: ["have drunk", "drank", "have drank", "drunk"],
+            ans: "have drunk",
+            expl: "'today' hali tugamagan vaqt davri bo'lgani uchun Present Perfect: 'have drunk'."
+          },
+          {
+            cat: "Time Marker Trap",
+            q: "She ______ a lot since she started her new job.",
+            opts: ["has changed", "changed", "has change", "did change"],
+            ans: "has changed",
+            expl: "'since' — Present Perfect bilan keladi: 'has changed'."
+          },
+          {
+            cat: "Ago = Past Simple",
+            q: "We ______ to a new apartment three months ______.",
+            opts: ["moved / ago", "have moved / ago", "moved / since", "have moved / since"],
+            ans: "moved / ago",
+            expl: "'ago' har doim Past Simple bilan ishlatiladi: 'moved...ago'."
+          },
+          {
+            cat: "Mixed Dialog Flow",
+            q: "I ______ Anvar at school in 2015, and we ______ best friends ever since.",
+            opts: ["met / have been", "have met / were", "met / were", "have met / have been"],
+            ans: "met / have been",
+            expl: "'in 2015' → Past Simple ('met'). 'ever since' → Present Perfect ('have been')."
+          }
+        ],
+
+        hwPrompt: `
+          <strong>📝 3-KUNLIK ULKAN VA KENGAYTIRILGAN UYGA VAZIFA (PP vs Past Simple Mastery):</strong><br><br>
+
+          <b>1-BO'LIM: Zamonni Tanlang va Tarjima Qiling (14 ta gap):</b><br>
+          1. Men bu filmni allaqachon ko'rganman, lekin u bu filmni o'tgan shanba kuni ko'rdi (see — PP vs PS).<br>
+          2. Ular 2019-yilda yangi uyga ko'chdilar (move — qaysi zamon?).<br>
+          3. Mening ingliz tilim so'nggi 3 oyda sezilarli darajada yaxshilandi (improve).<br>
+          4. U 5 yil oldin Toshkentdagi universitetni bitirgan (graduate / finish — ago!).<br>
+          5. Biz bu mashhur restoranda hech qachon ovqatlanmaganmiz (eat).<br>
+          6. Kecha u basketbol o'ynayotganda qo'lini sindirib oldi (break — yesterday!).<br>
+          7. Siz bugun ertalab yangiliklarni o'qidingizmi (read — today)?<br>
+          8. Men 2018-yilda Rimga borganman va u yerda 1 hafta yashaganman (go / stay).<br>
+          9. U o'zining barcha maqsadlariga erishdi (achieve).<br>
+          10. Siz kecha soat 20:00 da qayerda edingiz (was/were)?<br>
+          11. Men yaqinda yangi noutbuk sotib oldim (recently, buy).<br>
+          12. Shahrimiz mustaqillikdan beri juda o'zgardi (change, since).<br>
+          13. U bolaligida juda ko'p kitob o'qigan (read, when child).<br>
+          14. Men bugun hali do'stimga qo'ng'iroq qilganim yo'q (not call, today yet).<br><br>
+
+          <b>2-BO'LIM: 8 ta Katta Grammatik Xatoni Aniqlash & Tuzatish:</b><br>
+          • ❌ 1. <i>"I have visited Rome last December with my family."</i><br>
+          • ❌ 2. <i>"She didn't finish the quarterly project yet."</i><br>
+          • ❌ 3. <i>"We went to Paris. It was amazing. We have gone there in 2021."</i><br>
+          • ❌ 4. <i>"I lived in this city since 2015."</i><br>
+          • ❌ 5. <i>"He has broke his expensive smartphone yesterday."</i><br>
+          • ❌ 6. <i>"When have you arrived at the airport last night?"</i><br>
+          • ❌ 7. <i>"I have seen him 10 minutes ago."</i><br>
+          • ❌ 8. <i>"Did you ever saw a real tiger in the wild?"</i><br><br>
+
+          <b>3-BO'LIM: Qavslarni Ochish — Past Simple yoki Present Perfect? (12 ta gap):</b><br>
+          1. A: ____________ you ever ____________ (be) to Spain?<br>
+             B: Yes, I ____________ (go) there two years ago.<br>
+          2. I ____________ (not / see) Jamshid today. Is he ill?<br>
+          3. Shakespeare ____________ (write) more than 30 famous plays.<br>
+          4. She ____________ (already / write) three emails this morning.<br>
+          5. My grandfather ____________ (die) before I was born.<br>
+          6. I ____________ (lose) my key yesterday, but I ____________ (just / find) it!<br>
+          7. They ____________ (live) in Samarkand when they were young.<br>
+          8. Look at that bridge! The government ____________ (just / build) it.<br>
+          9. What time ____________ you ____________ (wake up) this morning?<br>
+          10. He ____________ (never / drive) an electric car before.<br><br>
+
+          <b>4-BO'LIM: Katta Qiyosiy Hayotiy Esse (14-16 gap):</b><br>
+          O'zingizning o'tmishingiz va bugungi tajribangiz haqida insho yozing:<br>
+          • 1-Qism: O'tgan yillardagi aniq voqealar (kamida 5 ta Past Simple — aniq sanalar bilan: <i>in 2020, last year, 3 years ago</i>).<br>
+          • 2-Qism: Umringizdagi umumiy yutuqlar va tajribalar (kamida 5 ta Present Perfect: <i>have achieved, have learned, have visited</i>).<br><br>
+
+          <b>5-BO'LIM: Ustoz Bilan Qiyosiy Dialog Tayyorlash (6 ta savol):</b><br>
+          Ustozingiz uchun 3 ta <code>"Have you ever...?"</code> va 3 ta <code>"When did you last...?"</code> savollarini tuzing.
+        `
+      },
+
+      4: {
+        dateStr: "24-Sentyabr, Payshanba",
+        shortDate: "24-Sent • Pay",
+        title: "Present Perfect with FOR / SINCE (Duration)",
+
+        slides: [
+          {
+            tag: "1-SLAYD • DAVOMIYLIK (HOW LONG?)",
+            title: "O'tmishda Boshlanib Hozir ham Davom Etayotgan Ishlar",
+            html: `
+              <div style="font-size: 16px; line-height: 1.6; color: #cbd5e1; margin: 18px 0;">
+                ⏳ <strong>"How long have you lived here?"</strong><br><br>
+                <div class="slide-compare-grid">
+                  <div class="slide-compare-card slide-card-green">
+                    <strong style="color: #34d399;">FOR + Vaqt Oralig'i (Davomiyligi)</strong><br>
+                    • <em>"I have lived here <strong>for 10 years</strong>."</em><br>
+                    (10 yil davomida yashab kelyapman).
+                  </div>
+                  <div class="slide-compare-card slide-card-red">
+                    <strong style="color: #38bdf8;">SINCE + Boshlangan Nuqtasi</strong><br>
+                    • <em>"I have lived here <strong>since 2016</strong>."</em><br>
+                    (2016-yildan buyon yashayapman).
+                  </div>
+                </div>
+              </div>
+            `
+          },
+          {
+            tag: "2-SLAYD • FOR vs SINCE JADVALI",
+            title: "Qaysi So'z Qachon Ishlatiladi?",
+            html: `
+              <div style="max-width: 700px; width: 100%; text-align: left; margin: 14px auto; font-size: 13px; line-height: 1.6;">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+                  <div style="background: rgba(16, 185, 129, 0.1); border: 1px solid rgba(16, 185, 129, 0.3); padding: 12px; border-radius: 10px;">
+                    <strong style="color: #34d399;">FOR (Muddat):</strong><br>
+                    • for 20 minutes<br>
+                    • for 5 days<br>
+                    • for 6 months<br>
+                    • for 3 years<br>
+                    • for a long time / for ages
+                  </div>
+                  <div style="background: rgba(14, 165, 233, 0.1); border: 1px solid rgba(14, 165, 233, 0.3); padding: 12px; border-radius: 10px;">
+                    <strong style="color: #38bdf8;">SINCE (Boshlanish vaqti):</strong><br>
+                    • since 9:00 AM<br>
+                    • since Monday<br>
+                    • since January<br>
+                    • since 2018<br>
+                    • since I was a child / since I left school
+                  </div>
+                </div>
+              </div>
+            `
+          },
+          {
+            tag: "3-SLAYD • HOW LONG SO'ROQ GAPLARI",
+            title: "⚠️ 'How long do you live?' EMAS!",
+            html: `
+              <div style="max-width: 700px; width: 100%; text-align: left; margin: 14px auto; font-size: 14px; line-height: 1.6;">
+                <div class="slide-compare-grid">
+                  <div class="slide-compare-card slide-card-green">
+                    <strong style="color: #34d399;">✅ TO'G'RI PRESENT PERFECT:</strong><br>
+                    • <em>"How long <strong>have you worked</strong> here?"</em><br>
+                    • <em>"How long <strong>has she known</strong> him?"</em>
+                  </div>
+                  <div class="slide-compare-card slide-card-red">
+                    <strong style="color: #f87171;">❌ XATO PRESENT SIMPLE:</strong><br>
+                    • ❌ <em>"How long do you work here?"</em><br>
+                    • ❌ <em>"How long does she know him?"</em>
+                  </div>
+                </div>
+              </div>
+            `
+          },
+          {
+            tag: "4-SLAYD • SINCE + PAST SIMPLE GAP",
+            title: "Since dan Keyin Butun Boshli Gap Kelishi",
+            html: `
+              <div style="max-width: 700px; width: 100%; text-align: left; margin: 14px auto; font-size: 13.5px; line-height: 1.6;">
+                <div class="rule-card" style="border-left-color: #34d399;">
+                  📌 <strong>Since + Past Simple:</strong><br>
+                  • <em>"I haven't seen her <strong>since she moved to London</strong>."</em><br>
+                  • <em>"We have been best friends <strong>since we were in school</strong>."</em><br>
+                  (Boshlang'ich nuqta Past Simple gap bilan ifodalanadi).
+                </div>
+              </div>
+            `
+          }
+        ],
+
+        lessonHtml: `
+          <h3>Present Perfect: FOR va SINCE bilan Davomiylikni Ifodalash</h3>
+          <p>
+            O'tmishning ma'lum bir nuqtasida boshlanib, <b>ayni damgacha davom etib kelayotgan</b> harakat va holatlar uchun Present Perfect ishlatiladi.
+          </p>
+          <div class="rule-card">
+            📌 <strong>FOR (davomida):</strong> Vaqt oralig'i, muddat ko'rsatilganda (<i>for 3 years, for 2 hours, for ages</i>).
+          </div>
+          <div class="rule-card" style="border-left-color: #38bdf8;">
+            📌 <strong>SINCE (...dan buyon):</strong> Harakat boshlangan aniq vaqt yoki voqea ko'rsatilganda (<i>since 2018, since morning, since I graduated</i>).
+          </div>
+          <div class="uz-trap-box">
+            ⚠️ <strong>O'zbek Tili Tuzog'i:</strong> O'zbek tilida "Men bu yerda 5 yildan beri ishlayman" deb hozirgi zamonda aytamiz. Lekin ingliz tilida "beri" (for/since) bo'lgani uchun <b>faqat Present Perfect</b> bo'ladi (❌ <i>I work here for 5 years</i> XATO!).
+          </div>
+        `,
+
+        vocab: [
+          { word: "last", pos: "fe'l", uz: "davom etmoq", exEn: "The meeting has lasted for two hours.", exUz: "Yig'ilish ikki soat davom etdi." },
+          { word: "continue", pos: "fe'l", uz: "davom ettirmoq", exEn: "She has continued to study since morning.", exUz: "U ertalabdan beri o'qishni davom ettirmoqda." },
+          { word: "belong", pos: "fe'l", uz: "tegishli bo'lmoq", exEn: "This book has belonged to my family for generations.", exUz: "Bu kitob avlodlar davomida oilamizga tegishli." },
+          { word: "own", pos: "fe'l", uz: "egalik qilmoq", exEn: "He has owned this shop since 2010.", exUz: "U 2010-yildan beri bu do'konga egalik qiladi." },
+          { word: "collect", pos: "fe'l", uz: "yig'moq, to'plamoq", exEn: "I have collected stamps for 15 years.", exUz: "Men 15 yildan beri markalar yig'aman." },
+          { word: "develop", pos: "fe'l", uz: "rivojlantirmoq, rivojlanmoq", exEn: "The city has developed rapidly since independence.", exUz: "Shahar mustaqillikdan beri tez rivojlandi." },
+          { word: "remain", pos: "fe'l", uz: "qolmoq, saqlanib qolmoq", exEn: "He has remained calm since the accident.", exUz: "U hodisadan beri sokin qolgan." },
+          { word: "increase", pos: "fe'l", uz: "oshmoq, ko'paymoq", exEn: "Prices have increased a lot since last year.", exUz: "Narxlar o'tgan yildan beri ancha oshdi." },
+          { word: "support", pos: "fe'l", uz: "qo'llab-quvvatlamoq", exEn: "She has supported this charity for years.", exUz: "U yillar davomida bu xayriya tashkilotini qo'llab-quvvatlagan." },
+          { word: "attend", pos: "fe'l", uz: "qatnashmoq, bormoq", exEn: "I have attended this school since September.", exUz: "Men sentyabrdan beri bu maktabga qatnashaman." }
+        ],
+
+        practice: [
+          {
+            cat: "For vs Since",
+            q: "I have known her ______ we were children in primary school.",
+            opts: ["since", "for", "from", "during"],
+            ans: "since",
+            expl: "'we were children' — boshlang'ich nuqta. Shuning uchun 'since' kerak."
+          },
+          {
+            cat: "For + Period",
+            q: "They have lived in this modern house ______ 20 years.",
+            opts: ["for", "since", "from", "during"],
+            ans: "for",
+            expl: "'20 years' — vaqt oralig'i (davr). 'for' ishlatiladi."
+          },
+          {
+            cat: "How Long Question",
+            q: "How long ______ you ______ at this international company?",
+            opts: ["have / worked", "do / work", "did / work", "are / working"],
+            ans: "have / worked",
+            expl: "'How long' + hozirgacha davom etayotgan ish → Present Perfect: 'have you worked'."
+          },
+          {
+            cat: "Since + Specific Point",
+            q: "She has been my business partner ______ 2018.",
+            opts: ["since", "for", "from", "at"],
+            ans: "since",
+            expl: "2018 = boshlang'ich yil. 'since 2018'."
+          },
+          {
+            cat: "Uzbek Translation Trap",
+            q: "I ______ English ______ three years.",
+            opts: ["have studied / for", "study / for", "studied / since", "am studying / for"],
+            ans: "have studied / for",
+            expl: "O'tmishda boshlanib hozir ham davom etyapti: 'have studied for 3 years'."
+          },
+          {
+            cat: "For vs Since Mixed",
+            q: "We haven't seen each other ______ last Christmas.",
+            opts: ["since", "for", "from", "at"],
+            ans: "since",
+            expl: "'last Christmas' — aniq boshlang'ich vaqt nuqtasi. 'since last Christmas'."
+          }
+        ],
+
+        hwPrompt: `
+          <strong>📝 4-KUNLIK ULKAN VA KENGAYTIRILGAN UYGA VAZIFA (FOR / SINCE Duration):</strong><br><br>
+
+          <b>1-BO'LIM: FOR yoki SINCE bilan Tarjima Qiling (14 ta gap):</b><br>
+          1. Men bu shaharda 2012-yildan beri yashayman (live, since 2012).<br>
+          2. U 5 yildan beri ingliz tilini o'rganib kelmoqda (study, for 5 years).<br>
+          3. Biz bir-birimizni bolalikdan beri taniymiz (know, since childhood).<br>
+          4. Men bu bekatda 40 daqiqadan beri kutmoqdaman (wait, for 40 minutes).<br>
+          5. Narxlar o'tgan oydan beri ancha oshdi (increase, since last month).<br>
+          6. Bu maktab 50 yildan beri faoliyat yuritmoqda (operate/work, for 50 years).<br>
+          7. Siz qanchadan beri bu kompaniyada ishlaysiz (How long have you worked...)?<br>
+          8. U 2015-yildan beri shaxsiy avtomobiliga ega (own, since 2015).<br>
+          9. Biz universitetni bitirganimizdan beri uchrashmadik (not meet, since graduated).<br>
+          10. Men bu kitobni 2 haftadan beri o'qiyapman (read, for 2 weeks).<br>
+          11. U ertalab soat 08:00 dan beri ofisda (be in office, since 8:00 AM).<br>
+          12. Shahzod va Malika 10 yildan beri turmush qurgan (be married, for 10 years).<br>
+          13. Siz qanchadan beri bu qimmat soatga egasiz (How long have you had...)?<br>
+          14. Yomg'ir kechadan beri to'xtovsiz yog'yapti (rain, since yesterday).<br><br>
+
+          <b>2-BO'LIM: Xatolarni Tuzating & Sababini Izohlang (8 ta gap):</b><br>
+          • ❌ 1. <i>"I know him since 10 years."</i><br>
+          • ❌ 2. <i>"She has worked here since 5 years."</i><br>
+          • ❌ 3. <i>"How long do you live in Tashkent?"</i><br>
+          • ❌ 4. <i>"We are friends for a long time."</i><br>
+          • ❌ 5. <i>"He has this smartphone since 3 months."</i><br>
+          • ❌ 6. <i>"I have lived here from 2018." (from emas!)</i><br>
+          • ❌ 7. <i>"She is ill since last Friday."</i><br>
+          • ❌ 8. <i>"How long time did you have this job?"</i><br><br>
+
+          <b>3-BO'LIM: FOR yoki SINCE? Bo'shliqlarni To'ldiring (12 ta gap):</b><br>
+          1. Nobody has lived in those houses ______ many years.<br>
+          2. Mike has been in hospital ______ Monday morning.<br>
+          3. It has been raining ______ three hours without stopping.<br>
+          4. I haven't seen Tom ______ we left high school.<br>
+          5. She has lived in London ______ all her life.<br>
+          6. My parents have been married ______ over 25 years.<br>
+          7. Everything has changed ______ you went away.<br>
+          8. We have been waiting here ______ 4:30 PM.<br>
+          9. The price of gold has increased ______ last summer.<br>
+          10. He has had that motorcycle ______ ages.<br>
+          11. I haven't eaten meat ______ I became a vegetarian.<br>
+          12. She has worked as a teacher ______ September.<br><br>
+
+          <b>4-BO'LIM: Katta Shaxsiy "How Long?" Inshosi (14-16 gap):</b><br>
+          O'zingizning hayotingizdagi davomiyliklar haqida yozing:<br>
+          • Qancha vaqtdan beri hozirgi uyingizda yashaysiz (kamida 2 ta gap).<br>
+          • Qancha vaqtdan beri ingliz tili yoki kasbingizni o'rganasiz (kamida 3 ta gap).<br>
+          • Eng yaqin do'stingizni qachondan beri taniysiz.<br>
+          • Qaysi sevimli buyumlaringizga necha yildan beri egasiz (kamida 5 ta <code>for</code> va 5 ta <code>since</code> ishlating).<br><br>
+
+          <b>5-BO'LIM: Ustoz Uchun "How Long Have You...?" Drilli (6 ta savol):</b><br>
+          Ustozingizning hayoti, tajribasi va qiziqishlari haqida <code>"How long have you...?"</code> bilan 6 ta savol tuzing.
+        `
+      },
+
+      5: {
+        dateStr: "25-Sentyabr, Juma",
+        shortDate: "25-Sent • Juma",
+        title: "Present Perfect Continuous (have been + V-ing)",
+
+        slides: [
+          {
+            tag: "1-SLAYD • HOOK & KO'RINIB TURGAN NATIJA",
+            title: "You look tired. Have you been running?",
+            html: `
+              <div style="font-size: 16px; line-height: 1.6; color: #cbd5e1; margin: 18px 0;">
+                🏃‍♂️ <strong>Hozirgina tugagan yoki hali davom etayotgan JARAYON:</strong><br><br>
+                Natijasi ko'z o'ngimizda ko'rinib turgan harakatlar:
+                <div class="slide-compare-grid" style="margin: 12px 0;">
+                  <div class="slide-compare-card slide-card-green">
+                    <strong style="color: #34d399;">"Your hands are dirty."</strong><br>
+                    • <em>"I have been repairing the car."</em><br>
+                    (Mashina tuzatayotgan edim — qo'llarim moy).
+                  </div>
+                  <div class="slide-compare-card slide-card-red">
+                    <strong style="color: #38bdf8;">"The ground is all wet."</strong><br>
+                    • <em>"It has been raining all night."</em><br>
+                    (Tun bo'yi yomg'ir yog'di — yer ho'l).
+                  </div>
+                </div>
+              </div>
+            `
+          },
+          {
+            tag: "2-SLAYD • FORMULA & TUZILISH",
+            title: "Formula: HAVE / HAS + BEEN + V-ing",
+            html: `
+              <div style="max-width: 700px; width: 100%; text-align: left; margin: 14px auto; font-size: 13.5px; line-height: 1.6;">
+                <div class="rule-card" style="margin-bottom: 12px;">
+                  📌 <strong>Darak:</strong><br>
+                  • <b>I/You/We/They</b> + <strong>have been</strong> + V-ing (waiting, working)<br>
+                  • <b>He/She/It</b> + <strong>has been</strong> + V-ing (sleeping, cooking)<br>
+                  📌 <strong>So'roq:</strong><br>
+                  • <strong>Have / Has</strong> + Subject + <strong>been</strong> + V-ing?
+                </div>
+              </div>
+            `
+          },
+          {
+            tag: "3-SLAYD • PP SIMPLE vs PP CONTINUOUS",
+            title: "Natija (Son) vs Jarayon (Davomiylik)",
+            html: `
+              <div style="max-width: 700px; width: 100%; text-align: left; margin: 14px auto; font-size: 13.5px; line-height: 1.6;">
+                <div class="slide-compare-grid">
+                  <div class="slide-compare-card slide-card-green">
+                    <strong style="color: #34d399;">PP SIMPLE (Natija & Son)</strong><br>
+                    • <em>"I have written <strong>5 emails</strong>."</em><br>
+                    • <em>"She has read <strong>3 books</strong>."</em><br>
+                    (Nechtaligi va tugallangan natija muhim).
+                  </div>
+                  <div class="slide-compare-card slide-card-red">
+                    <strong style="color: #38bdf8;">PP CONTINUOUS (Jarayon)</strong><br>
+                    • <em>"I have been writing emails <strong>all morning</strong>."</em><br>
+                    • <em>"She has been reading <strong>for 2 hours</strong>."</em><br>
+                    (Qancha vaqt sarflangani muhim).
+                  </div>
+                </div>
+              </div>
+            `
+          },
+          {
+            tag: "4-SLAYD • SON BO'LSA -ING BO'LMAYDI",
+            title: "⚠️ Aniq Son Ko'rsatilsa PPC MUMKIN EMAS!",
+            html: `
+              <div style="max-width: 700px; width: 100%; text-align: left; margin: 14px auto; font-size: 14px; line-height: 1.6;">
+                <div class="slide-compare-grid">
+                  <div class="slide-compare-card slide-card-green">
+                    <strong style="color: #34d399;">✅ TO'G'RI:</strong><br>
+                    • <em>"I have drunk <strong>3 cups</strong> of tea."</em><br>
+                    • <em>"He has repaired <strong>2 cars</strong> today."</em>
+                  </div>
+                  <div class="slide-compare-card slide-card-red">
+                    <strong style="color: #f87171;">❌ XATO:</strong><br>
+                    • ❌ <em>"I have been drinking 3 cups."</em><br>
+                    • ❌ <em>"He has been repairing 2 cars."</em>
+                  </div>
+                </div>
+              </div>
+            `
+          }
+        ],
+
+        lessonHtml: `
+          <h3>Present Perfect Continuous: Jarayon va Yaqindagi Faoliyat</h3>
+          <p>
+            O'tmishda boshlanib, <b>uzluksiz davom etayotgan jarayonni</b> yoki yaqindagina tugab, natijasi ko'rinib turgan ishlarni ifodalaydi.
+          </p>
+          <div class="rule-card">
+            📌 <strong>1. FORMULA:</strong> <code>have/has been + V-ing</code> (<i>I have been learning English for 2 years</i>).
+          </div>
+          <div class="rule-card" style="border-left-color: #38bdf8;">
+            📌 <strong>2. PP SIMPLE vs PP CONTINUOUS:</strong><br>
+            • <b>PP Simple:</b> Qancha narsa bitdi? (<i>I've painted 2 rooms</i> — Natija).<br>
+            • <b>PP Continuous:</b> Qancha vaqt ketdi? (<i>I've been painting all day</i> — Jarayon).
+          </div>
+          <div class="uz-trap-box">
+            ⚠️ <strong>Oltin Qoida:</strong> Agar gapda <i>"necha marta", "nechta kitob", "necha kilometr"</i> kabi aniq son bo'lsa — hech qachon <b>-ing</b> qo'ymang! Faqat Present Perfect Simple bo'ladi.
+          </div>
+        `,
+
+        vocab: [
+          { word: "practice", pos: "fe'l", uz: "mashq qilmoq", exEn: "I've been practicing the piano for an hour.", exUz: "Men bir soatdan beri pianino mashq qilayapman." },
+          { word: "research", pos: "fe'l", uz: "tadqiq qilmoq, o'rganmoq", exEn: "She's been researching this topic all week.", exUz: "U butun hafta bu mavzuni tadqiq qilayapti." },
+          { word: "train", pos: "fe'l", uz: "mashg'ulot qilmoq, shug'ullanmoq", exEn: "He's been training for the marathon since January.", exUz: "U yanvardan beri marafonga tayyorlanayapti." },
+          { word: "repair", pos: "fe'l", uz: "ta'mirlamoq", exEn: "They've been repairing the road for months.", exUz: "Ular oylar davomida yo'lni ta'mirlashayapti." },
+          { word: "paint", pos: "fe'l", uz: "bo'yamoq", exEn: "We've been painting the house all weekend.", exUz: "Biz butun dam olish kunlari uyni bo'yayapmiz." },
+          { word: "plant", pos: "fe'l", uz: "ekmoq, o'tqazmoq", exEn: "She's been planting flowers in the garden.", exUz: "U bog'da gul ekayapti." },
+          { word: "discuss", pos: "fe'l", uz: "muhokama qilmoq", exEn: "We've been discussing the project for hours.", exUz: "Biz soatlab loyihani muhokama qilayapmiz." },
+          { word: "organize", pos: "fe'l", uz: "tashkil qilmoq, tartibga solmoq", exEn: "He's been organizing the event since last month.", exUz: "U o'tgan oydan beri tadbirni tashkil qilayapti." },
+          { word: "search", pos: "fe'l", uz: "izlamoq, qidirmoq", exEn: "I've been searching for a new apartment.", exUz: "Men yangi kvartira izlayapman." },
+          { word: "decorate", pos: "fe'l", uz: "bezamoq", exEn: "They've been decorating the room for the party.", exUz: "Ular bayram uchun xonani bezashayapti." }
+        ],
+
+        practice: [
+          {
+            cat: "PPC Formation",
+            q: "You're all wet! ______ you ______ in the rain?",
+            opts: ["Have / been walking", "Did / walk", "Are / walking", "Have / walked"],
+            ans: "Have / been walking",
+            expl: "Ko'rinib turgan natija (ho'l) — yaqindagi jarayon haqida: 'Have you been walking?'"
+          },
+          {
+            cat: "PPC vs PP Simple",
+            q: "I ______ this novel for a week, but I ______ only 50 pages so far.",
+            opts: ["have been reading / have read", "have read / have been reading", "am reading / read", "read / have been reading"],
+            ans: "have been reading / have read",
+            expl: "Jarayon (PPC: 'have been reading') + aniq son (PP Simple: 'have read 50 pages')."
+          },
+          {
+            cat: "Duration with PPC",
+            q: "She ______ English ______ she was 10 years old.",
+            opts: ["has been learning / since", "has learned / for", "is learning / since", "learns / since"],
+            ans: "has been learning / since",
+            expl: "O'tmishda boshlanib davom etayotgan jarayon: 'has been learning since'."
+          },
+          {
+            cat: "Evidence of Activity",
+            q: "Your eyes are red and tired. ______ you ______ on the computer?",
+            opts: ["Have / been working", "Did / work", "Are / working", "Were / working"],
+            ans: "Have / been working",
+            expl: "Ko'zlar qizargan (natija) → kompyuterda ishlash jarayoni (PPC)."
+          },
+          {
+            cat: "PPC + For",
+            q: "They ______ for the bus ______ 40 minutes.",
+            opts: ["have been waiting / for", "are waiting / for", "waited / since", "have waited / since"],
+            ans: "have been waiting / for",
+            expl: "40 daqiqa davomida kutish jarayoni: 'have been waiting for 40 minutes'."
+          },
+          {
+            cat: "Result vs Process",
+            q: "I ______ 3 official letters today. / I ______ letters all morning.",
+            opts: ["have written / have been writing", "have been writing / have written", "wrote / am writing", "write / have been writing"],
+            ans: "have written / have been writing",
+            expl: "3 ta xat = son (PP Simple). Butun tong = jarayon (PPC)."
+          }
+        ],
+
+        hwPrompt: `
+          <strong>📝 5-KUNLIK ULKAN VA KENGAYTIRILGAN UYGA VAZIFA (Present Perfect Continuous):</strong><br><br>
+
+          <b>1-BO'LIM: PPC bilan Katta Tarjima Drilli (14 ta gap):</b><br>
+          1. Men ikki soatdan beri bu yerda sizni kutayapman (wait, for 2 hours)!<br>
+          2. U ertalabdan beri oshxonada shirinlik pishirmoqda (bake/cook, since morning).<br>
+          3. Ular butun hafta davomida katta yo'lni ta'mirlashayapti (repair, all week).<br>
+          4. Men bir oydan beri yangi ish qidiryapman (search, for a month).<br>
+          5. Tashqarida tongdan beri yomg'ir yog'yapti (rain, since morning).<br>
+          6. Biz soatlab bu yangi biznes loyihasini muhokama qilyapmiz (discuss, for hours).<br>
+          7. Shaxzoda yanvardan beri marafon yugurishiga tayyorlanyapti (train, since January).<br>
+          8. Ko'zlaringiz charchagan. Siz kun bo'yi kitob o'qiyapsizmi (read all day)?<br>
+          9. Bolalar ertalabdan beri hovlida futbol o'ynashyapti (play, since morning).<br>
+          10. Nega kiyimlaringiz bo'yoq? — Men xonamni bo'yayotgan edim (paint).<br>
+          11. U 3 soatdan beri pianino chalishni mashq qilyapti (practice, for 3 hours).<br>
+          12. Biz kechadan beri bayram tadbirini tashkil qilyapmiz (organize, since yesterday).<br>
+          13. Ular necha daqiqadan beri navbatda turishibdi (How long have they been standing...)?<br>
+          14. Men bu murakkab ilmiy mavzuni butun hafta o'rganib chiqyapman (research, all week).<br><br>
+
+          <b>2-BO'LIM: PP Simple yoki PPC? Xatolarni Tuzating (8 ta gap):</b><br>
+          • ❌ 1. <i>"I have been writing 4 business emails this morning." (son bor!)</i><br>
+          • ❌ 2. <i>"She has been knowing him for 5 years." (stative fe'l!)</i><br>
+          • ❌ 3. <i>"It is raining since 8:00 AM."</i><br>
+          • ❌ 4. <i>"We have been waiting since 45 minutes."</i><br>
+          • ❌ 5. <i>"I have read this book all day — my head hurts." (jarayon!)</i><br>
+          • ❌ 6. <i>"He has been drinking 3 cups of coffee today."</i><br>
+          • ❌ 7. <i>"How long are you learning English?"</i><br>
+          • ❌ 8. <i>"They have been built three new bridges."</i><br><br>
+
+          <b>3-BO'LIM: Qavslarni Ochish — Simple yoki Continuous? (12 ta gap):</b><br>
+          1. I ________________ (clean) the house all morning. I ________________ (clean) three rooms so far.<br>
+          2. She ________________ (learn) Spanish for six months.<br>
+          3. How many pages of that book ________________ you ________________ (read)?<br>
+          4. Look! Somebody ________________ (break) the kitchen window.<br>
+          5. My brother ________________ (play) tennis since 2 PM.<br>
+          6. We ________________ (know) each other for a very long time.<br>
+          7. You look exhausted! What ________________ you ________________ (do)?<br>
+          8. He ________________ (eat) 10 pieces of sushi today.<br>
+          9. It ________________ (snow) heavily for the past two hours.<br>
+          10. I ________________ (write) essays all afternoon, but I ________________ (only / finish) one.<br><br>
+
+          <b>4-BO'LIM: Katta "Natija va Jarayon" Inshosi (14-16 gap):</b><br>
+          Kun davomida qilgan faoliyatingiz haqida yozing:<br>
+          • Har bir mavzuda jarayonni (PPC: <i>I've been working / studying / cooking</i>) va erishilgan natijani (PP Simple: <i>I've finished / I've called 5 clients</i>) uyg'unlashtiring (kamida 5 ta PPC va 5 ta PP Simple jumlasi).<br><br>
+
+          <b>5-BO'LIM: Ustoz Uchun "What Have You Been Doing?" Savollari (6 ta savol):</b><br>
+          Ustozingizga yaqindagi ishlari va faoliyati haqida <code>"Have you been ...-ing recently?"</code> bilan 6 ta savol tuzing.
+        `
+      },
+
+      6: {
+        dateStr: "26-Sentyabr, Shanba",
+        shortDate: "26-Sent • Shan",
+        title: "State vs Action Verbs + Mixed Consolidation",
+
+        slides: [
+          {
+            tag: "1-SLAYD • ASOSIY TUZOQ",
+            title: "I've known him vs I've been knowing him",
+            html: `
+              <div style="font-size: 16px; line-height: 1.6; color: #cbd5e1; margin: 18px 0;">
+                🧠 <strong>Holat Fe'llari (Stative Verbs) HECH QACHON -ING OLMAYDI:</strong><br><br>
+                <div class="slide-compare-grid">
+                  <div class="slide-compare-card slide-card-green">
+                    <strong style="color: #34d399;">✅ TO'G'RI (PP Simple):</strong><br>
+                    • <em>"I have <strong>known</strong> him for 10 years."</em><br>
+                    • <em>"She has <strong>owned</strong> this car since 2018."</em><br>
+                    (know, own, believe — holat fe'llari).
+                  </div>
+                  <div class="slide-compare-card slide-card-red">
+                    <strong style="color: #f87171;">❌ QAT'IYAN XATO (PPC):</strong><br>
+                    • ❌ <em>"I have been knowing him."</em><br>
+                    • ❌ <em>"She has been owning this car."</em><br>
+                    (Holat fe'liga hech qachon -ing qo'shilmaydi!).
+                  </div>
+                </div>
+              </div>
+            `
+          },
+          {
+            tag: "2-SLAYD • HOLAT FE'LLARI RO'YXATI",
+            title: "Eng Ko'p Uchraydigan Stative Verbs",
+            html: `
+              <div style="max-width: 700px; width: 100%; text-align: left; margin: 14px auto; font-size: 13px; line-height: 1.6;">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+                  <div style="background: rgba(11, 17, 32, 0.7); border: 1px solid #1e293b; padding: 12px; border-radius: 10px;">
+                    <strong style="color: #818cf8;">Aqliy & Fikriy faoliyat:</strong><br>
+                    • know, believe, understand<br>
+                    • remember, forget, realize<br>
+                    • recognize, suppose, consider
+                  </div>
+                  <div style="background: rgba(11, 17, 32, 0.7); border: 1px solid #1e293b; padding: 12px; border-radius: 10px;">
+                    <strong style="color: #38bdf8;">Tuyg'u & Egalik:</strong><br>
+                    • like, love, hate, prefer<br>
+                    • want, need<br>
+                    • own, belong, exist, seem
+                  </div>
+                </div>
+              </div>
+            `
+          },
+          {
+            tag: "3-SLAYD • QAROR QABUL QILISH DARAXTI",
+            title: "Zamonni To'g'ri Tanlash Xaritasi",
+            html: `
+              <div style="max-width: 700px; width: 100%; text-align: left; margin: 14px auto; font-size: 13px; line-height: 1.6;">
+                <div class="rule-card" style="margin-bottom: 8px;">
+                  1️⃣ Aniq o'tgan vaqt bormi? (yesterday, in 2020) ➔ <strong>PAST SIMPLE</strong>
+                </div>
+                <div class="rule-card" style="border-left-color: #38bdf8; margin-bottom: 8px;">
+                  2️⃣ Umr tajribasi, yangilik yoki son bormi? (ever, just, 3 times) ➔ <strong>PRESENT PERFECT</strong>
+                </div>
+                <div class="rule-card" style="border-left-color: #34d399; margin-bottom: 8px;">
+                  3️⃣ Davom etayotgan harakat bormi? (for 2 hours, all day) ➔ <strong>PP CONTINUOUS</strong>
+                </div>
+                <div class="rule-card" style="border-left-color: #f59e0b;">
+                  4️⃣ Davom etayotgan HOLAT fe'limi? (know, like, own) ➔ <strong>PP SIMPLE (NOT -ing)</strong>
+                </div>
+              </div>
+            `
+          },
+          {
+            tag: "4-SLAYD • BIR GAPDA HAMMASI",
+            title: "Barcha Zamonlarni Birlashtiruvchi Master-Gap",
+            html: `
+              <div style="max-width: 700px; width: 100%; text-align: left; margin: 14px auto; font-size: 13.5px; line-height: 1.7;">
+                <div class="rule-card" style="border-left-color: #a855f7;">
+                  🌟 <em>"I <strong>started</strong> learning English in 2021. I <strong>have been studying</strong> every day for 3 years, I <strong>have read</strong> 10 books so far, and I <strong>have known</strong> my teacher since day one."</em><br><br>
+                  (Past Simple + PP Continuous + PP Simple Result + Stative Verb PP).
+                </div>
+              </div>
+            `
+          }
+        ],
+
+        lessonHtml: `
+          <h3>Holat Fe'llari (Stative Verbs) va Barcha Zamonlar Sintezi</h3>
+          <p>
+            Haftaning eng muhim yakuniy xulosasi: fe'l harakatmi yoki holatmi, vaqt aniqmi yoki noaniqmi, jarayonmi yoki natijami?
+          </p>
+          <div class="rule-card">
+            📌 <strong>1. STATIVE VERBS QOIDASI:</strong> <i>know, believe, belong, own, want, need, understand, remember, exist, seem</i> fe'llari davomiylikda ham <b>hech qachon -ing olmaydi</b> (<code>have known</code>, <code>have owned</code>).
+          </div>
+          <div class="rule-card" style="border-left-color: #38bdf8;">
+            📌 <strong>2. MASTER QIYOS:</strong> Harakat fe'li (<i>work, study, rain</i>) ➔ <code>have been working</code>. Holat fe'li (<i>know, have, own</i>) ➔ <code>have known</code>.
+          </div>
+          <div class="uz-trap-box">
+            ⚠️ <strong>Ertaga Yakshanba:</strong> Katta 3-Modulli Level Check kuni! Bugungi barcha mashqlarni to'liq bajaring.
+          </div>
+        `,
+
+        vocab: [
+          { word: "realize", pos: "fe'l", uz: "anglab yetmoq, tushunib yetmoq", exEn: "I have just realized my mistake.", exUz: "Men hozirgina xatomni anglab yetdim." },
+          { word: "recognize", pos: "fe'l", uz: "tanib olmoq", exEn: "I haven't recognized him — he has changed a lot.", exUz: "Uni taniy olmadim — juda o'zgaribdi." },
+          { word: "exist", pos: "fe'l", uz: "mavjud bo'lmoq", exEn: "This tradition has existed for centuries.", exUz: "Bu an'ana asrlar davomida mavjud." },
+          { word: "depend", pos: "fe'l", uz: "bog'liq bo'lmoq", exEn: "Success has always depended on hard work.", exUz: "Muvaffaqiyat har doim mehnatga bog'liq bo'lgan." },
+          { word: "consider", pos: "fe'l", uz: "hisoblamoq, ko'rib chiqmoq", exEn: "I have considered your offer carefully.", exUz: "Taklifingizni diqqat bilan ko'rib chiqdim." },
+          { word: "suppose", pos: "fe'l", uz: "taxmin qilmoq, deb o'ylamoq", exEn: "I have always supposed he was honest.", exUz: "Men har doim uni halol deb o'ylaganman." },
+          { word: "contain", pos: "fe'l", uz: "o'z ichiga olmoq", exEn: "This box has contained old letters since 1990.", exUz: "Bu quti 1990-yildan beri eski xatlarni saqlaydi." },
+          { word: "involve", pos: "fe'l", uz: "jalb qilmoq, o'z ichiga olmoq", exEn: "This project has involved many people.", exUz: "Bu loyihaga ko'p odamlar jalb qilingan." },
+          { word: "appear", pos: "fe'l", uz: "paydo bo'lmoq, ko'rinmoq", exEn: "A new café has appeared on our street.", exUz: "Ko'chamizda yangi kafe paydo bo'ldi." },
+          { word: "seem", pos: "fe'l", uz: "tuyulmoq, ko'rinmoq", exEn: "He has always seemed kind to me.", exUz: "U menga har doim mehribon tuyulgan." }
+        ],
+
+        practice: [
+          {
+            cat: "Stative Verb Trap",
+            q: "I ______ him since we were in primary school.",
+            opts: ["have known", "have been knowing", "knew", "am knowing"],
+            ans: "have known",
+            expl: "'know' holat fe'li — hech qachon -ing olmaydi. 'have known since' to'g'ri."
+          },
+          {
+            cat: "Action vs State",
+            q: "She ______ in the garden all afternoon.",
+            opts: ["has been working", "has worked", "has been knowing", "works"],
+            ans: "has been working",
+            expl: "'work' harakat fe'li — jarayon uchun PPC: 'has been working'."
+          },
+          {
+            cat: "Mixed: PP vs Past Simple",
+            q: "I ______ to Japan twice. The last time, I ______ there in 2022.",
+            opts: ["have been / went", "went / have been", "have been / have gone", "was / went"],
+            ans: "have been / went",
+            expl: "Umumiy tajriba: PP ('have been'). Aniq vaqt: PS ('went in 2022')."
+          },
+          {
+            cat: "Mixed: PPC vs PP Simple",
+            q: "You look exhausted! How long ______ you ______?",
+            opts: ["have / been studying", "did / study", "have / studied", "are / studying"],
+            ans: "have / been studying",
+            expl: "Ko'rinib turgan natija (charchagan) + jarayon so'rash: PPC ('have been studying')."
+          },
+          {
+            cat: "Stative + Duration",
+            q: "This historical building ______ here ______ over 100 years.",
+            opts: ["has existed / for", "has been existing / for", "existed / since", "is existing / for"],
+            ans: "has existed / for",
+            expl: "'exist' holat fe'li — PPC bo'lishi mumkin emas. 'has existed for' to'g'ri."
+          },
+          {
+            cat: "Full Mixed Challenge",
+            q: "I ______ English since 2020. I ______ a lot, and I ______ 4 grammar books so far.",
+            opts: ["have been learning / have improved / have read", "have learned / improved / read", "learn / improve / read", "am learning / am improving / am reading"],
+            ans: "have been learning / have improved / have read",
+            expl: "Jarayon (PPC) + natija (PP) + aniq son (PP). Uchala shakl bitta gapda!"
+          }
+        ],
+
+        hwPrompt: `
+          <strong>📝 6-KUNLIK ULKAN VA KENGAYTIRILGAN UYGA VAZIFA (State vs Action + Consolidation):</strong><br><br>
+
+          <b>1-BO'LIM: To'g'ri Shaklini Tanlang va Tarjima Qiling (14 ta gap):</b><br>
+          1. Men uni bolaligimdan beri taniyman (know — PP Simple yoki PPC?).<br>
+          2. U ertalabdan beri bog'da ishlamoqda (work — PP Simple yoki PPC?).<br>
+          3. Bu qadimiy an'ana asrlar davomida mavjud (exist — PP Simple yoki PPC?).<br>
+          4. Biz soatlab bu jiddiy masalani muhokama qilyapmiz (discuss).<br>
+          5. Men uning taklifini diqqat bilan ko'rib chiqdim (consider).<br>
+          6. Ular yanvardan beri marafonga tayyorlanishayapti (train).<br>
+          7. Men bu xatoni hozirgina anglab yetdim (realize, just).<br>
+          8. U juda o'zgarib ketibdi, uni deyarli tanimadim (recognize).<br>
+          9. Muvaffaqiyat doimo sabr va mehnatga bog'liq bo'lgan (depend on).<br>
+          10. Bu quti 1995-yildan beri eski suratlarni saqlab keladi (contain).<br>
+          11. U har doim menga juda samimiy tuyulgan (seem).<br>
+          12. Biz bu loyihaga 50 dan ortiq mutaxassislarni jalb qildik (involve).<br>
+          13. Ko'chamizda yangi zamonaviy bino paydo bo'ldi (appear, recently).<br>
+          14. Men har doim uni juda halol inson deb o'ylaganman (suppose).<br><br>
+
+          <b>2-BO'LIM: Stative yoki Action? 8 ta Katta Xatoni Tuzating:</b><br>
+          • ❌ 1. <i>"I've been believing in you since day one."</i><br>
+          • ❌ 2. <i>"She has been seeming tired lately."</i><br>
+          • ❌ 3. <i>"We've been owning this family house for 20 years."</i><br>
+          • ❌ 4. <i>"He has been wanting a new sports car for months."</i><br>
+          • ❌ 5. <i>"This wooden box has been containing old letters since 1980."</i><br>
+          • ❌ 6. <i>"I have been understanding this grammar rule now."</i><br>
+          • ❌ 7. <i>"She has been preferring tea to coffee all her life."</i><br>
+          • ❌ 8. <i>"Have you been needing any help with this task?"</i><br><br>
+
+          <b>3-BO'LIM: Butun Haftadagi Barcha Zamonlarni Qo'yish (12 ta gap):</b><br>
+          1. I ____________ (know) Sarah since we ____________ (be) at university.<br>
+          2. It ____________ (rain) all day and the streets ____________ (be) full of water.<br>
+          3. We ____________ (already / visit) Rome, but we ____________ (not / visit) Venice yet.<br>
+          4. When ____________ you ____________ (buy) that expensive jacket?<br>
+          5. He ____________ (repair) cars for ten years, and he ____________ (repair) over 500 cars so far.<br>
+          6. How long ____________ you ____________ (have) this smartphone?<br>
+          7. She ____________ (study) for 3 hours, but she ____________ (only / write) 2 pages.<br>
+          8. I ____________ (never / see) such a beautiful mountain view in my life.<br>
+          9. They ____________ (move) to Canada three years ago.<br>
+          10. Look! Somebody ____________ (leave) their wallet on the table.<br><br>
+
+          <b>4-BO'LIM: Katta Haftalik Xulosa Inshosi (16-18 gap):</b><br>
+          Butun 2-hafta davomida o'rgangan barcha mavzularni o'z ichiga olgan mukammal insho yozing:<br>
+          • O'tmishdagi aniq voqealar (Past Simple — 4 ta gap).<br>
+          • Umringizdagi tajribalar va yangiliklar (Present Perfect with ever/never/just/already — 4 ta gap).<br>
+          • Qancha vaqtdan beri davom etayotgan ishlar (PPC with for/since — 4 ta gap).<br>
+          • Holat fe'llari (Stative verbs in PP — 4 ta gap).<br><br>
+
+          <b>5-BO'LIM: Ertangi Level Check Uchun Ustozga 6 ta Savol:</b><br>
+          Haftaning eng qiyin tushunilgan nuqtalari bo'yicha ustozingizga 6 ta savol tuzing.
+        `
+      },
+
+      7: {
+        dateStr: "27-Sentyabr, Yakshanba",
+        shortDate: "27-Sent • Yak",
+        title: "🏆 Multi-Module Katta Level Check",
+
+        slides: [
+          {
+            tag: "1-SLAYD • LEVEL CHECK DIAGNOSTIKA",
+            title: "🏆 2-Hafta Katta Multi-Module Level Check",
+            html: `
+              <div style="font-size: 16px; line-height: 1.6; color: #cbd5e1; margin: 18px 0;">
+                Bugungi kengaytirilgan diagnostika <strong>3 ta to'liq mustaqil bo'limdan</strong> iborat:<br><br>
+                ⏱️ <strong>1-Modul: Grammatika Sinovi (24 ta savol)</strong> — har bir kunlik mavzudan 4 tadan mustahkam savol.<br>
+                ⚡ <strong>2-Modul: Katta Lug'at Sinovi (60 ta so'z)</strong> — haftalik barcha 60 ta so'z EN ➔ UZ tarjima testi.<br>
+                ✍️ <strong>3-Modul: Ochiq Yozma Savollar (12 ta mashq)</strong> — har bir mavzu bo'yicha 2 tadan yozma tahlil.<br><br>
+                Har bir bo'limni bosqichma-bosqich ishlab, yakunida to'liq diagnostika hisobotini ustozga Telegram orqali yuboring!
+              </div>
+            `
+          }
+        ],
+
+        lessonHtml: `
+          <h3>🏆 2-Haftalik Kengaytirilgan Multi-Module Level Check</h3>
+          <p>
+            Ushbu tizim o'quvchining barcha 6 kunlik Present Perfect mavzulari bo'yicha bilimini 3 ta alohida modulda sinovdan o'tkazadi:
+          </p>
+          <div class="rule-card">
+            1. <strong>24 ta Grammatika MCQ:</strong> Barcha 6 mavzudan 4 tadan chuqur savol (har biri tushuntirish bilan).<br>
+            2. <strong>60 ta Lug'at Sinovi:</strong> Haftalik barcha 60 ta so'zning to'liq tarjima sinovi.<br>
+            3. <strong>12 ta Ochiq Yozma Savol:</strong> To'g'ridan-to'g'ri yozma jumlalar tuzish va tahlil.
+          </div>
+        `,
+
+        vocab: [
+          { word: "travel", pos: "fe'l", uz: "sayohat qilmoq", exEn: "I have traveled a lot.", exUz: "Men ko'p sayohat qilganman." },
+          { word: "finish", pos: "fe'l", uz: "tugatmoq", exEn: "I have finished.", exUz: "Tugatdim." },
+          { word: "recently", pos: "ravish", uz: "yaqinda", exEn: "Recently started.", exUz: "Yaqinda boshlandi." },
+          { word: "improve", pos: "fe'l", uz: "yaxshilamoq", exEn: "English has improved.", exUz: "Ingliz tili yaxshilandi." },
+          { word: "achieve", pos: "fe'l", uz: "erishmoq", exEn: "Achieved goal.", exUz: "Maqsadga erishdi." },
+          { word: "belong", pos: "fe'l", uz: "tegishli bo'lmoq", exEn: "Belongs to me.", exUz: "Menga tegishli." },
+          { word: "practice", pos: "fe'l", uz: "mashq qilmoq", exEn: "Been practicing.", exUz: "Mashq qilib kelyapman." },
+          { word: "repair", pos: "fe'l", uz: "ta'mirlamoq", exEn: "Repaired car.", exUz: "Mashina tuzatildi." },
+          { word: "realize", pos: "fe'l", uz: "anglab yetmoq", exEn: "Realized mistake.", exUz: "Xatoni angladi." },
+          { word: "recognize", pos: "fe'l", uz: "tanib olmoq", exEn: "Recognized him.", exUz: "Uni tanib oldi." }
+        ],
+
+        practice: [
+          // 1-KUN: Present Perfect Experience (4 ta)
+          {
+            dayTopic: "1",
+            cat: "Day 1 • Ever & V3",
+            q: "______ you ever ______ a helicopter in your life?",
+            opts: ["Have / ridden", "Did / ride", "Have / rode", "Are / riding"],
+            ans: "Have / ridden",
+            expl: "'ever' → Present Perfect. ride → rode → ridden (V3)."
+          },
+          {
+            dayTopic: "1",
+            cat: "Day 1 • Never & Negative",
+            q: "I have ______ sushi, but I want to try it one day.",
+            opts: ["never eaten", "never ate", "haven't never eaten", "not never eaten"],
+            ans: "never eaten",
+            expl: "'never' have dan keyin keladi va gapda qo'shimcha 'not' bo'lmaydi: 'have never eaten'."
+          },
+          {
+            dayTopic: "1",
+            cat: "Day 1 • Been vs Gone",
+            q: "Where is Anvar? — He ______ to the supermarket. He'll be back in 20 minutes.",
+            opts: ["has gone", "has been", "was gone", "went to"],
+            ans: "has gone",
+            expl: "'has gone' = ketgan va hali qaytmagan. 'has been' = borib kelgan."
+          },
+          {
+            dayTopic: "1",
+            cat: "Day 1 • Irregular V3",
+            q: "She has ______ four successful novels in English.",
+            opts: ["written", "wrote", "writed", "writing"],
+            ans: "written",
+            expl: "write → wrote → written (V3). 'has written' to'g'ri."
+          },
+
+          // 2-KUN: Recent Events (just / already / yet) (4 ta)
+          {
+            dayTopic: "2",
+            cat: "Day 2 • Just Placement",
+            q: "I can't eat anything right now — I've ______ had a huge lunch.",
+            opts: ["just", "yet", "since", "for"],
+            ans: "just",
+            expl: "Hozirgina tushlik qilgan: have/has + just + V3."
+          },
+          {
+            dayTopic: "2",
+            cat: "Day 2 • Already in Affirmative",
+            q: "Don't worry about the tickets. I have ______ bought them online.",
+            opts: ["already", "yet", "ever", "ago"],
+            ans: "already",
+            expl: "Ish allaqachon bajarilgan (darak gapda): 'have already bought'."
+          },
+          {
+            dayTopic: "2",
+            cat: "Day 2 • Yet in Negative",
+            q: "The manager is still in the meeting — he ______ the email ______.",
+            opts: ["hasn't sent / yet", "didn't send / yet", "has sent / yet", "isn't sending / yet"],
+            ans: "hasn't sent / yet",
+            expl: "Inkor gapda 'yet' gap oxirida keladi: 'hasn't sent ... yet'."
+          },
+          {
+            dayTopic: "2",
+            cat: "Day 2 • Yet in Questions",
+            q: "______ the courier ______ the package ______?",
+            opts: ["Has / delivered / yet", "Did / deliver / yet", "Has / deliver / yet", "Is / delivering / yet"],
+            ans: "Has / delivered / yet",
+            expl: "Savolda 'yet' gap oxirida keladi: 'Has the courier delivered the package yet?'"
+          },
+
+          // 3-KUN: PP vs Past Simple (4 ta)
+          {
+            dayTopic: "3",
+            cat: "Day 3 • Specific Past Time",
+            q: "I ______ Bukhara twice. The last time I ______ there was in 2023.",
+            opts: ["have visited / went", "visited / have gone", "have visited / have gone", "visit / went"],
+            ans: "have visited / went",
+            expl: "Umumiy tajriba: PP ('have visited'). Aniq vaqt (in 2023): PS ('went')."
+          },
+          {
+            dayTopic: "3",
+            cat: "Day 3 • Ago with Past Simple",
+            q: "She ______ her official driving test three weeks ______.",
+            opts: ["passed / ago", "has passed / ago", "passed / since", "has passed / since"],
+            ans: "passed / ago",
+            expl: "'ago' har doim Past Simple bilan ishlatiladi: 'passed...ago'."
+          },
+          {
+            dayTopic: "3",
+            cat: "Day 3 • Unfinished Time Period",
+            q: "I ______ five important emails today — it's been a very busy morning.",
+            opts: ["have written", "wrote", "have been writing", "write"],
+            ans: "have written",
+            expl: "'today' hali tugamagan + aniq son (5 ta) = PP Simple: 'have written'."
+          },
+          {
+            dayTopic: "3",
+            cat: "Day 3 • Conversational Switch",
+            q: "A: Have you ever tried scuba diving? — B: Yes, I ______ it when I was in Egypt.",
+            opts: ["tried", "have tried", "have been trying", "was trying"],
+            ans: "tried",
+            expl: "'when I was in Egypt' — aniq o'tgan vaqt holati, shuning uchun Past Simple: 'tried'."
+          },
+
+          // 4-KUN: FOR vs SINCE Duration (4 ta)
+          {
+            dayTopic: "4",
+            cat: "Day 4 • Since Starting Point",
+            q: "We have been best neighbors ______ 2018.",
+            opts: ["since", "for", "from", "at"],
+            ans: "since",
+            expl: "2018 = aniq boshlang'ich yil nuqtasi. 'since 2018'."
+          },
+          {
+            dayTopic: "4",
+            cat: "Day 4 • For Time Span",
+            q: "He has worked at this international company ______ over 15 years.",
+            opts: ["for", "since", "from", "during"],
+            ans: "for",
+            expl: "'15 years' = vaqt oralig'i (davr). 'for 15 years'."
+          },
+          {
+            dayTopic: "4",
+            cat: "Day 4 • How Long Question",
+            q: "How long ______ you ______ this electric car?",
+            opts: ["have / had", "do / have", "did / have", "are / having"],
+            ans: "have / had",
+            expl: "'How long' + davom etayotgan egalik holati: PP 'have you had'."
+          },
+          {
+            dayTopic: "4",
+            cat: "Day 4 • Since + Past Clause",
+            q: "I haven't seen my classmate ______ she ______ to London.",
+            opts: ["since / moved", "for / moved", "since / has moved", "from / moved"],
+            ans: "since / moved",
+            expl: "Since dan keyin boshlang'ich voqea Past Simple da keladi: 'since she moved'."
+          },
+
+          // 5-KUN: Present Perfect Continuous (4 ta)
+          {
+            dayTopic: "5",
+            cat: "Day 5 • PPC Evidence",
+            q: "Your hands are dirty. ______ you ______ in the garden?",
+            opts: ["Have / been working", "Did / work", "Are / working", "Have / worked"],
+            ans: "Have / been working",
+            expl: "Ko'rinib turgan natija → yaqindagi jarayon haqida: PPC ('Have you been working?')."
+          },
+          {
+            dayTopic: "5",
+            cat: "Day 5 • PPC vs PP Result",
+            q: "I ______ 200 pages of this book. I ______ it since Monday.",
+            opts: ["have read / have been reading", "have been reading / have read", "read / am reading", "have read / read"],
+            ans: "have read / have been reading",
+            expl: "200 sahifa = aniq son (PP Simple). Dushanbadan beri = jarayon (PPC)."
+          },
+          {
+            dayTopic: "5",
+            cat: "Day 5 • PPC Duration",
+            q: "It ______ since early morning — the streets are all wet.",
+            opts: ["has been raining", "rained", "is raining", "has rained"],
+            ans: "has been raining",
+            expl: "Ertalabdan beri davom etayotgan jarayon: PPC ('has been raining')."
+          },
+          {
+            dayTopic: "5",
+            cat: "Day 5 • How Long + PPC",
+            q: "How long ______ she ______ for the delayed bus?",
+            opts: ["has / been waiting", "is / waiting", "did / wait", "has / waited"],
+            ans: "has / been waiting",
+            expl: "Davom etayotgan kutish jarayoni: 'How long has she been waiting?'"
+          },
+
+          // 6-KUN: Stative Verbs vs Action Verbs (4 ta)
+          {
+            dayTopic: "6",
+            cat: "Day 6 • Stative Verb 'Know'",
+            q: "I ______ him since we were in primary school. We are close friends.",
+            opts: ["have known", "have been knowing", "knew", "am knowing"],
+            ans: "have known",
+            expl: "'know' holat fe'li — hech qachon -ing olmaydi. 'have known since' to'g'ri."
+          },
+          {
+            dayTopic: "6",
+            cat: "Day 6 • Stative Verb 'Own'",
+            q: "My family ______ this historical house ______ over 50 years.",
+            opts: ["has owned / for", "has been owning / for", "owns / since", "owned / for"],
+            ans: "has owned / for",
+            expl: "'own' holat fe'li — PPC bo'lishi mumkin emas. 'has owned for 50 years' to'g'ri."
+          },
+          {
+            dayTopic: "6",
+            cat: "Day 6 • Stative 'Believe'",
+            q: "I have always ______ that hard work leads to great success.",
+            opts: ["believed", "been believing", "believe", "believing"],
+            ans: "believed",
+            expl: "'believe' aqliy holat fe'li bo'lgani uchun -ing olmaydi: 'have always believed'."
+          },
+          {
+            dayTopic: "6",
+            cat: "Day 6 • Full Mixed Synthesis",
+            q: "He ______ English since 2021. He ______ a lot, and he ______ the B2 exam last June.",
+            opts: ["has been studying / has improved / passed", "studies / improves / has passed", "has studied / has been improving / has passed", "is studying / improved / passed"],
+            ans: "has been studying / has improved / passed",
+            expl: "Jarayon (PPC) + natija (PP) + aniq o'tgan vaqt (PS). Hammasi o'z o'rnida!"
+          }
+        ],
+
+        hwPrompt: ""
+      }
+    };
+
+    const LEVEL_CHECK_VOCAB = [
+      // 1-KUN (10 ta so'z)
+      { q: "travel", ans: "sayohat qilmoq", opts: ["sayohat qilmoq", "sinab ko'rmoq", "yetib kelmoq", "ko'chmoq"] },
+      { q: "visit", ans: "tashrif buyurmoq", opts: ["tashrif buyurmoq", "yashamoq", "kutmoq", "uchrashmoq"] },
+      { q: "try", ans: "sinab ko'rmoq, tatib ko'rmoq", opts: ["sinab ko'rmoq, tatib ko'rmoq", "yutmoq", "boshlamoq", "tanlamoq"] },
+      { q: "experience", ans: "boshdan kechirmoq / tajriba", opts: ["boshdan kechirmoq / tajriba", "sayohat qilmoq", "saqlab qolmoq", "unutmoq"] },
+      { q: "abroad", ans: "chet elda", opts: ["chet elda", "yaqinda", "allaqachon", "uyda"] },
+      { q: "taste", ans: "tatib ko'rmoq", opts: ["tatib ko'rmoq", "izlamoq", "egalik qilmoq", "bezamoq"] },
+      { q: "meet", ans: "uchrashmoq, tanishmoq", opts: ["uchrashmoq, tanishmoq", "tark etmoq", "sotib olmoq", "kutmoq"] },
+      { q: "ride", ans: "minib yurmoq", opts: ["minib yurmoq", "uchmoq", "yugurmoq", "suzmoq"] },
+      { q: "fly", ans: "uchmoq", opts: ["uchmoq", "ekmoq", "bo'yamoq", "sindirmoq"] },
+      { q: "win", ans: "yutmoq, g'alaba qozonmoq", opts: ["yutmoq, g'alaba qozonmoq", "yo'qotmoq", "unutmoq", "topmoq"] },
+
+      // 2-KUN (10 ta so'z)
+      { q: "finish", ans: "tugatmoq", opts: ["tugatmoq", "davom ettirmoq", "qidirmoq", "qatnashmoq"] },
+      { q: "complete", ans: "to'liq bajarmoq", opts: ["to'liq bajarmoq", "boshlamoq", "qabul qilmoq", "unutmoq"] },
+      { q: "prepare", ans: "tayyorlamoq", opts: ["tayyorlamoq", "ta'mirlamoq", "to'plamoq", "taklif qilmoq"] },
+      { q: "receive", ans: "qabul qilmoq, olmoq", opts: ["qabul qilmoq, olmoq", "jo'natmoq", "yig'moq", "mashq qilmoq"] },
+      { q: "send", ans: "jo'natmoq", opts: ["jo'natmoq", "qabul qilmoq", "kutmoq", "yo'qotmoq"] },
+      { q: "begin", ans: "boshlamoq", opts: ["boshlamoq", "tugatmoq", "qolmoq", "ochmoq"] },
+      { q: "lose", ans: "yo'qotmoq", opts: ["yo'qotmoq", "topmoq", "yutmoq", "tanlamoq"] },
+      { q: "pass", ans: "muvaffaqiyatli topshirmoq", opts: ["muvaffaqiyatli topshirmoq", "yiqilmoq", "boshlamoq", "qidirmoq"] },
+      { q: "reply", ans: "javob bermoq", opts: ["javob bermoq", "savol bermoq", "qo'ng'iroq qilmoq", "yozmoq"] },
+      { q: "deliver", ans: "yetkazib bermoq", opts: ["yetkazib bermoq", "olib ketmoq", "yubormoq", "sotib olmoq"] },
+
+      // 3-KUN (10 ta so'z)
+      { q: "recently", ans: "yaqinda, shu kunlarda", opts: ["yaqinda, shu kunlarda", "allaqachon", "hali", "...oldin"] },
+      { q: "already", ans: "allaqachon", opts: ["allaqachon", "hali", "hech qachon", "yaqinda"] },
+      { q: "yet", ans: "hali", opts: ["hali", "allaqachon", "hozirgina", "doimo"] },
+      { q: "ago", ans: "...oldin (Past Simple)", opts: ["...oldin (Past Simple)", "...dan beri", "hozirgina", "yaqinda"] },
+      { q: "break", ans: "sindirmoq", opts: ["sindirmoq", "tuzatmoq", "qurmoq", "ochmoq"] },
+      { q: "grow up", ans: "voyaga yetmoq, o'smoq", opts: ["voyaga yetmoq, o'smoq", "ko'chmoq", "o'zgarmoq", "tug'ilmoq"] },
+      { q: "improve", ans: "yaxshilamoq, rivojlantirmoq", opts: ["yaxshilamoq, rivojlantirmoq", "o'zgartirmoq", "sindirmoq", "anglab yetmoq"] },
+      { q: "achieve", ans: "erishmoq", opts: ["erishmoq", "tegishli bo'lmoq", "tashkil qilmoq", "davom etmoq"] },
+      { q: "change", ans: "o'zgarmoq, o'zgartirmoq", opts: ["o'zgarmoq, o'zgartirmoq", "qolmoq", "ko'chmoq", "yaxshilamoq"] },
+      { q: "move", ans: "ko'chmoq, harakatlanmoq", opts: ["ko'chmoq, harakatlanmoq", "qolmoq", "yashamoq", "sotmoq"] },
+
+      // 4-KUN (10 ta so'z)
+      { q: "last", ans: "davom etmoq", opts: ["davom etmoq", "tugamoq", "boshlanmoq", "qolmoq"] },
+      { q: "continue", ans: "davom ettirmoq", opts: ["davom ettirmoq", "to'xtatmoq", "boshlamoq", "o'zgartirmoq"] },
+      { q: "belong", ans: "tegishli bo'lmoq", opts: ["tegishli bo'lmoq", "egalik qilmoq", "qolmoq", "mavjud bo'lmoq"] },
+      { q: "own", ans: "egalik qilmoq", opts: ["egalik qilmoq", "sotib olmoq", "ijaraga olmoq", "yo'qotmoq"] },
+      { q: "collect", ans: "yig'moq, to'plamoq", opts: ["yig'moq, to'plamoq", "tarqatmoq", "sarflamoq", "ekmoq"] },
+      { q: "develop", ans: "rivojlantirmoq, rivojlanmoq", opts: ["rivojlantirmoq, rivojlanmoq", "buzmoq", "qurmoq", "to'xtatmoq"] },
+      { q: "remain", ans: "qolmoq, saqlanib qolmoq", opts: ["qolmoq, saqlanib qolmoq", "ketmoq", "o'zgarmoq", "tark etmoq"] },
+      { q: "increase", ans: "oshmoq, ko'paymoq", opts: ["oshmoq, ko'paymoq", "kamaymoq", "tushmoq", "to'xtamoq"] },
+      { q: "support", ans: "qo'llab-quvvatlamoq", opts: ["qo'llab-quvvatlamoq", "qarshi chiqmoq", "rad etmoq", "yordam bermaslik"] },
+      { q: "attend", ans: "qatnashmoq, bormoq", opts: ["qatnashmoq, bormoq", "tashkil qilmoq", "rad etmoq", "taklif qilmoq"] },
+
+      // 5-KUN (10 ta so'z)
+      { q: "practice", ans: "mashq qilmoq", opts: ["mashq qilmoq", "tadqiq qilmoq", "muhokama qilmoq", "bezamoq"] },
+      { q: "research", ans: "tadqiq qilmoq, o'rganmoq", opts: ["tadqiq qilmoq, o'rganmoq", "o'qitmoq", "yozmoq", "ta'mirlamoq"] },
+      { q: "train", ans: "mashg'ulot qilmoq, shug'ullanmoq", opts: ["mashg'ulot qilmoq, shug'ullanmoq", "ta'mirlamoq", "ekmoq", "izlamoq"] },
+      { q: "repair", ans: "ta'mirlamoq", opts: ["ta'mirlamoq", "bo'yamoq", "bezamoq", "buzmoq"] },
+      { q: "paint", ans: "bo'yamoq", opts: ["bo'yamoq", "tozalamoq", "chizmoq", "qurmoq"] },
+      { q: "plant", ans: "ekmoq, o'tqazmoq", opts: ["ekmoq, o'tqazmoq", "yulib olmoq", "sug'ormoq", "kesmoq"] },
+      { q: "discuss", ans: "muhokama qilmoq", opts: ["muhokama qilmoq", "bahslashmoq", "tinglamoq", "gapirmaslik"] },
+      { q: "organize", ans: "tashkil qilmoq, tartibga solmoq", opts: ["tashkil qilmoq, tartibga solmoq", "buzmoq", "qoldirmoq", "bekor qilmoq"] },
+      { q: "search", ans: "izlamoq, qidirmoq", opts: ["izlamoq, qidirmoq", "topmoq", "yo'qotmoq", "saqlamoq"] },
+      { q: "decorate", ans: "bezamoq", opts: ["bezamoq", "buzmoq", "tozalamoq", "bo'yamoq"] },
+
+      // 6-KUN (10 ta so'z)
+      { q: "realize", ans: "anglab yetmoq, tushunib yetmoq", opts: ["anglab yetmoq, tushunib yetmoq", "tanib olmoq", "taxmin qilmoq", "tuyulmoq"] },
+      { q: "recognize", ans: "tanib olmoq", opts: ["tanib olmoq", "anglab yetmoq", "mavjud bo'lmoq", "hisoblamoq"] },
+      { q: "exist", ans: "mavjud bo'lmoq", opts: ["mavjud bo'lmoq", "yo'qolmoq", "paydo bo'lmoq", "yashamoq"] },
+      { q: "depend", ans: "bog'liq bo'lmoq", opts: ["bog'liq bo'lmoq", "jalb qilmoq", "paydo bo'lmoq", "tegishli bo'lmoq"] },
+      { q: "consider", ans: "hisoblamoq, ko'rib chiqmoq", opts: ["hisoblamoq, ko'rib chiqmoq", "rad etmoq", "unutmoq", "tan olmaslik"] },
+      { q: "suppose", ans: "taxmin qilmoq, deb o'ylamoq", opts: ["taxmin qilmoq, deb o'ylamoq", "aniq bilmoq", "isbotlamoq", "rad qilmoq"] },
+      { q: "contain", ans: "o'z ichiga olmoq", opts: ["o'z ichiga olmoq", "tashqarida qoldirmoq", "tarqatmoq", "saqlamaslik"] },
+      { q: "involve", ans: "jalb qilmoq, o'z ichiga olmoq", opts: ["jalb qilmoq, o'z ichiga olmoq", "chetlatmoq", "to'xtatmoq", "ajratmoq"] },
+      { q: "appear", ans: "paydo bo'lmoq, ko'rinmoq", opts: ["paydo bo'lmoq, ko'rinmoq", "yo'qolmoq", "ketmoq", "yashirinmoq"] },
+      { q: "seem", ans: "tuyulmoq, ko'rinmoq", opts: ["tuyulmoq, ko'rinmoq", "aniq bo'lmoq", "eshitilmoq", "sezilmoq"] }
+    ];
+
+    const LEVEL_CHECK_OPEN_QUESTIONS = [
+      // 1-KUN (2 ta)
+      { q: "Gapni inglizchaga tarjima qiling: 'Men hech qachon ot minmaganman.' (ride, never)", ans: ["i have never ridden a horse", "i've never ridden a horse"] },
+      { q: "Farqini yozing: 'U Londonga ketgan va hali qaytmagan.' (been yoki gone?)", ans: ["he has gone to london", "she has gone to london", "he's gone to london", "she's gone to london"] },
+
+      // 2-KUN (2 ta)
+      { q: "Tarjima qiling: 'U allaqachon kechki ovqatni tayyorlab qo'ygan.' (already, prepare)", ans: ["she has already prepared dinner", "he has already prepared dinner", "she's already prepared dinner", "he's already prepared dinner"] },
+      { q: "Xatoni tuzating: 'I didn't finish my homework yet.'", ans: ["i haven't finished my homework yet", "i have not finished my homework yet", "i haven't finished my hw yet"] },
+
+      // 3-KUN (2 ta)
+      { q: "Xatoni tuzating: 'I have visited Rome last December.'", ans: ["i visited rome last december"] },
+      { q: "Tarjima qiling: 'Biz bu yangi uyga 3 oy oldin ko'chdik.' (ago, move)", ans: ["we moved to this new house 3 months ago", "we moved here 3 months ago", "we moved to this house three months ago"] },
+
+      // 4-KUN (2 ta)
+      { q: "FOR yoki SINCE? 'I have known her ______ 2018.'", ans: ["since"] },
+      { q: "Tarjima qiling: 'Siz qanchadan beri bu kompaniyada ishlaysiz?' (How long)", ans: ["how long have you worked at this company", "how long have you worked in this company", "how long have you been working at this company"] },
+
+      // 5-KUN (2 ta)
+      { q: "Gapni to'ldiring: 'It ______________ (rain) since morning — the streets are wet.' (PPC)", ans: ["has been raining", "has been raining since morning"] },
+      { q: "PP Simple yoki PPC? 'I ______________ (read) 3 chapters of this book today.'", ans: ["have read", "have read 3 chapters"] },
+
+      // 6-KUN (2 ta)
+      { q: "PP Simple yoki PPC? 'I ______________ (own) this car for 3 years.'", ans: ["have owned"] },
+      { q: "3 ta gapda yozing: kecha nima qildingiz (PS), hayotingizda qilgan narsa (PP), va hozir nima bilan bandsiz (PPC).", isFreeForm: true }
+    ];
+
+    let currentDay = 1;
+    let currentSection = "slides";
+    let studentName = "";
+    let isTeacher = false;
+
+    // Slide State
+    let currentSlideIdx = 0;
+
+    // Flashcard State
+    let cardIdx = 0;
+
+    // Practice / Quiz State
+    let practiceIdx = 0;
+    let practiceAnswers = [];
+
+    // Day 7 Vocab Quiz State
+    let vocabQuizIdx = 0;
+    let vocabQuizAnswers = [];
+
+    // Day 7 Open Questions State
+    let openQuestionsScores = {};
+
+    function init() {
+      const stored = localStorage.getItem("ulunur_student_name");
+      if (stored) {
+        studentName = stored;
+        updateUserMode();
+        document.getElementById("name-modal").style.display = "none";
+      } else {
+        openNameModal();
+      }
+
+      refreshScheduleTabs();
+      loadDayContent(1);
+
+      window.addEventListener("keydown", (e) => {
+        if (currentSection !== "slides") return;
+        if (e.key === "ArrowRight" || e.key === " ") {
+          nextSlide();
+        } else if (e.key === "ArrowLeft") {
+          prevSlide();
+        }
+      });
+    }
+
+    function checkModalName(val) {
+      const isU = val.trim().toLowerCase() === "ulunur";
+      document.getElementById("modal-hint").style.display = isU ? "block" : "none";
+    }
+
+    function openNameModal() {
+      document.getElementById("name-modal").style.display = "flex";
+      if (studentName) {
+        document.getElementById("modal-name-input").value = studentName;
+        checkModalName(studentName);
+      }
+      setTimeout(() => {
+        document.getElementById("modal-name-input").focus();
+      }, 100);
+    }
+
+    function saveName() {
+      const val = document.getElementById("modal-name-input").value.trim();
+      if (!val) {
+        alert("Iltimos, ismingizni kiriting!");
+        return;
+      }
+      studentName = val;
+      localStorage.setItem("ulunur_student_name", studentName);
+      document.getElementById("name-modal").style.display = "none";
+      updateUserMode();
+      refreshScheduleTabs();
+      loadDayContent(currentDay || 1);
+    }
+
+    function updateUserMode() {
+      isTeacher = studentName.trim().toLowerCase() === "ulunur";
+      const teacherBadge = document.getElementById("teacher-badge");
+      teacherBadge.style.display = isTeacher ? "inline-flex" : "none";
+
+      const userGreeting = document.getElementById("user-greeting");
+      userGreeting.innerHTML = isTeacher 
+        ? `👑 <strong>Ulunur Ustoz (O'qituvchi Rejimi)</strong>` 
+        : `Xush kelibsiz, <strong>${studentName}</strong>! 👋`;
+    }
+
+    function isDayUnlocked(dayNum) {
+      if (isTeacher) return true;
+      if (dayNum === 1) return true;
+      return localStorage.getItem("ulunur_hw_done_" + (dayNum - 1)) === "true";
+    }
+
+    function refreshScheduleTabs() {
+      const container = document.getElementById("schedule-grid");
+      container.innerHTML = "";
+
+      for (let d = 1; d <= 7; d++) {
+        const unlocked = isDayUnlocked(d);
+        const tab = document.createElement("div");
+        tab.className = `day-tab ${unlocked ? "" : "locked"} ${d === currentDay ? "active" : ""}`;
+        tab.id = `tab-day-${d}`;
+        
+        let statusText = unlocked ? (d === 7 ? "🏆 Katta Sinov" : "Ochiq ✨") : "🔒 Yopiq";
+        let titleText = unlocked ? COURSE_DAYS[d].title : `🔒 Oldingi vazifani topshiring`;
+
+        tab.innerHTML = `
+          <div class="day-tab-date">
+            <span>${COURSE_DAYS[d].shortDate}</span>
+            <span>${statusText}</span>
+          </div>
+          <div class="day-tab-title">${titleText}</div>
+        `;
+
+        tab.onclick = () => handleDayClick(d);
+        container.appendChild(tab);
+      }
+    }
+
+    function handleDayClick(dayNum) {
+      if (!isDayUnlocked(dayNum)) {
+        alert(`🔒 Bu dars yopiq!\nAvval ${dayNum - 1}-kunning barcha uyga vazifalarini to'liq yozib topshiring.`);
+        return;
+      }
+      currentDay = dayNum;
+      refreshScheduleTabs();
+      loadDayContent(dayNum);
+    }
+
+    function loadDayContent(dayNum) {
+      const data = COURSE_DAYS[dayNum];
+
+      // 1. Slides Deck
+      currentSlideIdx = 0;
+      renderActiveSlide();
+
+      // 2. Lesson
+      document.getElementById("lesson-html").innerHTML = data.lessonHtml;
+
+      // 3. Flashcards
+      cardIdx = 0;
+      updateFlashcardUI();
+
+      // 4. Practice / Level Check Hub
+      practiceIdx = 0;
+      practiceAnswers = [];
+      vocabQuizIdx = 0;
+      vocabQuizAnswers = [];
+      openQuestionsScores = {};
+      document.getElementById("diagnostic-report-box").style.display = "none";
+
+      const day7Nav = document.getElementById("day7-hub-nav");
+      if (dayNum === 7) {
+        day7Nav.style.display = "block";
+        switchLcModule("tenses");
+        renderOpenQuestionsModule();
+      } else {
+        day7Nav.style.display = "none";
+        document.getElementById("lc-module-tenses").style.display = "block";
+        document.getElementById("lc-module-vocab").style.display = "none";
+        document.getElementById("lc-module-open").style.display = "none";
+      }
+
+      loadPracticeQuestion();
+
+      // 5. Homework
+      if (dayNum === 7) {
+        document.getElementById("hw-prompt-text").innerHTML = "<strong>🏆 2-HAFTALIK KATTA LEVEL CHECK</strong><br>Barcha 3 ta modulni ishlagach, 'Level Check & Testlar' bo'limi orqali natijani ustozga yuboring.";
+        document.getElementById("hw-textarea").style.display = "none";
+        document.getElementById("hw-submit-btn").style.display = "none";
+      } else {
+        document.getElementById("hw-prompt-text").innerHTML = data.hwPrompt;
+        document.getElementById("hw-textarea").style.display = "block";
+        document.getElementById("hw-textarea").value = "";
+        document.getElementById("hw-submit-btn").style.display = "inline-flex";
+        document.getElementById("hw-submit-btn").disabled = false;
+        document.getElementById("hw-submit-btn").textContent = "Ustozga Yuborish (Telegram) 🚀";
+      }
+      document.getElementById("hw-toast").style.display = "none";
+
+      switchSection(currentSection);
+    }
+
+    function switchSection(sec) {
+      currentSection = sec;
+      const sections = ["slides", "lesson", "vocab", "practice", "hw"];
+      sections.forEach(s => {
+        const el = document.getElementById(`section-${s}`);
+        if (el) el.style.display = (s === sec) ? "block" : "none";
+
+        const btn = document.getElementById(`sec-btn-${s}`);
+        if (btn) {
+          if (s === sec) btn.classList.add("active");
+          else btn.classList.remove("active");
+        }
+      });
+    }
+
+    function switchLcModule(mod) {
+      const mods = ["tenses", "vocab", "open"];
+      mods.forEach(m => {
+        const el = document.getElementById(`lc-module-${m}`);
+        const pill = document.getElementById(`pill-btn-${m}`);
+        if (el) el.style.display = (m === mod) ? "block" : "none";
+        if (pill) {
+          if (m === mod) pill.classList.add("active");
+          else pill.classList.remove("active");
+        }
+      });
+
+      if (mod === "vocab" && vocabQuizIdx === 0 && vocabQuizAnswers.length === 0) {
+        loadVocabQuizQuestion();
+      }
+    }
+
+    // ==========================================
+    // PRESENTATION SLIDES CONTROLLER
+    // ==========================================
+    function renderActiveSlide() {
+      const slides = COURSE_DAYS[currentDay].slides || [];
+      if (slides.length === 0) return;
+
+      const slide = slides[currentSlideIdx];
+      const viewport = document.getElementById("slide-viewport");
+
+      viewport.innerHTML = `
+        <div class="slide-tag">${slide.tag}</div>
+        <div class="slide-title">${slide.title}</div>
+        <div class="slide-body">${slide.html}</div>
+      `;
+
+      const dotsContainer = document.getElementById("ppt-dots-container");
+      dotsContainer.innerHTML = "";
+      slides.forEach((_, idx) => {
+        const dot = document.createElement("div");
+        dot.className = `ppt-dot ${idx === currentSlideIdx ? 'active' : ''}`;
+        dot.onclick = () => goToSlide(idx);
+        dotsContainer.appendChild(dot);
+      });
+
+      document.getElementById("btn-prev-slide").disabled = (currentSlideIdx === 0);
+      document.getElementById("btn-next-slide").disabled = (currentSlideIdx === slides.length - 1);
+    }
+
+    function nextSlide() {
+      const slides = COURSE_DAYS[currentDay].slides || [];
+      if (currentSlideIdx < slides.length - 1) {
+        currentSlideIdx++;
+        renderActiveSlide();
+      }
+    }
+
+    function prevSlide() {
+      if (currentSlideIdx > 0) {
+        currentSlideIdx--;
+        renderActiveSlide();
+      }
+    }
+
+    function goToSlide(idx) {
+      currentSlideIdx = idx;
+      renderActiveSlide();
+    }
+
+    function toggleFullscreen() {
+      const frame = document.getElementById("presentation-frame");
+      if (!document.fullscreenElement) {
+        frame.requestFullscreen().catch(err => {
+          alert(`Fullscreen xatosi: ${err.message}`);
+        });
+      } else {
+        document.exitFullscreen();
+      }
+    }
+
+    // ==========================================
+    // FLASHCARDS CONTROLLER
+    // ==========================================
+    function flipCard() {
+      const card = document.getElementById("flashcard-el");
+      card.classList.toggle("flipped");
+    }
+
+    function updateFlashcardUI() {
+      const list = COURSE_DAYS[currentDay].vocab;
+      if (!list || list.length === 0) return;
+
+      const c = list[cardIdx];
+      const card = document.getElementById("flashcard-el");
+      card.classList.remove("flipped");
+
+      document.getElementById("fc-pos").textContent = c.pos;
+      document.getElementById("fc-word").textContent = c.word;
+      document.getElementById("fc-uz").textContent = c.uz;
+      document.getElementById("fc-ex-en").textContent = `"${c.exEn}"`;
+      document.getElementById("fc-ex-uz").textContent = c.exUz;
+
+      document.getElementById("fc-counter").textContent = `${cardIdx + 1} / ${list.length}`;
+    }
+
+    function nextCard() {
+      const list = COURSE_DAYS[currentDay].vocab;
+      if (cardIdx < list.length - 1) {
+        cardIdx++;
+        updateFlashcardUI();
+      }
+    }
+
+    function prevCard() {
+      if (cardIdx > 0) {
+        cardIdx--;
+        updateFlashcardUI();
+      }
+    }
+
+    // ==========================================
+    // STEP-BY-STEP PRACTICE & LEVEL CHECK QUIZ
+    // ==========================================
+    function loadPracticeQuestion() {
+      const list = COURSE_DAYS[currentDay].practice;
+      const q = list[practiceIdx];
+
+      document.getElementById("pq-counter").textContent = `Savol ${practiceIdx + 1} / ${list.length}`;
+      document.getElementById("pq-category").textContent = q.cat || "Grammar Focus";
+      document.getElementById("pq-title").textContent = q.q;
+
+      const optsBox = document.getElementById("pq-options");
+      optsBox.innerHTML = "";
+
+      const letters = ["A", "B", "C", "D"];
+      q.opts.forEach((opt, idx) => {
+        const btn = document.createElement("button");
+        btn.className = "quiz-opt-btn";
+        btn.innerHTML = `<span style="width: 22px; height: 22px; border-radius: 6px; background: rgba(255,255,255,0.08); display: inline-flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700;">${letters[idx]}</span><span>${opt}</span>`;
+        btn.onclick = () => selectPracticeOpt(opt, btn);
+        optsBox.appendChild(btn);
+      });
+
+      document.getElementById("pq-expl").style.display = "none";
+      document.getElementById("pq-next-btn").style.display = "none";
+    }
+
+    function selectPracticeOpt(selectedText, btnEl) {
+      const list = COURSE_DAYS[currentDay].practice;
+      const q = list[practiceIdx];
+
+      const isCorrect = selectedText === q.ans;
+      practiceAnswers.push({
+        qNum: practiceIdx + 1,
+        question: q.q,
+        dayTopic: q.dayTopic || "General",
+        category: q.cat || "Grammar",
+        chosen: selectedText,
+        correctAns: q.ans,
+        isCorrect: isCorrect
+      });
+
+      const allBtns = document.querySelectorAll("#pq-options .quiz-opt-btn");
+      allBtns.forEach(b => {
+        b.disabled = true;
+        const text = b.querySelectorAll("span")[1].textContent;
+        if (text === q.ans) b.classList.add("correct");
+      });
+
+      if (!isCorrect) {
+        btnEl.classList.add("wrong");
+      }
+
+      const explBox = document.getElementById("pq-expl");
+      explBox.style.display = "block";
+      explBox.style.borderLeftColor = isCorrect ? "var(--emerald)" : "var(--rose)";
+      explBox.innerHTML = `<strong>${isCorrect ? "✅ To'g'ri!" : "❌ Tushuntirish:"}</strong> ${q.expl}`;
+
+      const nextBtn = document.getElementById("pq-next-btn");
+      nextBtn.style.display = "inline-flex";
+
+      if (practiceIdx === list.length - 1) {
+        nextBtn.textContent = (currentDay === 7) ? "2-Modul: Lug'at Sinoviga O'tish ⚡" : "Natijani Ko'rish 📊";
+      } else {
+        nextBtn.textContent = "Keyingi savol →";
+      }
+    }
+
+    function nextPracticeQuestion() {
+      const list = COURSE_DAYS[currentDay].practice;
+      if (practiceIdx < list.length - 1) {
+        practiceIdx++;
+        loadPracticeQuestion();
+      } else {
+        if (currentDay === 7) {
+          document.getElementById("pill-btn-tenses").classList.add("completed");
+          switchLcModule("vocab");
+        } else {
+          renderDiagnosticReport();
+        }
+      }
+    }
+
+    // ==========================================
+    // MODULE 2: VOCABULARY QUIZ (DAY 7)
+    // ==========================================
+    function loadVocabQuizQuestion() {
+      const list = LEVEL_CHECK_VOCAB;
+      const q = list[vocabQuizIdx];
+
+      document.getElementById("vq-counter").textContent = `So'z ${vocabQuizIdx + 1} / ${list.length}`;
+      document.getElementById("vq-title").textContent = q.q;
+
+      const optsBox = document.getElementById("vq-options");
+      optsBox.innerHTML = "";
+
+      const shuffled = [...q.opts].sort(() => Math.random() - 0.5);
+      shuffled.forEach((opt, idx) => {
+        const btn = document.createElement("button");
+        btn.className = "quiz-opt-btn";
+        btn.innerHTML = `<span style="font-weight: 700; color: #38bdf8;">${idx + 1}.</span> <span>${opt}</span>`;
+        btn.onclick = () => selectVocabQuizOpt(opt, btn);
+        optsBox.appendChild(btn);
+      });
+
+      document.getElementById("vq-expl").style.display = "none";
+      document.getElementById("vq-next-btn").style.display = "none";
+    }
+
+    function selectVocabQuizOpt(selectedOpt, btnEl) {
+      const list = LEVEL_CHECK_VOCAB;
+      const q = list[vocabQuizIdx];
+
+      const isCorrect = selectedOpt === q.ans;
+      vocabQuizAnswers.push({
+        word: q.q,
+        chosen: selectedOpt,
+        correct: q.ans,
+        isCorrect: isCorrect
+      });
+
+      const allBtns = document.querySelectorAll("#vq-options .quiz-opt-btn");
+      allBtns.forEach(b => {
+        b.disabled = true;
+        const text = b.querySelectorAll("span")[1].textContent;
+        if (text === q.ans) b.classList.add("correct");
+      });
+
+      if (!isCorrect) {
+        btnEl.classList.add("wrong");
+      }
+
+      const explBox = document.getElementById("vq-expl");
+      explBox.style.display = "block";
+      explBox.style.borderLeftColor = isCorrect ? "var(--emerald)" : "var(--rose)";
+      explBox.innerHTML = isCorrect 
+        ? `<strong>✅ To'g'ri!</strong> <i>"${q.q}"</i> = ${q.ans}` 
+        : `<strong>❌ To'g'ri tarjima:</strong> <i>"${q.q}"</i> = <b>${q.ans}</b>`;
+
+      const nextBtn = document.getElementById("vq-next-btn");
+      nextBtn.style.display = "inline-flex";
+
+      if (vocabQuizIdx === list.length - 1) {
+        nextBtn.textContent = "3-Modul: Ochiq Yozma Savollarga O'tish ✍️";
+      } else {
+        nextBtn.textContent = "Keyingi so'z →";
+      }
+    }
+
+    function nextVocabQuizQuestion() {
+      const list = LEVEL_CHECK_VOCAB;
+      if (vocabQuizIdx < list.length - 1) {
+        vocabQuizIdx++;
+        loadVocabQuizQuestion();
+      } else {
+        document.getElementById("pill-btn-vocab").classList.add("completed");
+        switchLcModule("open");
+      }
+    }
+
+    // ==========================================
+    // MODULE 3: OPEN TYPED QUESTIONS (DAY 7)
+    // ==========================================
+    function renderOpenQuestionsModule() {
+      const container = document.getElementById("open-questions-container");
+      container.innerHTML = "";
+
+      LEVEL_CHECK_OPEN_QUESTIONS.forEach((oq, idx) => {
+        const qNum = idx + 1;
+        const div = document.createElement("div");
+        div.className = "open-q-box";
+
+        if (oq.isFreeForm) {
+          div.innerHTML = `
+            <div class="open-q-title"><b>${qNum}.</b> ${oq.q}</div>
+            <textarea id="open-ans-${qNum}" class="open-q-input" style="height: 100px; resize: vertical;" placeholder="Ingliz tilida 3 ta gap yozing..."></textarea>
+            <button class="btn-secondary" onclick="checkOpenAnswer(${qNum}, [], true)">Javobni Saqlash ✨</button>
+            <div class="open-q-feedback" id="open-feed-${qNum}"></div>
+          `;
+        } else {
+          div.innerHTML = `
+            <div class="open-q-title"><b>${qNum}.</b> ${oq.q}</div>
+            <input type="text" id="open-ans-${qNum}" class="open-q-input" placeholder="Javobingizni yozing...">
+            <button class="btn-secondary" onclick="checkOpenAnswer(${qNum}, ${JSON.stringify(oq.ans).replace(/"/g, '&quot;')}, false)">Javobni Tekshirish ✨</button>
+            <div class="open-q-feedback" id="open-feed-${qNum}"></div>
+          `;
+        }
+        container.appendChild(div);
+      });
+    }
+
+    function checkOpenAnswer(qNum, acceptedAnswers, isFree) {
+      const input = document.getElementById(`open-ans-${qNum}`);
+      const val = input.value.trim();
+      const feed = document.getElementById(`open-feed-${qNum}`);
+
+      if (!val) {
+        alert("Iltimos, avval javobingizni yozing!");
+        return;
+      }
+
+      feed.style.display = "block";
+
+      if (isFree) {
+        openQuestionsScores[qNum] = {
+          studentText: val,
+          isCorrect: true,
+          isFree: true
+        };
+        feed.className = "open-q-feedback check";
+        feed.innerHTML = `💡 <b>Saqlandi!</b> Javobingiz to'g'ridan-to'g'ri ustozga tahlil uchun yuboriladi.`;
+        return;
+      }
+
+      const cleanVal = val.toLowerCase().replace(/[.,\/#!$%\^&\*;:{}=\-_`~()']/g, "").replace(/\s+/g, " ");
+      const cleanAccepted = acceptedAnswers.map(a => a.toLowerCase().replace(/[.,\/#!$%\^&\*;:{}=\-_`~()']/g, "").replace(/\s+/g, " "));
+      
+      const isCorrect = cleanAccepted.some(a => cleanVal.includes(a) || a.includes(cleanVal));
+
+      openQuestionsScores[qNum] = {
+        studentText: val,
+        isCorrect: isCorrect,
+        modelAnswer: acceptedAnswers[0]
+      };
+
+      if (isCorrect) {
+        feed.className = "open-q-feedback correct";
+        feed.innerHTML = `✅ <b>A'lo!</b> Javobingiz to'g'ri qabul qilindi.`;
+      } else {
+        feed.className = "open-q-feedback check";
+        feed.innerHTML = `💡 <b>Ustoz andozasi:</b> <i>"${acceptedAnswers[0]}"</i> (Sizning kiritganingiz: "${val}")`;
+      }
+    }
+
+    function finishAllLevelChecks() {
+      document.getElementById("pill-btn-open").classList.add("completed");
+      renderDiagnosticReport();
+    }
+
+    // ==========================================
+    // DIAGNOSTIC REPORT GENERATOR
+    // ==========================================
+    function renderDiagnosticReport() {
+      const reportBox = document.getElementById("diagnostic-report-box");
+      reportBox.style.display = "block";
+
+      if (currentDay === 7) {
+        const grammarCorrect = practiceAnswers.filter(a => a.isCorrect).length;
+        const vocabCorrect = vocabQuizAnswers.filter(a => a.isCorrect).length;
+        const openAnswered = Object.keys(openQuestionsScores).length;
+
+        const totalScorePercent = Math.round(((grammarCorrect + vocabCorrect) / (practiceAnswers.length + vocabQuizAnswers.length)) * 100);
+
+        let evalText = "";
+        if (totalScorePercent >= 85) {
+          evalText = "🏆 <b>A'lo Natija (B2 Reach):</b> Present Perfect, For/Since davomiylik va stative fe'llarni a'lo darajada o'zlashtirgansiz!";
+        } else if (totalScorePercent >= 70) {
+          evalText = "✨ <b>Yaxshi Natija (B1+ Strong):</b> Mavzular yaxshi tushunilgan. Faqat vaqt ko'rsatkichlari (Past Simple vs PP) yoki stative tuzoqlarga ozgina e'tibor qarating.";
+        } else {
+          evalText = "⚠️ <b>Mustahkamlash Tavsiya Etiladi:</b> O'tgan zamon va Present Perfect qiyosini yana bir bor takrorlash lozim.";
+        }
+
+        document.getElementById("diag-title").innerHTML = `🏆 2-Haftalik Multi-Module Diagnostika: ${totalScorePercent}%`;
+        document.getElementById("diag-desc").innerHTML = evalText;
+
+        let breakdownHtml = `
+          <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 14px;">
+            <div style="background: rgba(11, 17, 32, 0.8); padding: 10px; border-radius: 10px; border: 1px solid #1e293b;">
+              <strong style="color: #38bdf8;">⏱️ Grammatika:</strong><br>${grammarCorrect} / ${practiceAnswers.length} to'g'ri
+            </div>
+            <div style="background: rgba(11, 17, 32, 0.8); padding: 10px; border-radius: 10px; border: 1px solid #1e293b;">
+              <strong style="color: #34d399;">⚡ 60 ta Lug'at:</strong><br>${vocabCorrect} / ${vocabQuizAnswers.length} to'g'ri
+            </div>
+            <div style="background: rgba(11, 17, 32, 0.8); padding: 10px; border-radius: 10px; border: 1px solid #1e293b;">
+              <strong style="color: #f59e0b;">✍️ Ochiq Savollar:</strong><br>${openAnswered} / ${LEVEL_CHECK_OPEN_QUESTIONS.length} ta topshirildi
+            </div>
+          </div>
+          <b>Ochiq Savollarga Yozilgan Javoblaringiz:</b><br>
+        `;
+
+        for (let i = 1; i <= LEVEL_CHECK_OPEN_QUESTIONS.length; i++) {
+          const ans = openQuestionsScores[i];
+          if (ans) {
+            breakdownHtml += `${ans.isCorrect ? '✅' : '💡'} <b>${i}.</b> "${ans.studentText}"<br>`;
+          }
+        }
+
+        document.getElementById("diag-breakdown").innerHTML = breakdownHtml;
+
+      } else {
+        const correctCount = practiceAnswers.filter(a => a.isCorrect).length;
+        const percent = Math.round((correctCount / practiceAnswers.length) * 100);
+        document.getElementById("diag-title").innerHTML = `🏆 Natijangiz: ${correctCount} / ${practiceAnswers.length} (${percent}%)`;
+        document.getElementById("diag-desc").innerHTML = `Kunlik mashq testi muvaffaqiyatli yakunlandi.`;
+      }
+
+      reportBox.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // ==========================================
+    // TELEGRAM DISPATCH LOGIC
+    // ==========================================
+    async function sendFullLevelCheckToTelegram() {
+      const btn = document.getElementById("btn-send-test-result");
+      btn.disabled = true;
+      btn.textContent = "Yuborilmoqda...";
+
+      if (isTeacher) {
+        alert("🛡️ Ulunur rejimi: Diagnostika tekshirildi (Telegramga yuborish o'chirilgan).");
+        btn.textContent = "Yuborildi ✨";
+        return;
+      }
+
+      const grammarCorrect = practiceAnswers.filter(a => a.isCorrect).length;
+      const vocabCorrect = vocabQuizAnswers.filter(a => a.isCorrect).length;
+      const totalScorePercent = Math.round(((grammarCorrect + vocabCorrect) / (practiceAnswers.length + vocabQuizAnswers.length)) * 100);
+      const time = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+
+      // Topic Statistics
+      const topicStats = {
+        "1": { name: "1-Kun (Experience: ever/never/V3)", c: 0, t: 0 },
+        "2": { name: "2-Kun (Recent: just/already/yet)", c: 0, t: 0 },
+        "3": { name: "3-Kun (PP vs Past Simple)", c: 0, t: 0 },
+        "4": { name: "4-Kun (FOR / SINCE Duration)", c: 0, t: 0 },
+        "5": { name: "5-Kun (PP Continuous)", c: 0, t: 0 },
+        "6": { name: "6-Kun (Stative vs Action)", c: 0, t: 0 }
+      };
+      practiceAnswers.forEach(a => {
+        if (topicStats[a.dayTopic]) {
+          topicStats[a.dayTopic].t++;
+          if (a.isCorrect) topicStats[a.dayTopic].c++;
+        }
+      });
+
+      let msg = `📊 <b>2-HAFTALIK KATTA LEVEL CHECK REPORT</b>\n`;
+      msg += `━━━━━━━━━━━━━━━━━━━━\n`;
+      msg += `👤 <b>O'quvchi:</b> ${studentName}\n`;
+      msg += `🎯 <b>Umumiy Natija:</b> ${totalScorePercent}%\n`;
+      msg += `⏱️ <b>Grammatika (24 ta):</b> ${grammarCorrect} / ${practiceAnswers.length}\n`;
+      msg += `⚡ <b>Lug'at Sinovi (60 ta):</b> ${vocabCorrect} / ${vocabQuizAnswers.length}\n`;
+      msg += `✍️ <b>Ochiq Savollar (12 ta):</b> ${Object.keys(openQuestionsScores).length} / ${LEVEL_CHECK_OPEN_QUESTIONS.length}\n`;
+      msg += `⏰ <b>Vaqt:</b> ${time}\n\n`;
+
+      msg += `📈 <b>KUNLIK MAVZULAR TAHLILI:</b>\n`;
+      for (let k in topicStats) {
+        msg += `• ${topicStats[k].name}: <b>${topicStats[k].c} / ${topicStats[k].t}</b>\n`;
+      }
+
+      msg += `\n🔍 <b>XATOLAR & NOTO'G'RI JAVOBLAR:</b>\n`;
+      const wrongGrammar = practiceAnswers.filter(a => !a.isCorrect);
+      if (wrongGrammar.length > 0) {
+        wrongGrammar.forEach(w => {
+          msg += `• Q${w.qNum} (${w.category}): ❌ "${w.chosen}" ➔ ✅ "${w.correctAns}"\n`;
+        });
+      } else {
+        msg += `• Grammatikada 0 ta xato! A'lo!\n`;
+      }
+
+      const wrongVocab = vocabQuizAnswers.filter(a => !a.isCorrect);
+      if (wrongVocab.length > 0) {
+        msg += `\n⚡ <b>Lug'atdagi Xatolar:</b>\n`;
+        wrongVocab.forEach(v => {
+          msg += `• "${v.word}": ❌ "${v.chosen}" ➔ ✅ "${v.correct}"\n`;
+        });
+      }
+      
+      msg += `\n✍️ <b>O'QUVCHINING OCHIQ JAVOBLARI (12 ta):</b>\n`;
+      for (let i = 1; i <= LEVEL_CHECK_OPEN_QUESTIONS.length; i++) {
+        const ans = openQuestionsScores[i];
+        if (ans) {
+          msg += `<b>${i}.</b> <i>"${ans.studentText}"</i> (${ans.isCorrect ? '✅' : '💡'})\n`;
+        }
+      }
+      msg += `━━━━━━━━━━━━━━━━━━━━`;
+
+      try {
+        const res = await fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            chat_id: TELEGRAM_CHAT_ID,
+            text: msg,
+            parse_mode: "HTML"
+          })
+        });
+
+        if (res.ok) {
+          alert("✅ Barcha Level Check natijalari va yozma javoblaringiz ustozingizning Telegramiga yetib bordi!");
+          btn.textContent = "Telegramga Muvaffaqiyatli Yuborildi ✨";
+        } else {
+          alert("⚠️ Xatolik yuz berdi. Internetni tekshirib qayta urinib ko'ring.");
+          btn.disabled = false;
+          btn.textContent = "Qayta urinish";
+        }
+      } catch (err) {
+        console.error(err);
+        alert("⚠️ Xatolik yuz berdi.");
+        btn.disabled = false;
+        btn.textContent = "Qayta urinish";
+      }
+    }
+
+    function analyzeHomework(dayNum, text) {
+      const lower = text.toLowerCase();
+      let errors = [];
+      let strengths = [];
+
+      // 1. Specific Grammar Error Traps
+      const traps = [
+        { pattern: /\b(have|has|'ve|'s)\s+went\b/i, error: "❌ 'have/has went' aniqlandi ➔ 💡 To'g'ri shakl: 'have/has gone / been' (V3)" },
+        { pattern: /\b(have|has|'ve|'s)\s+saw\b/i, error: "❌ 'have/has saw' aniqlandi ➔ 💡 To'g'ri shakl: 'have/has seen' (V3)" },
+        { pattern: /\b(have|has|'ve|'s)\s+ate\b/i, error: "❌ 'have/has ate' aniqlandi ➔ 💡 To'g'ri shakl: 'have/has eaten' (V3)" },
+        { pattern: /\b(have|has|'ve|'s)\s+wrote\b/i, error: "❌ 'have/has wrote' aniqlandi ➔ 💡 To'g'ri shakl: 'have/has written' (V3)" },
+        { pattern: /\b(have|has|'ve|'s)\s+broke\b/i, error: "❌ 'have/has broke' aniqlandi ➔ 💡 To'g'ri shakl: 'have/has broken' (V3)" },
+        { pattern: /\b(have|has|'ve|'s)\s+did\b/i, error: "❌ 'have/has did' aniqlandi ➔ 💡 To'g'ri shakl: 'have/has done' (V3)" },
+        { pattern: /\b(have|has|'ve|'s)\s+took\b/i, error: "❌ 'have/has took' aniqlandi ➔ 💡 To'g'ri shakl: 'have/has taken' (V3)" },
+        { pattern: /\b(have|has|'ve|'s)\s+came\b/i, error: "❌ 'have/has came' aniqlandi ➔ 💡 To'g'ri shakl: 'have/has come' (V3)" },
+        { pattern: /\b(she|he|it)\s+have\b/i, error: "❌ 'She/He/It have' aniqlandi ➔ 💡 To'g'ri shakl: 'She/He/It HAS' (3-shaxs birlik)" },
+        { pattern: /\b(i|we|they|you)\s+has\b/i, error: "❌ 'I/We/They/You has' aniqlandi ➔ 💡 To'g'ri shakl: 'I/We/They/You HAVE'" },
+        { pattern: /\b(haven't|hasn't|hadn't|don't|didn't)\s+never\b/i, error: "❌ 'haven't never' (qo'sh inkor) aniqlandi ➔ 💡 To'g'ri shakl: 'have never + V3'" },
+        { pattern: /\b(have|has|'ve|'s)\s+\w+(ed|en|ne|ne|wn|t)\s+(yesterday|last\s+(night|year|month|week|summer|winter|monday|friday)|in\s+(19\d\d|20\d\d))\b/i, error: "❌ Aniq o'tgan vaqt (yesterday / last... / in 20..) bilan Present Perfect qo'yilgan ➔ 💡 Faqat Past Simple bo'ladi" },
+        { pattern: /\b(have|has|'ve|'s)\s+\w+\s+\d+\s+(years|days|months|weeks|hours|minutes)\s+ago\b/i, error: "❌ 'ago' bilan Present Perfect ishlatilgan ➔ 💡 'ago' faqat Past Simple (V2) bilan ishlatiladi" },
+        { pattern: /\bsince\s+\d+\s+(years|months|days|weeks|hours|minutes)\b/i, error: "❌ 'since + muddat' (masalan: since 5 years) aniqlandi ➔ 💡 Vaqt oralig'i uchun 'FOR' ishlatiladi" },
+        { pattern: /\bfor\s+(19\d\d|20\d\d|morning|yesterday|monday|january|christmas)\b/i, error: "❌ 'for + boshlang'ich vaqt' aniqlandi ➔ 💡 Boshlang'ich nuqta uchun 'SINCE' ishlatiladi" },
+        { pattern: /\bhow\s+long\s+(do\s+you|are\s+you|does\s+she)\b/i, error: "❌ 'How long do you...' (hozirgi zamon) aniqlandi ➔ 💡 Davomiylik so'rashda: 'How long have you lived/worked...?'" },
+        { pattern: /\b(have|has|'ve|'s)\s+been\s+(knowing|owning|wanting|needing|believing|seeming|understanding|preferring|containing)\b/i, error: "❌ Holat fe'liga -ing qo'shilgan (masalan: 'have been knowing') ➔ 💡 Holat fe'llari (stative verbs) hech qachon -ing olmaydi ('have known', 'have owned')" }
+      ];
+
+      traps.forEach(t => {
+        if (t.pattern.test(text)) {
+          errors.push(t.error);
+        }
+      });
+
+      // 2. Section 3 (Verb Form Drill) Key Matcher
+      const day3Keys = {
+        1: [
+          { expected: ["have never eaten", "haven't eaten", "'ve never eaten"] },
+          { expected: ["have you ever met", "'ve you ever met"] },
+          { expected: ["has won", "'s won"] },
+          { expected: ["has not visited", "hasn't visited", "has never visited"] },
+          { expected: ["has your sister ever ridden"] },
+          { expected: ["have been", "'ve been"] },
+          { expected: ["has never flown", "'s never flown", "has not flown"] },
+          { expected: ["have seen", "'ve seen"] },
+          { expected: ["have you ever lost"] },
+          { expected: ["have traveled", "have travelled", "'ve traveled"] }
+        ],
+        2: [
+          { expected: ["has just arrived", "'s just arrived"] },
+          { expected: ["have already read", "'ve already read"] },
+          { expected: ["have you spoken", "have you spoke"] },
+          { expected: ["has not received", "hasn't received"] },
+          { expected: ["have just heard", "'ve just heard"] },
+          { expected: ["has already made", "'s already made"] },
+          { expected: ["have not started", "haven't started"] },
+          { expected: ["has your brother passed"] },
+          { expected: ["has just broken", "'s just broken"] },
+          { expected: ["have already drunk", "'ve already drunk"] }
+        ],
+        3: [
+          { expected: ["have you ever been", "went"] },
+          { expected: ["haven't seen", "have not seen"] },
+          { expected: ["wrote"] },
+          { expected: ["has already written", "'s already written"] },
+          { expected: ["died"] },
+          { expected: ["lost", "have just found", "'ve just found"] },
+          { expected: ["lived"] },
+          { expected: ["has just built", "'s just built"] },
+          { expected: ["did you wake up"] },
+          { expected: ["has never driven", "'s never driven"] }
+        ],
+        4: [
+          { expected: ["for"] },
+          { expected: ["since"] },
+          { expected: ["for"] },
+          { expected: ["since"] },
+          { expected: ["for"] },
+          { expected: ["for"] },
+          { expected: ["since"] },
+          { expected: ["since"] },
+          { expected: ["since"] },
+          { expected: ["for"] }
+        ],
+        5: [
+          { expected: ["have been cleaning", "have cleaned"] },
+          { expected: ["has been learning", "'s been learning"] },
+          { expected: ["have you read"] },
+          { expected: ["has broken", "'s broken"] },
+          { expected: ["has been playing", "'s been playing"] },
+          { expected: ["have known", "'ve known"] },
+          { expected: ["have you been doing"] },
+          { expected: ["has eaten", "'s eaten"] },
+          { expected: ["has been snowing", "'s been snowing"] },
+          { expected: ["have been writing", "have only finished"] }
+        ],
+        6: [
+          { expected: ["have known", "were"] },
+          { expected: ["has been raining", "are", "were"] },
+          { expected: ["have already visited", "have not visited", "haven't visited"] },
+          { expected: ["did you buy"] },
+          { expected: ["has been repairing", "has repaired"] },
+          { expected: ["have you had"] },
+          { expected: ["has been studying", "has only written"] },
+          { expected: ["have never seen", "'ve never seen"] },
+          { expected: ["moved"] },
+          { expected: ["has left", "'s left"] }
+        ]
+      };
+
+      let sec3Score = 0;
+      let sec3Total = 0;
+      const drillKeys = day3Keys[dayNum] || [];
+      if (drillKeys.length > 0) {
+        sec3Total = drillKeys.length;
+        drillKeys.forEach(k => {
+          const matched = k.expected.some(exp => lower.includes(exp.toLowerCase()));
+          if (matched) sec3Score++;
+        });
+      }
+
+      // 3. Section Completeness Check
+      const hasSec1 = lower.includes("1-bo'lim") || lower.includes("tarjima") || text.length > 200;
+      const hasSec2 = lower.includes("2-bo'lim") || lower.includes("xato") || lower.includes("tuzat");
+      const hasSec3 = lower.includes("3-bo'lim") || lower.includes("qavs") || lower.includes("fe'l");
+      const hasSec4 = lower.includes("4-bo'lim") || lower.includes("insho") || lower.includes("hikoya") || text.split(/\s+/).length > 70;
+      const hasSec5 = lower.includes("5-bo'lim") || lower.includes("savol") || text.includes("?");
+
+      const wordCount = text.trim().split(/\s+/).filter(w => w.length > 0).length;
+
+      // 4. Demonstrated Grammar Strengths
+      if (text.includes("have") || text.includes("has")) strengths.push("Present Perfect strukturasi faol qo'llanilgan");
+      if (text.includes("never") || text.includes("ever")) strengths.push("Tajriba indikatorlari (ever/never) mavjud");
+      if (text.includes("just") || text.includes("already") || text.includes("yet")) strengths.push("Yaqindagi voqealar signallari (just/already/yet) ishlatilgan");
+      if (text.includes("for") || text.includes("since")) strengths.push("Davomiylik (for/since) to'g'ri kiritilgan");
+      if (text.includes("been") && (text.includes("ing") || text.includes("working") || text.includes("learning") || text.includes("reading"))) strengths.push("Present Perfect Continuous (-ing) tuzilmalari qo'llanilgan");
+
+      return {
+        wordCount,
+        sec3Score,
+        sec3Total,
+        hasSec1,
+        hasSec2,
+        hasSec3,
+        hasSec4,
+        hasSec5,
+        errors,
+        strengths
+      };
+    }
+
+    async function submitHomework() {
+      const text = document.getElementById("hw-textarea").value.trim();
+      if (!text) {
+        alert("Iltimos, avval barcha bo'limlar bo'yicha vazifangizni to'liq yozing!");
+        return;
+      }
+
+      const submitBtn = document.getElementById("hw-submit-btn");
+      const toast = document.getElementById("hw-toast");
+      submitBtn.disabled = true;
+      submitBtn.textContent = "Yuborilmoqda...";
+
+      if (isTeacher) {
+        toast.style.display = "block";
+        toast.style.background = "rgba(245, 158, 11, 0.15)";
+        toast.style.border = "1px solid rgba(245, 158, 11, 0.4)";
+        toast.style.color = "var(--amber)";
+        toast.innerHTML = "🛡️ <b>Ulunur rejimi:</b> Vazifa tekshirildi (Telegramga jo'natilmadi). Keyingi kun ochildi!";
+        submitBtn.textContent = "Yuborildi ✨";
+        localStorage.setItem("ulunur_hw_done_" + currentDay, "true");
+        refreshScheduleTabs();
+        return;
+      }
+
+      const time = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+      const analysis = analyzeHomework(currentDay, text);
+
+      let msg = `📝 <b>YANGI ULKAN VAZIFA & AVTOMATIK TAHLIL (2-Hafta)</b>\n`;
+      msg += `━━━━━━━━━━━━━━━━━━━━\n`;
+      msg += `👤 <b>O'quvchi:</b> ${studentName}\n`;
+      msg += `📅 <b>Dars:</b> ${COURSE_DAYS[currentDay].dateStr} (${COURSE_DAYS[currentDay].title})\n`;
+      msg += `⏰ <b>Vaqt:</b> ${time}\n`;
+      msg += `📊 <b>Hajm:</b> ${analysis.wordCount} ta so'z\n\n`;
+
+      msg += `🤖 <b>USTOZ UCHUN AVTOMATIK TEKSHIRUV & TAHLIL:</b>\n`;
+      msg += `━━━━━━━━━━━━━━━━━━━━\n`;
+      msg += `📋 <b>Bo'limlar Bajarilishi:</b>\n`;
+      msg += `• 1-Bo'lim (Tarjimalar): ${analysis.hasSec1 ? '✅ Bajarilgan' : '⚠️ Qisman'}\n`;
+      msg += `• 2-Bo'lim (Tuzoqlarni tuzatish): ${analysis.hasSec2 ? '✅ Bajarilgan' : '⚠️ Qisman'}\n`;
+      if (analysis.sec3Total > 0) {
+        const p = Math.round((analysis.sec3Score / analysis.sec3Total) * 100);
+        msg += `• 3-Bo'lim (Fe'l shakllari testi): <b>${analysis.sec3Score} / ${analysis.sec3Total} to'g'ri</b> (${p}%)\n`;
+      }
+      msg += `• 4-Bo'lim (Insho / Esse): ${analysis.hasSec4 ? '✅ Yozilgan' : '⚠️ Qisqa'}\n`;
+      msg += `• 5-Bo'lim (Ustozga savollar): ${analysis.hasSec5 ? '✅ Tayyorlangan' : '⚠️ Topilmadi'}\n\n`;
+
+      if (analysis.errors.length > 0) {
+        msg += `🔍 <b>ANIQLANGAN EHTIMOLIY XATOLAR (${analysis.errors.length} ta):</b>\n`;
+        analysis.errors.slice(0, 8).forEach(e => {
+          msg += `${e}\n`;
+        });
+        msg += `\n`;
+      } else {
+        msg += `🔍 <b>Grammatik Xatolar:</b> 0 ta qo'pol xato aniqlandi! A'lo darajada! ✨\n\n`;
+      }
+
+      if (analysis.strengths.length > 0) {
+        msg += `🌟 <b>Ijobiy Tomonlari:</b>\n`;
+        analysis.strengths.forEach(s => {
+          msg += `• ${s}\n`;
+        });
+        msg += `\n`;
+      }
+
+      // Safe length for student raw text to keep within Telegram 4096 character limit
+      let rawSnippet = text;
+      if (rawSnippet.length > 1400) {
+        rawSnippet = rawSnippet.substring(0, 1400) + "... (matn qolgan qismi to'liq qabul qilindi)";
+      }
+
+      msg += `📄 <b>O'QUVCHI TOPSHIRGAN ASL MATN:</b>\n`;
+      msg += `<i>"${rawSnippet.replace(/</g, '&lt;').replace(/>/g, '&gt;')}"</i>\n`;
+      msg += `━━━━━━━━━━━━━━━━━━━━`;
+
+      try {
+        const res = await fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            chat_id: TELEGRAM_CHAT_ID,
+            text: msg,
+            parse_mode: "HTML"
+          })
+        });
+
+        if (res.ok) {
+          toast.style.display = "block";
+          toast.style.background = "rgba(16, 185, 129, 0.15)";
+          toast.style.border = "1px solid rgba(16, 185, 129, 0.4)";
+          toast.style.color = "#34d399";
+          toast.innerHTML = `✅ Kengaytirilgan vazifangiz va avtomatik tekshiruv hisoboti ustozingizning Telegramiga yetib bordi! <b>${currentDay + 1}-kun darsi ochildi!</b>`;
+          submitBtn.textContent = "Muvaffaqiyatli Yuborildi ✨";
+          
+          localStorage.setItem("ulunur_hw_done_" + currentDay, "true");
+          refreshScheduleTabs();
+        } else {
+          toast.style.display = "block";
+          toast.style.background = "rgba(239, 68, 68, 0.15)";
+          toast.style.color = "#f87171";
+          toast.innerHTML = "⚠️ Xatolik yuz berdi. Internetni tekshirib qayta urinib ko'ring.";
+          submitBtn.disabled = false;
+          submitBtn.textContent = "Qayta urinish";
+        }
+      } catch (err) {
+        console.error(err);
+        toast.style.display = "block";
+        toast.style.background = "rgba(239, 68, 68, 0.15)";
+        toast.style.color = "#f87171";
+        toast.innerHTML = "⚠️ Xatolik yuz berdi.";
+        submitBtn.disabled = false;
+        submitBtn.textContent = "Qayta urinish";
+      }
+    }
+
+    window.addEventListener("DOMContentLoaded", init);
+  </script>
+</body>
+</html>

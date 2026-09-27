@@ -649,6 +649,48 @@
       color: #94a3b8;
     }
 
+    .btn-speaker {
+      background: rgba(99, 102, 241, 0.15);
+      border: 1px solid rgba(99, 102, 241, 0.4);
+      color: #818cf8;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .btn-speaker:hover {
+      background: var(--primary);
+      color: white;
+      transform: scale(1.08);
+      box-shadow: 0 0 12px var(--primary-glow);
+    }
+    .btn-speaker-sm {
+      background: rgba(99, 102, 241, 0.12);
+      border: 1px solid rgba(99, 102, 241, 0.3);
+      color: #a5b4fc;
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      cursor: pointer;
+      transition: all 0.15s ease;
+      vertical-align: middle;
+      margin-left: 6px;
+    }
+    .btn-speaker-sm:hover {
+      background: var(--primary);
+      color: white;
+      transform: scale(1.1);
+    }
+
     .card-controls {
       display: flex;
       justify-content: center;
@@ -1111,12 +1153,18 @@
           <div class="flashcard" id="flashcard-el">
             <div class="flashcard-front">
               <span class="card-pos" id="fc-pos">fe'l</span>
-              <div class="card-word" id="fc-word">travel</div>
+              <div style="display: flex; align-items: center; justify-content: center; gap: 12px; margin-bottom: 8px;">
+                <div class="card-word" id="fc-word" style="margin-bottom: 0;">travel</div>
+                <button class="btn-speaker" onclick="event.stopPropagation(); speakText(document.getElementById('fc-word').textContent)" title="Talaffuzni eshitish">🔊</button>
+              </div>
               <span class="card-hint">🔄 O'zbekcha tarjimasini ko'rish uchun bosing</span>
             </div>
             <div class="flashcard-back">
               <div class="card-uz-trans" id="fc-uz">sayohat qilmoq</div>
-              <div class="card-ex-en" id="fc-ex-en">"I have traveled to 5 countries."</div>
+              <div style="display: flex; align-items: center; justify-content: center; gap: 8px; margin-bottom: 4px;">
+                <div class="card-ex-en" id="fc-ex-en" style="margin-bottom: 0;">"I have traveled to 5 countries."</div>
+                <button class="btn-speaker-sm" onclick="event.stopPropagation(); speakText(document.getElementById('fc-ex-en').textContent)" title="Gapni eshitish">🔊</button>
+              </div>
               <div class="card-ex-uz" id="fc-ex-uz">Men 5 ta mamlakatga sayohat qilganman.</div>
             </div>
           </div>
@@ -1241,7 +1289,7 @@
       <p style="font-size: 13px; color: var(--text-muted); line-height: 1.5;">
         Darslarni boshlash uchun ismingizni kiriting.
       </p>
-      <input type="text" id="modal-name-input" class="input-clean" placeholder="Masalan: Malika" oninput="checkModalName(this.value)" onkeyup="if(event.key==='Enter') saveName()">
+      <input type="text" id="modal-name-input" class="input-clean" placeholder="Ismingizni kiriting..." oninput="checkModalName(this.value)" onkeyup="if(event.key==='Enter') saveName()">
       <div id="modal-hint" style="display: none; color: var(--amber); font-size: 12px; font-weight: 700; margin-bottom: 10px;">
         🛡️ Ulunur rejimi aniqlandi: Barcha darslar to'liq ochiq va Telegram xabarlari simulyatsiya qilinadi.
       </div>
@@ -2089,7 +2137,7 @@
           9. Biz universitetni bitirganimizdan beri uchrashmadik (not meet, since graduated).<br>
           10. Men bu kitobni 2 haftadan beri o'qiyapman (read, for 2 weeks).<br>
           11. U ertalab soat 08:00 dan beri ofisda (be in office, since 8:00 AM).<br>
-          12. Shahzod va Malika 10 yildan beri turmush qurgan (be married, for 10 years).<br>
+          12. Shahzod va Dilnoza 10 yildan beri turmush qurgan (be married, for 10 years).<br>
           13. Siz qanchadan beri bu qimmat soatga egasiz (How long have you had...)?<br>
           14. Yomg'ir kechadan beri to'xtovsiz yog'yapti (rain, since yesterday).<br><br>
 
@@ -3182,6 +3230,21 @@
       } else {
         document.exitFullscreen();
       }
+    }
+
+    // Speech Synthesis for audio pronunciation
+    function speakText(text) {
+      if (!('speechSynthesis' in window)) return;
+      window.speechSynthesis.cancel();
+      const clean = (text || '').replace(/["'«»]/g, '').trim();
+      if (!clean) return;
+      const utterance = new SpeechSynthesisUtterance(clean);
+      utterance.lang = 'en-US';
+      utterance.rate = 0.85;
+      const voices = window.speechSynthesis.getVoices();
+      const enVoice = voices.find(v => v.lang && v.lang.startsWith('en') && (v.name.includes('Natural') || v.name.includes('Google') || v.name.includes('Samantha') || v.name.includes('David') || v.name.includes('Zira') || v.name.includes('English')));
+      if (enVoice) utterance.voice = enVoice;
+      window.speechSynthesis.speak(utterance);
     }
 
     // ==========================================

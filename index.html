@@ -1045,6 +1045,9 @@
         </div>
       </a>
       <div style="display: flex; align-items: center; gap: 10px;">
+        <button class="btn-header-tool" style="background: rgba(16, 185, 129, 0.15); border-color: rgba(16, 185, 129, 0.4); color: #34d399; font-weight: 700;" onclick="handleDayClick(7)">
+          🏆 Level Check (7-Kun)
+        </button>
         <a href="vocab.html" class="btn-header-tool">
           🎯 Vocab Test (EN ➔ UZ)
         </a>
@@ -1070,6 +1073,11 @@
       <p class="week-desc">
         Dars taqdimoti (Google Meet), 3D kartochkalar, <strong>kengaytirilgan 5 bo'limli ulkan vazifalar</strong> va <strong>bosqichma-bosqich 3-Modulli katta Level Check</strong> tizimi.
       </p>
+      <div style="margin-top: 14px; display: flex; gap: 10px; flex-wrap: wrap;">
+        <button class="btn-submit" style="background: linear-gradient(135deg, #10b981, #059669); box-shadow: 0 4px 14px rgba(16, 185, 129, 0.4); font-size: 14px; padding: 10px 20px; width: auto;" onclick="handleDayClick(7)">
+          🏆 7-Kun: Katta Multi-Module Level Checkga O'tish →
+        </button>
+      </div>
     </div>
 
     <!-- 7 DAYS SCHEDULE TABS -->
@@ -2991,7 +2999,13 @@
       }
 
       refreshScheduleTabs();
-      loadDayContent(1);
+
+      const hash = window.location.hash.toLowerCase();
+      if (hash.includes("levelcheck") || hash.includes("day7") || hash.includes("test")) {
+        handleDayClick(7);
+      } else {
+        loadDayContent(1);
+      }
 
       window.addEventListener("keydown", (e) => {
         if (currentSection !== "slides") return;
@@ -3045,9 +3059,8 @@
     }
 
     function isDayUnlocked(dayNum) {
-      if (isTeacher) return true;
-      if (dayNum === 1) return true;
-      return localStorage.getItem("ulunur_hw_done_" + (dayNum - 1)) === "true";
+      // Barcha darslar va 7-kun Katta Level Check o'quvchi uchun to'liq ochiq
+      return true;
     }
 
     function refreshScheduleTabs() {
@@ -3055,20 +3068,20 @@
       container.innerHTML = "";
 
       for (let d = 1; d <= 7; d++) {
-        const unlocked = isDayUnlocked(d);
         const tab = document.createElement("div");
-        tab.className = `day-tab ${unlocked ? "" : "locked"} ${d === currentDay ? "active" : ""}`;
+        tab.className = `day-tab ${d === currentDay ? "active" : ""}`;
         tab.id = `tab-day-${d}`;
         
-        let statusText = unlocked ? (d === 7 ? "🏆 Katta Sinov" : "Ochiq ✨") : "🔒 Yopiq";
-        let titleText = unlocked ? COURSE_DAYS[d].title : `🔒 Oldingi vazifani topshiring`;
+        let statusBadge = d === 7 
+          ? `<span style="background: rgba(16, 185, 129, 0.2); color: #34d399; padding: 2px 8px; border-radius: 999px; font-weight: 700; font-size: 11px;">🏆 Katta Sinov</span>` 
+          : `<span style="color: var(--primary); font-weight: 600; font-size: 11px;">Ochiq ✨</span>`;
 
         tab.innerHTML = `
           <div class="day-tab-date">
             <span>${COURSE_DAYS[d].shortDate}</span>
-            <span>${statusText}</span>
+            ${statusBadge}
           </div>
-          <div class="day-tab-title">${titleText}</div>
+          <div class="day-tab-title">${COURSE_DAYS[d].title}</div>
         `;
 
         tab.onclick = () => handleDayClick(d);
@@ -3077,13 +3090,14 @@
     }
 
     function handleDayClick(dayNum) {
-      if (!isDayUnlocked(dayNum)) {
-        alert(`🔒 Bu dars yopiq!\nAvval ${dayNum - 1}-kunning barcha uyga vazifalarini to'liq yozib topshiring.`);
-        return;
-      }
       currentDay = dayNum;
       refreshScheduleTabs();
       loadDayContent(dayNum);
+      if (dayNum === 7) {
+        switchSection('practice');
+        const cb = document.querySelector('.content-box');
+        if (cb) cb.scrollIntoView({ behavior: 'smooth' });
+      }
     }
 
     function loadDayContent(dayNum) {
